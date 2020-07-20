@@ -1,0 +1,117 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pf_format.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/12 16:24:43 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:24:43 by emaveric         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/ft_printf.h"
+
+static void		size_lh(t_pf *pf, char p, va_list ap, int n)
+{
+	if (n == 2)
+	{
+		if (p == 'd' || p == 'i')
+			!(ft_strcmp(pf->size, "hh")) ?
+			(pf->num.lli = (long long int)((signed char)va_arg(ap, int)))
+			: (pf->num.lli = va_arg(ap, long long int));
+		else if (p == 'u' || p == 'o' || p == 'x' || p == 'X')
+			!(ft_strcmp(pf->size, "hh")) ?
+			(pf->num.ulli = (unsigned long long)
+					((unsigned char)va_arg(ap, int)))
+			: (pf->num.ulli = va_arg(ap, unsigned long long));
+	}
+	else
+	{
+		if (p == 'd' || p == 'i')
+			!(ft_strcmp(pf->size, "h")) ?
+			(pf->num.lli = (long long int)((short int)va_arg(ap, int)))
+			: (pf->num.lli = (long long int)va_arg(ap, long int));
+		else if (ft_strchr("fF", p) && !ft_strcmp(pf->size, "l"))
+			pf->num.ld = (long double)va_arg(ap, double);
+		else if (p == 'u' || p == 'o' || p == 'x' || p == 'X')
+			!(ft_strcmp(pf->size, "h")) ?
+	(pf->num.ulli = (unsigned long long)((unsigned short int)va_arg(ap, int)))
+	: (pf->num.ulli = (unsigned long long)va_arg(ap, unsigned long int));
+	}
+}
+
+static void		number_size(t_pf *pf, char p, va_list ap)
+{
+	if (pf->size && (!(ft_strcmp(pf->size, "ll"))
+	|| !(ft_strcmp(pf->size, "hh"))))
+		size_lh(pf, p, ap, 2);
+	else if (pf->size && (!(ft_strcmp(pf->size, "l"))
+	|| !(ft_strcmp(pf->size, "h"))))
+		size_lh(pf, p, ap, 1);
+	else if (pf->size && !ft_strcmp(pf->size, "L"))
+		pf->num.ld = (long double)va_arg(ap, long double);
+	else
+	{
+		if (p == 'd' || p == 'i')
+			pf->num.lli = (long long int)va_arg(ap, int);
+		else if (p == 'u' || p == 'x' || p == 'X' || p == 'o')
+			pf->num.ulli = (unsigned long long)va_arg(ap, unsigned int);
+		else if (ft_strchr("fF", p))
+			pf->num.ld = (long double)va_arg(ap, double);
+		else if (p == 'p')
+			pf->num.ulli = va_arg(ap, unsigned long long);
+	}
+}
+
+static void		sc_percent_size(t_pf *pf, char p, va_list ap)
+{
+	if (p == 's' || p == 'S')
+	{
+		if (!(pf->tmp_oxfs = ft_strdup(va_arg(ap, char*))))
+			pf->tmp_oxfs = ft_strdup("(null)");
+	}
+	else if (p == 'c' || p == 'C')
+		pf->num.c = (char)va_arg(ap, int);
+	else if (p == '%')
+		pf->num.c = '%';
+}
+
+static void		find_format(t_pf *pf, char **p)
+{
+	if (is_flags(*p))
+		find_flags(pf, &*p);
+	if (is_width(*p))
+		find_width(pf, &*p);
+	if (is_precision(&*p, pf))
+		find_precision(pf, &*p);
+	if (is_size(*p))
+		find_size(pf, &*p);
+}
+
+int				pf_format(t_pf *pf, char **p, va_list ap)
+{
+	*p += 1;
+	find_format(pf, p);
+	if (**p == '\0')
+		return (-1);
+	if (!ft_strchr("%sScCpfFdiouxX", **p))
+		return (-1);
+	if (ft_strchr("%sScCpfFdiouxX", **p))
+	{
+		pf->type = **p;
+		if (ft_strchr("pfFdiouxX", pf->type))
+			number_size(pf, **p, ap);
+		else
+			sc_percent_size(pf, **p, ap);
+		*p += 1;
+	}
+	if (ft_strchr("fF", pf->type))
+		display_f(pf);
+	parse_format(pf);
+	if (find_str_size(pf) == -1)
+		return (-1);
+	check_buf(pf, &*p);
+	pf->counter += pf->str_len;
+	return (1);
+}
