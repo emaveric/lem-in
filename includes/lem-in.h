@@ -20,11 +20,39 @@
 # include "../ft_printf/libft/libft.h"
 # include "../ft_printf/includes/ft_printf.h"
 
-typedef struct	s_lem_in
+typedef struct		s_room
 {
-	int 		ant_num;
-	int 		ant_start;
-	int 		ant_end;
-}				t_lem_in;
+	char			*name;
+	int 			level;
+	int 			x;
+	int 			y;
+	int 			num_input;
+	int 			num_output;
+	int 			visited;
+	struct s_room	*next;
+	int 			ant_name;
+}					t_room;
+
+typedef struct		s_link
+{
+	t_room 			*start;
+	t_room 			*end;
+}					t_link;
+
+typedef struct		s_queue
+{
+	t_room 			*room;
+	struct s_queue	*next;
+}					t_queue;
+
+typedef struct		s_lem_in
+{
+	int 			ant_num;
+	int 			ant_start;
+	int 			ant_end;
+	int 			**link_arr;
+	t_room			*rooms;
+	t_link			*links;
+}					t_lem_in;
 
 #endif
