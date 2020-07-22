@@ -2958,6 +2958,60 @@ ft_printf/src/print_check.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/src/print_check.c.s
 .PHONY : ft_printf/src/print_check.c.s
 
+src/get_room.o: src/get_room.c.o
+
+.PHONY : src/get_room.o
+
+# target to build an object file
+src/get_room.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/get_room.c.o
+.PHONY : src/get_room.c.o
+
+src/get_room.i: src/get_room.c.i
+
+.PHONY : src/get_room.i
+
+# target to preprocess a source file
+src/get_room.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/get_room.c.i
+.PHONY : src/get_room.c.i
+
+src/get_room.s: src/get_room.c.s
+
+.PHONY : src/get_room.s
+
+# target to generate assembly for a file
+src/get_room.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/get_room.c.s
+.PHONY : src/get_room.c.s
+
+src/init.o: src/init.c.o
+
+.PHONY : src/init.o
+
+# target to build an object file
+src/init.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/init.c.o
+.PHONY : src/init.c.o
+
+src/init.i: src/init.c.i
+
+.PHONY : src/init.i
+
+# target to preprocess a source file
+src/init.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/init.c.i
+.PHONY : src/init.c.i
+
+src/init.s: src/init.c.s
+
+.PHONY : src/init.s
+
+# target to generate assembly for a file
+src/init.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/init.c.s
+.PHONY : src/init.c.s
+
 src/lem-in.o: src/lem-in.c.o
 
 .PHONY : src/lem-in.o
@@ -2984,6 +3038,60 @@ src/lem-in.s: src/lem-in.c.s
 src/lem-in.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/lem-in.c.s
 .PHONY : src/lem-in.c.s
+
+src/map.o: src/map.c.o
+
+.PHONY : src/map.o
+
+# target to build an object file
+src/map.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/map.c.o
+.PHONY : src/map.c.o
+
+src/map.i: src/map.c.i
+
+.PHONY : src/map.i
+
+# target to preprocess a source file
+src/map.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/map.c.i
+.PHONY : src/map.c.i
+
+src/map.s: src/map.c.s
+
+.PHONY : src/map.s
+
+# target to generate assembly for a file
+src/map.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/map.c.s
+.PHONY : src/map.c.s
+
+src/validation.o: src/validation.c.o
+
+.PHONY : src/validation.o
+
+# target to build an object file
+src/validation.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/validation.c.o
+.PHONY : src/validation.c.o
+
+src/validation.i: src/validation.c.i
+
+.PHONY : src/validation.i
+
+# target to preprocess a source file
+src/validation.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/validation.c.i
+.PHONY : src/validation.c.i
+
+src/validation.s: src/validation.c.s
+
+.PHONY : src/validation.s
+
+# target to generate assembly for a file
+src/validation.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/validation.c.s
+.PHONY : src/validation.c.s
 
 # Help Target
 help:
@@ -3309,9 +3417,21 @@ help:
 	@echo "... ft_printf/src/print_check.o"
 	@echo "... ft_printf/src/print_check.i"
 	@echo "... ft_printf/src/print_check.s"
+	@echo "... src/get_room.o"
+	@echo "... src/get_room.i"
+	@echo "... src/get_room.s"
+	@echo "... src/init.o"
+	@echo "... src/init.i"
+	@echo "... src/init.s"
 	@echo "... src/lem-in.o"
 	@echo "... src/lem-in.i"
 	@echo "... src/lem-in.s"
+	@echo "... src/map.o"
+	@echo "... src/map.i"
+	@echo "... src/map.s"
+	@echo "... src/validation.o"
+	@echo "... src/validation.i"
+	@echo "... src/validation.s"
 .PHONY : help
 
 

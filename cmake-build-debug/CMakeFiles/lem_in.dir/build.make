@@ -1435,6 +1435,58 @@ CMakeFiles/lem_in.dir/src/lem-in.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/lem-in.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/lem-in/src/lem-in.c -o CMakeFiles/lem_in.dir/src/lem-in.c.s
 
+CMakeFiles/lem_in.dir/src/validation.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/validation.c.o: ../src/validation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/lem_in.dir/src/validation.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/validation.c.o   -c /Users/emaveric/lem-in/src/validation.c
+
+CMakeFiles/lem_in.dir/src/validation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/validation.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/emaveric/lem-in/src/validation.c > CMakeFiles/lem_in.dir/src/validation.c.i
+
+CMakeFiles/lem_in.dir/src/validation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/validation.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/lem-in/src/validation.c -o CMakeFiles/lem_in.dir/src/validation.c.s
+
+CMakeFiles/lem_in.dir/src/init.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/init.c.o: ../src/init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/lem_in.dir/src/init.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/init.c.o   -c /Users/emaveric/lem-in/src/init.c
+
+CMakeFiles/lem_in.dir/src/init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/init.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/emaveric/lem-in/src/init.c > CMakeFiles/lem_in.dir/src/init.c.i
+
+CMakeFiles/lem_in.dir/src/init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/init.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/lem-in/src/init.c -o CMakeFiles/lem_in.dir/src/init.c.s
+
+CMakeFiles/lem_in.dir/src/map.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/map.c.o: ../src/map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/lem_in.dir/src/map.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/map.c.o   -c /Users/emaveric/lem-in/src/map.c
+
+CMakeFiles/lem_in.dir/src/map.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/map.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/emaveric/lem-in/src/map.c > CMakeFiles/lem_in.dir/src/map.c.i
+
+CMakeFiles/lem_in.dir/src/map.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/map.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/lem-in/src/map.c -o CMakeFiles/lem_in.dir/src/map.c.s
+
+CMakeFiles/lem_in.dir/src/get_room.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/get_room.c.o: ../src/get_room.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/lem_in.dir/src/get_room.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/get_room.c.o   -c /Users/emaveric/lem-in/src/get_room.c
+
+CMakeFiles/lem_in.dir/src/get_room.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/get_room.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/emaveric/lem-in/src/get_room.c > CMakeFiles/lem_in.dir/src/get_room.c.i
+
+CMakeFiles/lem_in.dir/src/get_room.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/get_room.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/lem-in/src/get_room.c -o CMakeFiles/lem_in.dir/src/get_room.c.s
+
 # Object files for target lem_in
 lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/ft_printf/libft/ft_atoi.c.o" \
@@ -1542,7 +1594,11 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/ft_printf/src/pf_free.c.o" \
 "CMakeFiles/lem_in.dir/ft_printf/src/pf_libft.c.o" \
 "CMakeFiles/lem_in.dir/ft_printf/src/print_check.c.o" \
-"CMakeFiles/lem_in.dir/src/lem-in.c.o"
+"CMakeFiles/lem_in.dir/src/lem-in.c.o" \
+"CMakeFiles/lem_in.dir/src/validation.c.o" \
+"CMakeFiles/lem_in.dir/src/init.c.o" \
+"CMakeFiles/lem_in.dir/src/map.c.o" \
+"CMakeFiles/lem_in.dir/src/get_room.c.o"
 
 # External object files for target lem_in
 lem_in_EXTERNAL_OBJECTS =
@@ -1653,9 +1709,13 @@ lem_in: CMakeFiles/lem_in.dir/ft_printf/src/pf_free.c.o
 lem_in: CMakeFiles/lem_in.dir/ft_printf/src/pf_libft.c.o
 lem_in: CMakeFiles/lem_in.dir/ft_printf/src/print_check.c.o
 lem_in: CMakeFiles/lem_in.dir/src/lem-in.c.o
+lem_in: CMakeFiles/lem_in.dir/src/validation.c.o
+lem_in: CMakeFiles/lem_in.dir/src/init.c.o
+lem_in: CMakeFiles/lem_in.dir/src/map.c.o
+lem_in: CMakeFiles/lem_in.dir/src/get_room.c.o
 lem_in: CMakeFiles/lem_in.dir/build.make
 lem_in: CMakeFiles/lem_in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Linking C executable lem_in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Linking C executable lem_in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lem_in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

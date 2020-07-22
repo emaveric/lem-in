@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/20 20:50:12 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/22 21:29:53 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 # define MAX_INT 2147483647
 # define ERROR -1
-
+# define B_SIZE 3000000
 
 # include "../ft_printf/libft/libft.h"
 # include "../ft_printf/includes/ft_printf.h"
 
 typedef struct		s_room
 {
+	int 			num; // номер комнаты
 	char			*name;
 	int 			level;
 	int 			x;
@@ -47,12 +48,29 @@ typedef struct		s_queue
 
 typedef struct		s_lem_in
 {
+	int 			i;
+	int 			flag;
+	int 			s_flag;
+	int 			e_flag;
 	int 			ant_num;
 	int 			ant_start;
 	int 			ant_end;
+	int 			room_num; // кол-во
+	int 			link_num;
 	int 			**link_arr;
-	t_room			*rooms;
-	t_link			*links;
+	char 			**line;
+	/*t_room 			*start;
+	t_room			*end;*/
+	t_room			**rooms;
+	t_link			**links;
 }					t_lem_in;
+
+int					empty_line_check(char *buff);
+int 				get_map(t_lem_in *l_i);
+int 				link_valid(t_lem_in *l_i, const char *line);
+int 				coord_valid(t_lem_in *l_i, char **str, int n);
+int					get_room(t_lem_in *l_i, char *line, int i);
+t_lem_in			*init_l_i(void);
+
 
 #endif

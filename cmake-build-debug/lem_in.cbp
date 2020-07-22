@@ -417,7 +417,19 @@
 		<Unit filename="/Users/emaveric/lem-in/includes/lem-in.h">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/lem-in/src/get_room.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/emaveric/lem-in/src/init.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/lem-in/src/lem-in.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/emaveric/lem-in/src/map.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/emaveric/lem-in/src/validation.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/emaveric/lem-in/CMakeLists.txt">
