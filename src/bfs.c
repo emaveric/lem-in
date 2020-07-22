@@ -11,7 +11,7 @@ int    bfs(t_lem_in *lem_in)
 	int i;
 	int level;
 
-	queue = new_queue_node(lem_in->start_room);
+	queue = new_queue_node(lem_in->rooms[0]);
 	if (!queue)
 		return (-1);
 	queue->room->visited = 1;

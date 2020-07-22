@@ -11,6 +11,7 @@ int main()
 	t_room *room5;
 	t_room *room6;
 	t_room *room7;
+	char *name;
 
     t_room *room_temp;
 //    t_link *link1;
@@ -50,25 +51,14 @@ int main()
 	room6->level = -1;
 	room7 = malloc(sizeof(t_room));
 	room7->level = MAX_INT;
-    room0->visited = 0;
-    room1->visited = 0;
-    room2->visited = 0;
-	room3->visited = 0;
-	room4->visited = 0;
-	room5->visited = 0;
-	room6->visited = 0;
-	room7->visited = 0;
-    room0->num = 0;
-    room1->num = 1;
-    room2->num = 2;
-	room3->num = 3;
-	room4->num = 4;
-	room5->num = 5;
-	room6->num = 6;
-	room7->num = 7;
 
 
-
+	name = (char*)malloc(sizeof(char) * 5);
+	name[0] = 'n';
+	name[1] = 'a';
+	name[2] = 'm';
+	name[3] = 'e';
+	name[4] = '\0';
     lem_in->room_num = 8;
     lem_in->link_num = 10;
 //    link1 = malloc(sizeof(t_link));
@@ -86,6 +76,16 @@ int main()
 	lem_in->rooms[5] = room5;
 	lem_in->rooms[6] = room6;
 	lem_in->rooms[7] = room7;
+	i = 0;
+	while (i < lem_in->room_num)
+	{
+		lem_in->rooms[i]->visited = 0;
+		lem_in->rooms[i]->num = i;
+		lem_in->rooms[i]->num_input = 0;
+		lem_in->rooms[i]->num_output = 0;
+		lem_in->rooms[i]->name = name;
+		i++;
+	}
     lem_in->links = (t_link**)malloc(sizeof(t_link*) * lem_in->link_num);
 //    lem_in->links[0] = link1;
 //    lem_in->links[1] = link2;
@@ -125,18 +125,14 @@ int main()
     lem_in->start_room = room0;
     i = 0;
     print_links(lem_in->link_arr, lem_in->room_num);
-    while (i < lem_in->room_num)
-    {
-        ft_printf("room level: %d\n", lem_in->rooms[i]->level);
-        i++;
-    }
+	print_rooms(lem_in->rooms, lem_in->room_num);
     bfs(lem_in);
     i = 0;
-	while (i < lem_in->room_num)
-	{
-		ft_printf("room%d level: %d\n", i, lem_in->rooms[i]->level);
-		i++;
-	}
 	delete_useless(lem_in);
 	print_links(lem_in->link_arr, lem_in->room_num);
+//	print_rooms(lem_in->rooms, lem_in->room_num);
+	count_input_output(lem_in);
+	print_rooms(lem_in->rooms, lem_in->room_num);
+	delete_dead_ends(lem_in);
+	print_rooms(lem_in->rooms, lem_in->room_num);
 }
