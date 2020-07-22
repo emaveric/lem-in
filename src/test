@@ -1,0 +1,8 @@
+room 0 level = 0 visited = 1
+room 1 level = 1 visited = 1
+room 2 level = 1  visited = 1
+room 3 level = 2  visited = 1
+room 4 level = 2  visited = 1
+room 6 level = 2  visited = 1
+room 7 level = MAXINT  visited = 0
+room 8 level = MAXINT visited = 0
