@@ -122,6 +122,8 @@ int main()
 	lem_in->link_arr[7][5] = 1;
 	lem_in->link_arr[7][6] = 1;
 	lem_in->link_arr[6][7] = 1;
+	lem_in->link_arr[2][4] = 1;
+	lem_in->link_arr[4][2] = 1;
     lem_in->start_room = room0;
     i = 0;
     print_links(lem_in->link_arr, lem_in->room_num);
@@ -135,4 +137,9 @@ int main()
 	print_rooms(lem_in->rooms, lem_in->room_num);
 	delete_dead_ends(lem_in);
 	print_rooms(lem_in->rooms, lem_in->room_num);
+	print_links(lem_in->link_arr, lem_in->room_num);
+	delete_input_forks(lem_in);
+	print_links(lem_in->link_arr, lem_in->room_num);
+	print_rooms(lem_in->rooms, lem_in->room_num);
+	delete_output_forks(lem_in);
 }
