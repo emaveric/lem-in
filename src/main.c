@@ -85,6 +85,8 @@ int main()
 		lem_in->rooms[i]->num_output = 0;
 		lem_in->rooms[i]->name = name;
 		lem_in->rooms[i]->ant_name = -1;
+		lem_in->rooms[i]->next = NULL;
+		lem_in->rooms[i]->prev =NULL;
 		i++;
 	}
     lem_in->links = (t_link**)malloc(sizeof(t_link*) * lem_in->link_num);

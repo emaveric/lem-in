@@ -18,6 +18,8 @@ void 	define_next(t_lem_in *lem_in)
 				{
 					ft_printf("this is where it goes: room%d\n", j);
 					lem_in->rooms[i]->next = lem_in->rooms[j];
+					if (lem_in->rooms[j]->level != MAX_INT)
+						lem_in->rooms[j]->prev = lem_in->rooms[i];
 				}
 				j++;
 			}
