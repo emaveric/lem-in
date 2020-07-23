@@ -83,6 +83,7 @@ int has_output_forks(t_lem_in *lem_in, int room_id)
 			i++;
 		}
 	}
+	return (0);
 }
 
 /*
@@ -116,7 +117,7 @@ void delete_input_forks(t_lem_in *lem_in)
 			}
 			j++;
 		}
-		if (room->num_input > 1)
+		if (room->num_input > 1 && room->level != MAX_INT)
 		{
 			j = 0;
 			best_room_id = -1;
@@ -143,7 +144,7 @@ void delete_input_forks(t_lem_in *lem_in)
 					lem_in->link_arr[j][room->num] = 0;
 					room->num_input--;
 					lem_in->rooms[j]->num_output--;
-					ft_printf("useless link room%d--room%d deleted\n", room->num, j);
+					ft_printf("input fork room%d--room%d deleted\n", room->num, j);
 				}
 				j++;
 			}
@@ -157,24 +158,19 @@ void delete_input_forks(t_lem_in *lem_in)
  */
 int find_shortest(t_lem_in *lem_in, int room_id)
 {
-	int i;
 	int best_path;
-	int best_room;
-	int curr_path;
+	t_room *temp;
 
-	i = 1;
-	best_path = MAX_INT;
-	best_room = -1;
-	if (lem_in->link_arr[room_id][lem_in->room_num - 1] == 1)
-		return(1);
-	while (i < lem_in->room_num - 1)
+	best_path = 0;
+	temp = lem_in->rooms[room_id];
+	if (lem_in->rooms[room_id]->level == MAX_INT)
+		return (0);
+	while (temp)
 	{
-		if (lem_in->link_arr[room_id][i] == 1 && lem_in->rooms[i]->level > lem_in->rooms[room_id]->level)
-		{
-			curr_path = find_shortest(lem_in, i);
-		}
-		i++;
+		best_path++;
+		temp = temp->next;
 	}
+	return (best_path - 1);
 }
 
 void delete_output_forks(t_lem_in *lem_in)
@@ -190,21 +186,67 @@ void delete_output_forks(t_lem_in *lem_in)
 
 
 	queue = new_queue_node(lem_in->rooms[lem_in->room_num - 1]);
+	curr_path = MAX_INT;
 	while (queue) {
 		room = pop_node(&queue);
 		j = 1;
 //		add rooms to queue
-		while (j < lem_in->room_num) {
-			if (lem_in->link_arr[room->num][j] == 1 && lem_in->rooms[room->num]->level > lem_in->rooms[j]->level
-				&& lem_in->rooms[j]->visited != 3 && j != 0) {
+//		ft_printf("current room: %d\n", room->num);
+		while (j < lem_in->room_num)
+		{
+//			ft_printf("j: %d\n", j);
+//			ft_printf("room->level: %d\n", room->level);
+//			ft_printf("j->level: %d\n", lem_in->rooms[j]->level);
+			if ((room->level == MAX_INT && lem_in->link_arr[room->num][j] == 1 && lem_in->rooms[j]->visited != 3
+			&& lem_in->rooms[j]->level == lem_in->bfs_level) ||
+			(room->level != MAX_INT && lem_in->rooms[j]->level == room->level - 1 && lem_in->rooms[j]->visited != 3 && j != 0))
+			{
 
 				node = new_queue_node(lem_in->rooms[j]);
 				node->room->visited = 3;
 				push_node(&queue, node);
-				ft_printf("room added to queue: %d\n", node->room->num);
+//				ft_printf("room added to queue: %d\n", node->room->num);
 			}
 			j++;
 		}
+		if (room->num_output > 1)
+		{
+			j = 0;
+//			ft_printf("room num: %d\n", lem_in->room_num);
+			while (j < lem_in->room_num)
+			{
+//				ft_printf("%d\n", j);
+				if (lem_in->link_arr[j][room->num] == 1 && room->level < lem_in->rooms[j]->level)
+				{
+//					ft_printf("room%d\n", j);
+					curr_path = find_shortest(lem_in, j);
+					if (curr_path < best_path)
+					{
+						best_room = j;
+						best_path = curr_path;
+					}
+				}
+
+				j++;
+			}
+			j = 1;
+//			ft_printf("curr room: %d\n", room->num);
+//			ft_printf("best room: %d\n", best_room);
+			room->next = lem_in->rooms[best_room];
+			while (j < lem_in->room_num)
+			{
+				if (lem_in->link_arr[j][room->num] == 1 && room->level < lem_in->rooms[j]->level && j != best_room)
+				{
+					lem_in->link_arr[j][room->num] = 0;
+					lem_in->link_arr[room->num][j] = 0;
+					room->num_output -=1;
+					lem_in->rooms[j]->num_input -= 1;
+				}
+				j++;
+			}
+		}
+
+
 	}
 }
 

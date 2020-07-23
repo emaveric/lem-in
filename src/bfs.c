@@ -9,7 +9,6 @@ int    bfs(t_lem_in *lem_in)
 	t_queue *node;
 	t_room *room;
 	int i;
-	int level;
 
 	queue = new_queue_node(lem_in->rooms[0]);
 	if (!queue)
@@ -19,7 +18,7 @@ int    bfs(t_lem_in *lem_in)
 	{
 		i = 0;
 		room = pop_node(&queue);
-		level = room->level + 1;
+		lem_in->bfs_level = room->level + 1;
 		while (i < lem_in->room_num)
 		{
 			if (lem_in->link_arr[room->num][i] == 1 &&
@@ -31,11 +30,12 @@ int    bfs(t_lem_in *lem_in)
 					return (-1);
 				}
 				ft_printf("level changed\n");
-				node->room->level = level;
+				node->room->level = lem_in->bfs_level;
 				node->room->visited = 1;
 				push_node(&queue, node);
 			}
 			i++;
 		}
 	}
+	lem_in->bfs_level--;
 }

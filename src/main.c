@@ -84,6 +84,7 @@ int main()
 		lem_in->rooms[i]->num_input = 0;
 		lem_in->rooms[i]->num_output = 0;
 		lem_in->rooms[i]->name = name;
+		lem_in->rooms[i]->ant_name = -1;
 		i++;
 	}
     lem_in->links = (t_link**)malloc(sizeof(t_link*) * lem_in->link_num);
@@ -125,11 +126,13 @@ int main()
 	lem_in->link_arr[2][4] = 1;
 	lem_in->link_arr[4][2] = 1;
     lem_in->start_room = room0;
+    lem_in->path_num = 0;
     i = 0;
     print_links(lem_in->link_arr, lem_in->room_num);
 	print_rooms(lem_in->rooms, lem_in->room_num);
     bfs(lem_in);
     i = 0;
+    ft_printf("level: %d\n", lem_in->bfs_level);
 	delete_useless(lem_in);
 	print_links(lem_in->link_arr, lem_in->room_num);
 //	print_rooms(lem_in->rooms, lem_in->room_num);
@@ -139,7 +142,24 @@ int main()
 	print_rooms(lem_in->rooms, lem_in->room_num);
 	print_links(lem_in->link_arr, lem_in->room_num);
 	delete_input_forks(lem_in);
+	define_next(lem_in);
 	print_links(lem_in->link_arr, lem_in->room_num);
 	print_rooms(lem_in->rooms, lem_in->room_num);
 	delete_output_forks(lem_in);
+	print_rooms(lem_in->rooms, lem_in->room_num);
+//	ft_printf("shortest len: %d\n", find_shortest(lem_in, 5));
+	i = form_paths(lem_in);
+//	ft_printf("form paths returned %d\n", i);
+
+	sort_paths(lem_in->paths, lem_in->path_num);
+	define_comp_num(lem_in->paths, lem_in->path_num);
+	print_paths(lem_in);
+
+	lem_in->ant_num = 5;
+	lem_in->ant_start = 5;
+	lem_in->ant_end = 0;
+//	lem_in->rooms[1]->ant_name = 2;
+//	lem_in->rooms[4]->ant_name = 1;
+//	move_all_in_path(lem_in, 5, lem_in->paths[1]->head);
+	move_ants(lem_in);
 }
