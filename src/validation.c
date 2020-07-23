@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/22 21:06:00 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/23 16:08:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		empty_line_check(char *line)
 	int 	i;
 
 	i = 0;
-	while (line([i]) != '\0')
+	while (line[i] != '\0')
 	{
 		if (line[i] == '\n')
 			if (line[i +1] && line[i + 1] == '\n')
@@ -51,7 +51,51 @@ int 	coord_valid(t_lem_in *l_i, char **str, int n)
 	return (0);
 }
 
-int 	link_valid(t_lem_in *l_i, const char *line)
+int 	is_link(t_lem_in *l_i)
+{
+	int 	i;
+	int 	j;
+
+	i = 0;
+	j = 0;
+	while (i < l_i->room_num)
+	{
+		while (j < l_i->room_num)
+		{
+			if (l_i->link_arr[i][j] == 1 && l_i->link_arr[j][i] == 1)
+				return (0);
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	return (ERROR);
+}
+
+int 	same_name_and_coord_valid(t_lem_in *l_i)
+{
+	int		i;
+	int 	j;
+
+	i = 0;
+	j = 1;
+	while (i < l_i->room_num)
+	{
+		while (j < l_i->room_num)
+		{
+			if (i != j)
+				if (ft_strcmp(l_i->rooms[i]->name, l_i->rooms[j]->name) == 0 ||
+					l_i->rooms[i]->x == l_i->rooms[j]->x ||
+					l_i->rooms[i]->y == l_i->rooms[j]->y)
+					return (ERROR);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+}
+
+int 	link_or_room(t_lem_in *l_i, const char *line)
 {
 	int 	i;
 
@@ -65,7 +109,7 @@ int 	link_valid(t_lem_in *l_i, const char *line)
 		if (line[i] == '\0')
 			return (ERROR);
 		else
-			return (1)
+			return (1);
 	}
 	return (0);
 }

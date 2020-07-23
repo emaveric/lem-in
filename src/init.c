@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 15:47:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/22 21:42:37 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/23 15:28:08 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,28 @@ t_queue		*init_queue(void)
 	return (new);
 }
 
-t_link 		*init_link(void)
+int 		**init_link_arr(t_lem_in *l_i)
 {
-	t_link		*new;
+	int 	**new;
+	int 	i;
+	int 	j;
 
-	if (!(new = (t_link *)malloc(sizeof(t_link))))
+	if (!(new = (int **)malloc(sizeof(int *) * l_i->room_num)))
 		return (NULL);
-	new->start = NULL;
-	new->end = NULL;
+	i = 0;
+	j = 0;
+	while (i < l_i->room_num)
+	{
+		if (!(new[i] = (int *)malloc(sizeof(int) * l_i->room_num)))
+			return (NULL);
+		while (j < l_i->room_num)
+		{
+			new[i][j] = 0;
+			j++;
+		}
+		j = 0;
+		i++;
+	}
 	return (new);
 }
 

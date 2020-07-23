@@ -331,10 +331,25 @@ CMakeFiles/lem_in.dir/ft_printf/src/print_check.c.o: ../ft_printf/includes/ft_pr
 CMakeFiles/lem_in.dir/ft_printf/src/print_check.c.o: ../ft_printf/libft/libft.h
 CMakeFiles/lem_in.dir/ft_printf/src/print_check.c.o: ../ft_printf/src/print_check.c
 
+CMakeFiles/lem_in.dir/src/get_room.c.o: ../ft_printf/includes/ft_printf.h
+CMakeFiles/lem_in.dir/src/get_room.c.o: ../ft_printf/libft/libft.h
+CMakeFiles/lem_in.dir/src/get_room.c.o: ../includes/lem-in.h
+CMakeFiles/lem_in.dir/src/get_room.c.o: ../src/get_room.c
+
+CMakeFiles/lem_in.dir/src/init.c.o: ../ft_printf/includes/ft_printf.h
+CMakeFiles/lem_in.dir/src/init.c.o: ../ft_printf/libft/libft.h
+CMakeFiles/lem_in.dir/src/init.c.o: ../includes/lem-in.h
+CMakeFiles/lem_in.dir/src/init.c.o: ../src/init.c
+
 CMakeFiles/lem_in.dir/src/lem-in.c.o: ../ft_printf/includes/ft_printf.h
 CMakeFiles/lem_in.dir/src/lem-in.c.o: ../ft_printf/libft/libft.h
 CMakeFiles/lem_in.dir/src/lem-in.c.o: ../includes/lem-in.h
 CMakeFiles/lem_in.dir/src/lem-in.c.o: ../src/lem-in.c
+
+CMakeFiles/lem_in.dir/src/map.c.o: ../ft_printf/includes/ft_printf.h
+CMakeFiles/lem_in.dir/src/map.c.o: ../ft_printf/libft/libft.h
+CMakeFiles/lem_in.dir/src/map.c.o: ../includes/lem-in.h
+CMakeFiles/lem_in.dir/src/map.c.o: ../src/map.c
 
 CMakeFiles/lem_in.dir/src/validation.c.o: ../ft_printf/includes/ft_printf.h
 CMakeFiles/lem_in.dir/src/validation.c.o: ../ft_printf/libft/libft.h

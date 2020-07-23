@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/22 21:33:15 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/23 15:35:09 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,29 @@ int 	get_command(t_lem_in *l_i, char **line, int i)
 
 int 	get_link(t_lem_in *l_i, char *line, int i)
 {
+	int 	j;
+	int 	k;
+	char 	**str;
+
+	j = -1;
+	k = -1;
+	str = ft_strsplit(line, '-');
+	while (i < l_i->room_num)
+	{
+		if (ft_strcmp(l_i->rooms[i]->name, str[0]) == 0 &&
+			ft_strcmp(l_i->rooms[i]->name, str[1]) == 0)
+			return (ERROR);
+		if (ft_strcmp(l_i->rooms[i]->name, str[0]) == 0)
+			j = l_i->rooms[i]->num;
+		if (ft_strcmp(l_i->rooms[i]->name, str[1]) == 0)
+			k = l_i->rooms[i]->num;
+		i++;
+	}
+	if ((k == -1 || j == -1) ||
+		l_i->link_arr[j][k] == 1 || l_i->link_arr[k][j] == 1)
+		return (ERROR);
+	l_i->link_arr[j][k] = 1;
+	l_i->link_arr[k][j] = 1;
 	l_i->link_num++;
 	return (0);
 }
@@ -57,17 +80,17 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 {
 	if (l_i->line[i][0] == '#')
 		get_command(l_i, l_i->line, i);
-	if (link_valid(l_i, l_i->line[i]) == ERROR)
+	if (link_or_room(l_i, l_i->line[i]) == ERROR)
 		return (ERROR);
-	else if (link_valid(l_i, l_i->line[i]) == 0)
+	else if (link_or_room(l_i, l_i->line[i]) == 0)
 	{
-		get_link(l_i, l_i->line[i], i);
+		get_link(l_i, l_i->line[i], 0);
 		l_i->flag = 1;
 	}
 	else
 	{
 		if (l_i->flag == 0)
-			get_room(l_i, l_i->line[i]);
+			get_room(l_i, l_i->line[i], i);
 		else
 			return (ERROR);
 	}
@@ -78,6 +101,15 @@ int		get_map(t_lem_in *l_i)
 {
 	int 	i;
 
+	i = 0;
+	while (i < l_i->room_num)
+	{
+		if (!(l_i->rooms[i] = init_room()))
+			return (ERROR);
+		i++;
+	}
+	if (!(l_i->link_arr = init_link_arr(l_i)))
+		return (ERROR);
 	i = 1;
 	if (get_ant(l_i, l_i->line[0]) == ERROR)
 		return (ERROR);

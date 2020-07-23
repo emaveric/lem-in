@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 21:21:10 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/22 21:22:50 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/23 14:47:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int 	get_end_or_start_room(t_lem_in *l_i, char **str, int i)
 	if (ft_strcmp(l_i->line[i - 1], "##start") == 0)
 		j = 0;
 	else
-		j = l_i->room_num;
+		j = l_i->room_num - 1;
 	ft_strcpy(l_i->rooms[j]->name, str[0]);
 	if (l_i->rooms[j]->name[0] == 'L' || l_i->rooms[j]->name[0] == '#')
 		return (ERROR);
@@ -41,7 +41,8 @@ int		get_room(t_lem_in *l_i, char *line, int i)
 		j++;
 	if (j != 2)
 		return (ERROR);
-	if (ft_strcmp(l_i->line[i - 1], "##start") == 0 ||  ft_strcmp(l_i->line[i - 1], "##end") == 0)
+	if (ft_strcmp(l_i->line[i - 1], "##start") == 0 ||
+		ft_strcmp(l_i->line[i - 1], "##end") == 0)
 	{
 		if (get_end_or_start_room(l_i, str, i) == ERROR)
 			return (ERROR);
