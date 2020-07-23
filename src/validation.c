@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/23 16:08:04 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/23 17:55:43 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ int		empty_line_check(char *line)
 	while (line[i] != '\0')
 	{
 		if (line[i] == '\n')
+		{
 			if (line[i +1] && line[i + 1] == '\n')
 				return (ERROR); // написать общую функцию для ошибок
-			i++;
+		}
+		i++;
 	}
 	return (0);
 }
@@ -85,14 +87,15 @@ int 	same_name_and_coord_valid(t_lem_in *l_i)
 		{
 			if (i != j)
 				if (ft_strcmp(l_i->rooms[i]->name, l_i->rooms[j]->name) == 0 ||
-					l_i->rooms[i]->x == l_i->rooms[j]->x ||
-					l_i->rooms[i]->y == l_i->rooms[j]->y)
+					(l_i->rooms[i]->x == l_i->rooms[j]->x &&
+					l_i->rooms[i]->y == l_i->rooms[j]->y))
 					return (ERROR);
 			j++;
 		}
 		j = 0;
 		i++;
 	}
+	return (0);
 }
 
 int 	link_or_room(t_lem_in *l_i, const char *line)

@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/23 15:35:09 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/23 18:05:56 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int 	get_link(t_lem_in *l_i, char *line, int i)
 	return (0);
 }
 
-
 int		get_ant(t_lem_in *l_i, char *line)
 {
 	int 	j;
@@ -80,19 +79,24 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 {
 	if (l_i->line[i][0] == '#')
 		get_command(l_i, l_i->line, i);
-	if (link_or_room(l_i, l_i->line[i]) == ERROR)
-		return (ERROR);
-	else if (link_or_room(l_i, l_i->line[i]) == 0)
-	{
-		get_link(l_i, l_i->line[i], 0);
-		l_i->flag = 1;
-	}
 	else
 	{
-		if (l_i->flag == 0)
-			get_room(l_i, l_i->line[i], i);
-		else
+		if (link_or_room(l_i, l_i->line[i]) == ERROR)
 			return (ERROR);
+		else if (link_or_room(l_i, l_i->line[i]) == 0)
+		{
+			if (same_name_and_coord_valid(l_i) == ERROR
+				|| get_link(l_i, l_i->line[i], 0) == ERROR)
+				return (ERROR);
+			l_i->flag = 1;
+		}
+		else
+		{
+			if (l_i->flag == 0)
+				get_room(l_i, l_i->line[i], i, 0);
+			else
+				return (ERROR);
+		}
 	}
 	return (0);
 }
@@ -119,5 +123,6 @@ int		get_map(t_lem_in *l_i)
 			return (ERROR);
 		i++;
 	}
+	is_link(l_i);
 	return (0);
 }

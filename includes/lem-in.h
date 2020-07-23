@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/23 15:26:06 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/23 16:50:18 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,12 @@ int					empty_line_check(char *buff);
 int 				get_map(t_lem_in *l_i);
 int 				link_or_room(t_lem_in *l_i, const char *line);
 int 				coord_valid(t_lem_in *l_i, char **str, int n);
-int					get_room(t_lem_in *l_i, char *line, int i);
+int					get_room(t_lem_in *l_i, char *line, int i, int j);
 t_lem_in			*init_l_i(void);
 t_room				*init_room(void);
 int 				**init_link_arr(t_lem_in *l_i);
 int 				same_name_and_coord_valid(t_lem_in *l_i);
+int 				is_link(t_lem_in *l_i);
 
 
 #endif

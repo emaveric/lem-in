@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 15:47:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/23 15:28:08 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/23 18:05:56 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ t_room		*init_room(void)
 	new->level = -1;
 	new->x = 0;
 	new->y = 0;
+	new->name = NULL;
 	new->num_input = 0;
 	new->num_output = 0;
 	new->visited = 0;
 	new->ant_name = 0;
 	new->next = NULL;
-	new->name = NULL;
 	return (new);
 }
 
@@ -85,7 +85,8 @@ t_lem_in	*init_l_i(void)
 	new->i = 1;
 	/*new->start = NULL;
 	new->end = NULL;*/
-	new->rooms = NULL;
+	if (!(new->rooms = (t_room **)malloc(sizeof(t_room*))))
+		return (NULL);
 	new->links = NULL;
 	return (new);
 }
