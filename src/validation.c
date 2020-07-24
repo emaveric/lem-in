@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/24 14:25:06 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/24 15:11:32 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,31 @@ int 	coord_valid(t_lem_in *l_i, char **str, int n)
 int 	is_link(t_lem_in *l_i)
 {
 	int 	i;
+	int 	flag;
 	int 	j;
 
+
 	i = 0;
+	flag = 0;
+	while (i < l_i->room_num)
+	{
+		if (l_i->link_arr[0][i] == 1)
+		{
+			flag = 1;
+			break;
+		}
+		i++;
+	}
+	if (flag == 0)
+		return (ERROR);
+	i = 0;
+	while (i < l_i->room_num)
+	{
+		if (l_i->link_arr[l_i->room_num - 1][i] == 1)
+			return (0);
+		i++;
+	}
+	/*i = 0;
 	j = 0;
 	while (i < l_i->room_num)
 	{
@@ -70,8 +92,7 @@ int 	is_link(t_lem_in *l_i)
 		}
 		i++;
 		j = 0;
-	}
-	//printf("\nno links\n");
+	}*/
 	return (ERROR);
 }
 

@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/24 14:09:04 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/24 15:01:40 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,9 @@ int		get_map(t_lem_in *l_i)
 		i++;
 	}
 	if (is_link(l_i) == ERROR)
+	{
+		//printf("\nno links\n");
 		return (ERROR);
+	}
 	return (0);
 }
