@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/23 18:05:56 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/24 14:09:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,20 +82,28 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 	else
 	{
 		if (link_or_room(l_i, l_i->line[i]) == ERROR)
+		{
+			//printf("\n??\n");
 			return (ERROR);
+		}
 		else if (link_or_room(l_i, l_i->line[i]) == 0)
 		{
-			if (same_name_and_coord_valid(l_i) == ERROR
+			if (l_i->e_flag == 0 || l_i->s_flag == 0 ||
+				same_name_and_coord_valid(l_i) == ERROR
 				|| get_link(l_i, l_i->line[i], 0) == ERROR)
+			{
+				//printf("\????\n");
 				return (ERROR);
+			}
 			l_i->flag = 1;
 		}
 		else
 		{
-			if (l_i->flag == 0)
-				get_room(l_i, l_i->line[i], i, 0);
-			else
+			if (l_i->flag == 1 || get_room(l_i, l_i->line[i], i, 0) == ERROR)
+			{
+				//printf("\n???\n");
 				return (ERROR);
+			}
 		}
 	}
 	return (0);
@@ -121,8 +129,11 @@ int		get_map(t_lem_in *l_i)
 	{
 		if (get_map_p2(l_i, i) == ERROR)
 			return (ERROR);
+		if (l_i->i >= l_i->room_num)
+			return (ERROR);
 		i++;
 	}
-	is_link(l_i);
+	if (is_link(l_i) == ERROR)
+		return (ERROR);
 	return (0);
 }

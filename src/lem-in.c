@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/23 18:59:09 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/24 14:28:50 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int		map_reading(int fd, t_lem_in *l_i)
     	return (ERROR); // минимально возможное кол-во символов на валидной карте - 32
 	}
     buff[data] = '\0';
-    i = 0;
-   line = NULL;
+    i = 1;
+    line = NULL;
     /*while (get_next_line(fd, &line))
 	{
     	ft_memalloc()
@@ -35,10 +35,12 @@ int		map_reading(int fd, t_lem_in *l_i)
     printf("\n%s\n%lu\n", line, ft_strlen(line));*/
     if (/*ft_strlen(line) < 32 || */empty_line_check(buff) == ERROR)
     	return (ERROR);
-    l_i->line = ft_strsplit(buff, '*');
+    l_i->line = ft_strsplit(buff, '\n');
     while (l_i->line[i])
 	{
-		if (l_i->line[i][0] != '#' && link_or_room(l_i, l_i->line[i]) == 1)
+    	if (l_i->line[i][0] != '#' && link_or_room(l_i, l_i->line[i]) != 1)
+    		break;
+		if (l_i->line[i][0] != '#')
 		{
 			if (l_i->room_num == MAX_INT)
 				return (ERROR);

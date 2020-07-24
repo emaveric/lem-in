@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 21:21:10 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/23 18:39:33 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/24 13:58:39 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int 	get_end_or_start_room(t_lem_in *l_i, char **str, int i)
 		j = 0;
 	else
 		j = l_i->room_num - 1;
-	if (!(l_i->rooms[j]->name = ft_memalloc(ft_strlen(str[0]))))//(char*)malloc(sizeof(char) * ft_strlen(str[0]))))
+	if (!(l_i->rooms[j]->name = ft_memalloc(ft_strlen(str[0]) + 1)))//(char*)malloc(sizeof(char) * ft_strlen(str[0]))))
 		return (ERROR);
 	ft_strcpy(l_i->rooms[j]->name, str[0]);
 	if (l_i->rooms[j]->name[0] == 'L' || l_i->rooms[j]->name[0] == '#')
@@ -47,7 +47,7 @@ int		get_room(t_lem_in *l_i, char *line, int i, int j)
 			return (ERROR);
 		return (0);
 	}
-	if (!(l_i->rooms[l_i->i]->name = ft_memalloc(ft_strlen(str[0]))))
+	if (!(l_i->rooms[l_i->i]->name = ft_memalloc(ft_strlen(str[0]) + 1)))
 		return (ERROR);
 	ft_strcpy(l_i->rooms[l_i->i]->name, str[0]);
 	if (l_i->rooms[l_i->i]->name[0] == 'L' || l_i->rooms[l_i->i]->name[0] == '#')

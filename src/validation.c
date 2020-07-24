@@ -6,13 +6,13 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/23 17:55:43 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/24 14:25:06 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem-in.h"
 
-int		empty_line_check(char *line)
+int		empty_line_check(const char *line)
 {
 	int 	i;
 
@@ -71,6 +71,7 @@ int 	is_link(t_lem_in *l_i)
 		i++;
 		j = 0;
 	}
+	//printf("\nno links\n");
 	return (ERROR);
 }
 

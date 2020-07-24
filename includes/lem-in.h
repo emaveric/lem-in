@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/23 16:50:18 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/24 13:54:46 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ typedef struct		s_lem_in
 	t_link			**links;
 }					t_lem_in;
 
-int					empty_line_check(char *buff);
+int					empty_line_check(const char *line);
 int 				get_map(t_lem_in *l_i);
 int 				link_or_room(t_lem_in *l_i, const char *line);
 int 				coord_valid(t_lem_in *l_i, char **str, int n);
