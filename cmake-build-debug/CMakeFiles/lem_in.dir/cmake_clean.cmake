@@ -104,6 +104,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/ft_printf/src/pf_free.c.o"
   "CMakeFiles/lem_in.dir/ft_printf/src/pf_libft.c.o"
   "CMakeFiles/lem_in.dir/ft_printf/src/print_check.c.o"
+  "CMakeFiles/lem_in.dir/src/check.c.o"
   "CMakeFiles/lem_in.dir/src/get_room.c.o"
   "CMakeFiles/lem_in.dir/src/init.c.o"
   "CMakeFiles/lem_in.dir/src/lem-in.c.o"

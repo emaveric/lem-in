@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/24 13:54:46 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/25 16:29:58 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ typedef struct		s_lem_in
 }					t_lem_in;
 
 int					empty_line_check(const char *line);
-int 				get_map(t_lem_in *l_i);
+int 				get_map(t_lem_in *l_i, int i);
 int 				link_or_room(t_lem_in *l_i, const char *line);
 int 				coord_valid(t_lem_in *l_i, char **str, int n);
 int					get_room(t_lem_in *l_i, char *line, int i, int j);
@@ -75,6 +75,6 @@ t_room				*init_room(void);
 int 				**init_link_arr(t_lem_in *l_i);
 int 				same_name_and_coord_valid(t_lem_in *l_i);
 int 				is_link(t_lem_in *l_i);
-
+int 				room_num_check(t_lem_in *l_i);
 
 #endif

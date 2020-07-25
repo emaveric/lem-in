@@ -2958,6 +2958,33 @@ ft_printf/src/print_check.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/src/print_check.c.s
 .PHONY : ft_printf/src/print_check.c.s
 
+src/check.o: src/check.c.o
+
+.PHONY : src/check.o
+
+# target to build an object file
+src/check.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/check.c.o
+.PHONY : src/check.c.o
+
+src/check.i: src/check.c.i
+
+.PHONY : src/check.i
+
+# target to preprocess a source file
+src/check.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/check.c.i
+.PHONY : src/check.c.i
+
+src/check.s: src/check.c.s
+
+.PHONY : src/check.s
+
+# target to generate assembly for a file
+src/check.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/check.c.s
+.PHONY : src/check.c.s
+
 src/get_room.o: src/get_room.c.o
 
 .PHONY : src/get_room.o
@@ -3417,6 +3444,9 @@ help:
 	@echo "... ft_printf/src/print_check.o"
 	@echo "... ft_printf/src/print_check.i"
 	@echo "... ft_printf/src/print_check.s"
+	@echo "... src/check.o"
+	@echo "... src/check.i"
+	@echo "... src/check.s"
 	@echo "... src/get_room.o"
 	@echo "... src/get_room.i"
 	@echo "... src/get_room.s"

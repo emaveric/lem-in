@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/24 15:01:40 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/25 16:32:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ int 	get_link(t_lem_in *l_i, char *line, int i)
 	}
 	if ((k == -1 || j == -1) ||
 		l_i->link_arr[j][k] == 1 || l_i->link_arr[k][j] == 1)
+	{
+		printf("k = %d, j = %d, [j][k] = %d, [k][j] = %d, same link\n", k, j, l_i->link_arr[j][k], l_i->link_arr[k][j]);
 		return (ERROR);
+	}
 	l_i->link_arr[j][k] = 1;
 	l_i->link_arr[k][j] = 1;
 	l_i->link_num++;
@@ -63,6 +66,7 @@ int		get_ant(t_lem_in *l_i, char *line)
 	int 	j;
 
 	j = 0;
+	printf("\n%s\n", line);
 	while (line[j] != '\0')
 	{
 		if (ft_isdigit(line[j]) == 0)
@@ -83,7 +87,7 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 	{
 		if (link_or_room(l_i, l_i->line[i]) == ERROR)
 		{
-			//printf("\n??\n");
+			printf("\n??\n");
 			return (ERROR);
 		}
 		else if (link_or_room(l_i, l_i->line[i]) == 0)
@@ -92,7 +96,7 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 				same_name_and_coord_valid(l_i) == ERROR
 				|| get_link(l_i, l_i->line[i], 0) == ERROR)
 			{
-				//printf("\????\n");
+				printf("%d, %s\n????\n", i, l_i->line[i]);
 				return (ERROR);
 			}
 			l_i->flag = 1;
@@ -101,7 +105,7 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 		{
 			if (l_i->flag == 1 || get_room(l_i, l_i->line[i], i, 0) == ERROR)
 			{
-				//printf("\n???\n");
+				printf("\n???\n");
 				return (ERROR);
 			}
 		}
@@ -109,11 +113,8 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 	return (0);
 }
 
-int		get_map(t_lem_in *l_i)
+int		get_map(t_lem_in *l_i, int i)
 {
-	int 	i;
-
-	i = 0;
 	while (i < l_i->room_num)
 	{
 		if (!(l_i->rooms[i] = init_room()))
@@ -122,15 +123,22 @@ int		get_map(t_lem_in *l_i)
 	}
 	if (!(l_i->link_arr = init_link_arr(l_i)))
 		return (ERROR);
-	i = 1;
-	if (get_ant(l_i, l_i->line[0]) == ERROR)
+	i = 0;
+	while (l_i->line[i][0] == '#')
+		i++;
+	if (get_ant(l_i, l_i->line[i]) == ERROR)
 		return (ERROR);
+	i++;
 	while (l_i->line[i])
 	{
 		if (get_map_p2(l_i, i) == ERROR)
 			return (ERROR);
 		if (l_i->i >= l_i->room_num)
+		{
+			//printf("%s\n", l_i->line[i]);
+			//printf("\n!!\n");
 			return (ERROR);
+		}
 		i++;
 	}
 	if (is_link(l_i) == ERROR)

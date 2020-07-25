@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/24 15:01:01 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/25 16:32:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,24 @@ int		map_reading(int fd, t_lem_in *l_i)
     char 	buff[B_SIZE + 1];
     int 	data;
     int 	i;
-    char 	*line;
 
     if ((data = read(fd, buff, B_SIZE)) < 32)
 	{
-    	printf("\n%s\n%d\n", buff, data);
+    	//printf("\n%s\n%d\n", buff, data);
     	return (ERROR); // минимально возможное кол-во символов на валидной карте - 32
 	}
     buff[data] = '\0';
-    i = 1;
-    line = NULL;
-    /*while (get_next_line(fd, &line))
+    i = 0;
+    if (empty_line_check(buff) == ERROR)
 	{
-    	ft_memalloc()
-	}*/
-   /* get_next_line(fd, &line);
-    printf("\n%s\n%lu\n", line, ft_strlen(line));*/
-    if (/*ft_strlen(line) < 32 || */empty_line_check(buff) == ERROR)
+    	//printf("\nhello\n");
     	return (ERROR);
-    l_i->line = ft_strsplit(buff, '\n');
-    while (l_i->line[i])
-	{
-    	if (l_i->line[i][0] != '#' && link_or_room(l_i, l_i->line[i]) != 1)
-    		break;
-		if (l_i->line[i][0] != '#')
-		{
-			if (l_i->room_num == MAX_INT)
-				return (ERROR);
-			l_i->room_num++;
-		}
-		i++;
 	}
-    if (get_map(l_i) == ERROR)
+    l_i->line = ft_strsplit(buff, '\n');
+    if (room_num_check(l_i) == ERROR)
+    	return (ERROR);
+    //printf("\nr_num %d\n", l_i->room_num);
+    if (get_map(l_i, 0) == ERROR)
     	return (ERROR);
     //printf("\nOK\n");
     return (0);

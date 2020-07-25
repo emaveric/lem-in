@@ -6,28 +6,11 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/24 15:11:32 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/25 16:40:58 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem-in.h"
-
-int		empty_line_check(const char *line)
-{
-	int 	i;
-
-	i = 0;
-	while (line[i] != '\0')
-	{
-		if (line[i] == '\n')
-		{
-			if (line[i +1] && line[i + 1] == '\n')
-				return (ERROR); // написать общую функцию для ошибок
-		}
-		i++;
-	}
-	return (0);
-}
 
 int 	coord_valid(t_lem_in *l_i, char **str, int n)
 {
@@ -111,7 +94,10 @@ int 	same_name_and_coord_valid(t_lem_in *l_i)
 				if (ft_strcmp(l_i->rooms[i]->name, l_i->rooms[j]->name) == 0 ||
 					(l_i->rooms[i]->x == l_i->rooms[j]->x &&
 					l_i->rooms[i]->y == l_i->rooms[j]->y))
+				{
+					//printf("same\n");
 					return (ERROR);
+				}
 			j++;
 		}
 		j = 0;

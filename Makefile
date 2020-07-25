@@ -20,7 +20,7 @@ INC_PRINTF = ./ft_printf/includes/
 SRC_DIR = ./src/
 OBJ_DIR = ./obj/
 
-SRC_NAME = lem-in.c init.c get_room.c map.c validation.c
+SRC_NAME = lem-in.c init.c get_room.c map.c validation.c check.c
 
 HEADER = $(addprefix $(INC_DIR), $(HEADER_NAME))
 
