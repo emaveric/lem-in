@@ -80,8 +80,10 @@ t_lem_in	*init_l_i(void)
 	new->line = NULL;
 	new->link_arr = NULL;
 	new->flag = 0;
-	new->s_flag = 0;
-	new->e_flag = 0;
+	new->s_r_flag = 0;
+	new->e_r_flag = 0;
+	new->s_l_flag = 0;
+	new->e_l_flag = 0;
 	new->i = 1;
 	/*new->start = NULL;
 	new->end = NULL;*/

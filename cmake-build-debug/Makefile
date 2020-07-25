@@ -231,6 +231,33 @@ ft_printf/libft/ft_bzero.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/libft/ft_bzero.c.s
 .PHONY : ft_printf/libft/ft_bzero.c.s
 
+ft_printf/libft/ft_check_space.o: ft_printf/libft/ft_check_space.c.o
+
+.PHONY : ft_printf/libft/ft_check_space.o
+
+# target to build an object file
+ft_printf/libft/ft_check_space.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/libft/ft_check_space.c.o
+.PHONY : ft_printf/libft/ft_check_space.c.o
+
+ft_printf/libft/ft_check_space.i: ft_printf/libft/ft_check_space.c.i
+
+.PHONY : ft_printf/libft/ft_check_space.i
+
+# target to preprocess a source file
+ft_printf/libft/ft_check_space.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/libft/ft_check_space.c.i
+.PHONY : ft_printf/libft/ft_check_space.c.i
+
+ft_printf/libft/ft_check_space.s: ft_printf/libft/ft_check_space.c.s
+
+.PHONY : ft_printf/libft/ft_check_space.s
+
+# target to generate assembly for a file
+ft_printf/libft/ft_check_space.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/libft/ft_check_space.c.s
+.PHONY : ft_printf/libft/ft_check_space.c.s
+
 ft_printf/libft/ft_clear_table.o: ft_printf/libft/ft_clear_table.c.o
 
 .PHONY : ft_printf/libft/ft_clear_table.o
@@ -3141,6 +3168,9 @@ help:
 	@echo "... ft_printf/libft/ft_bzero.o"
 	@echo "... ft_printf/libft/ft_bzero.i"
 	@echo "... ft_printf/libft/ft_bzero.s"
+	@echo "... ft_printf/libft/ft_check_space.o"
+	@echo "... ft_printf/libft/ft_check_space.i"
+	@echo "... ft_printf/libft/ft_check_space.s"
 	@echo "... ft_printf/libft/ft_clear_table.o"
 	@echo "... ft_printf/libft/ft_clear_table.i"
 	@echo "... ft_printf/libft/ft_clear_table.s"

@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/25 16:29:58 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/25 21:17:43 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ typedef struct		s_lem_in
 {
 	int 			i;
 	int 			flag;
-	int 			s_flag;
-	int 			e_flag;
+	int 			s_r_flag;
+	int 			e_r_flag;
+	int 			s_l_flag; //добавил для теста на оптимизацию, показывает был ли линк у старта
+	int 			e_l_flag;
 	int 			ant_num;
 	int 			ant_start;
 	int 			ant_end;
@@ -74,7 +76,9 @@ t_lem_in			*init_l_i(void);
 t_room				*init_room(void);
 int 				**init_link_arr(t_lem_in *l_i);
 int 				same_name_and_coord_valid(t_lem_in *l_i);
-int 				is_link(t_lem_in *l_i);
+int 				is_link(t_lem_in *l_i, int j, int k);
 int 				room_num_check(t_lem_in *l_i);
+int 				get_end_or_start_room(t_lem_in *l_i, char **str, int i);
+int 				start_end_room_check(t_lem_in *l_i, int i, char **str);
 
 #endif

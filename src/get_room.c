@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 21:21:10 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/24 13:58:39 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/25 20:16:10 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,22 @@ int		get_room(t_lem_in *l_i, char *line, int i, int j)
 {
 	char 	**str;
 
+	//printf("%s\n", line);
+	if (ft_check_space(line) == ERROR)
+		return (ERROR);
 	str = ft_strsplit(line, ' ');
 	while (str[j])
 		j++;
 	if (j != 3)
-		return (ERROR);
-	if (ft_strcmp(l_i->line[i - 1], "##start") == 0 ||
-		ft_strcmp(l_i->line[i - 1], "##end") == 0)
 	{
-		if (get_end_or_start_room(l_i, str, i) == ERROR)
-			return (ERROR);
-		return (0);
+		printf ("j = %d\n", j);
+		return (ERROR);
 	}
+	j = start_end_room_check(l_i, i - 1, str);
+	if (j == ERROR)
+		return (ERROR);
+	else if (j == 0)
+		return (0);
 	if (!(l_i->rooms[l_i->i]->name = ft_memalloc(ft_strlen(str[0]) + 1)))
 		return (ERROR);
 	ft_strcpy(l_i->rooms[l_i->i]->name, str[0]);

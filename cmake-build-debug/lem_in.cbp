@@ -108,6 +108,9 @@
 		<Unit filename="/Users/emaveric/lem-in/ft_printf/libft/ft_bzero.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/lem-in/ft_printf/libft/ft_check_space.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/lem-in/ft_printf/libft/ft_clear_table.c">
 			<Option target="lem_in"/>
 		</Unit>

@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/ft_printf/libft/ft_atoi_base.c.o"
   "CMakeFiles/lem_in.dir/ft_printf/libft/ft_atoi_int_max.c.o"
   "CMakeFiles/lem_in.dir/ft_printf/libft/ft_bzero.c.o"
+  "CMakeFiles/lem_in.dir/ft_printf/libft/ft_check_space.c.o"
   "CMakeFiles/lem_in.dir/ft_printf/libft/ft_clear_table.c.o"
   "CMakeFiles/lem_in.dir/ft_printf/libft/ft_countwords.c.o"
   "CMakeFiles/lem_in.dir/ft_printf/libft/ft_div_mod.c.o"

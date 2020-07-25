@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/25 16:32:04 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/25 21:12:38 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ int 	get_command(t_lem_in *l_i, char **line, int i)
 {
 	if (ft_strcmp(line[i], "##end") == 0)
 	{
-		if (l_i->e_flag == 1)
+		if (l_i->e_r_flag == 1)
 			return (ERROR);
-		l_i->e_flag = 1;
+		l_i->e_r_flag = 1;
 	}
 	else if (ft_strcmp(line[i], "##start") == 0)
 	{
-		if (l_i->s_flag == 1)
+		if (l_i->s_r_flag == 1)
 			return (ERROR);
-		l_i->s_flag = 1;
+		l_i->s_r_flag = 1;
 	}
 	return (0);
 }
@@ -49,12 +49,14 @@ int 	get_link(t_lem_in *l_i, char *line, int i)
 			k = l_i->rooms[i]->num;
 		i++;
 	}
-	if ((k == -1 || j == -1) ||
+	/*if (k == -1 || j == -1 ||
 		l_i->link_arr[j][k] == 1 || l_i->link_arr[k][j] == 1)
 	{
-		printf("k = %d, j = %d, [j][k] = %d, [k][j] = %d, same link\n", k, j, l_i->link_arr[j][k], l_i->link_arr[k][j]);
+		//printf("k = %d, j = %d, [j][k] = %d, [k][j] = %d, same link\n", k, j, l_i->link_arr[j][k], l_i->link_arr[k][j]);
 		return (ERROR);
-	}
+	}*/
+	if (is_link(l_i, j, k) == ERROR)
+		return (ERROR);
 	l_i->link_arr[j][k] = 1;
 	l_i->link_arr[k][j] = 1;
 	l_i->link_num++;
@@ -66,15 +68,23 @@ int		get_ant(t_lem_in *l_i, char *line)
 	int 	j;
 
 	j = 0;
-	printf("\n%s\n", line);
+	//printf("\n%s\n", line);
 	while (line[j] != '\0')
 	{
 		if (ft_isdigit(line[j]) == 0)
+		{
+			printf("error ant\n");
 			return (ERROR);
+		}
 		j++;
 	}
 	if (ft_atoi_max_int(&l_i->ant_num, line) == -1)
 		return (ERROR);
+	if (l_i->ant_num <= 0)
+	{
+		printf("zero or less ant\n");
+		return (ERROR);
+	}
 	l_i->ant_start = l_i->ant_num;
 	return (0);
 }
@@ -82,7 +92,13 @@ int		get_ant(t_lem_in *l_i, char *line)
 int 	get_map_p2(t_lem_in *l_i, int i)
 {
 	if (l_i->line[i][0] == '#')
-		get_command(l_i, l_i->line, i);
+	{
+		if (get_command(l_i, l_i->line, i) == ERROR)
+		{
+			printf("double flag\n");
+			return (ERROR);
+		}
+	}
 	else
 	{
 		if (link_or_room(l_i, l_i->line[i]) == ERROR)
@@ -92,11 +108,11 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 		}
 		else if (link_or_room(l_i, l_i->line[i]) == 0)
 		{
-			if (l_i->e_flag == 0 || l_i->s_flag == 0 ||
+			if (l_i->e_r_flag == 0 || l_i->s_r_flag == 0 ||
 				same_name_and_coord_valid(l_i) == ERROR
 				|| get_link(l_i, l_i->line[i], 0) == ERROR)
 			{
-				printf("%d, %s\n????\n", i, l_i->line[i]);
+				printf("%d, %s\n????\n", i + 1, l_i->line[i]);
 				return (ERROR);
 			}
 			l_i->flag = 1;
@@ -135,15 +151,15 @@ int		get_map(t_lem_in *l_i, int i)
 			return (ERROR);
 		if (l_i->i >= l_i->room_num)
 		{
-			//printf("%s\n", l_i->line[i]);
-			//printf("\n!!\n");
+			printf("l_i->i = %d, room_num = %d, %s\n", l_i->i, l_i->room_num, l_i->line[i]);
+			printf("\n!!\n");
 			return (ERROR);
 		}
 		i++;
 	}
-	if (is_link(l_i) == ERROR)
+	if (l_i->s_l_flag == 0 || l_i->e_l_flag == 0)
 	{
-		//printf("\nno links\n");
+		printf("\nno links\n");
 		return (ERROR);
 	}
 	return (0);
