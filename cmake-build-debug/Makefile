@@ -1743,6 +1743,33 @@ ft_printf/libft/ft_strequ.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/libft/ft_strequ.c.s
 .PHONY : ft_printf/libft/ft_strequ.c.s
 
+ft_printf/libft/ft_strfromcpy.o: ft_printf/libft/ft_strfromcpy.c.o
+
+.PHONY : ft_printf/libft/ft_strfromcpy.o
+
+# target to build an object file
+ft_printf/libft/ft_strfromcpy.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/libft/ft_strfromcpy.c.o
+.PHONY : ft_printf/libft/ft_strfromcpy.c.o
+
+ft_printf/libft/ft_strfromcpy.i: ft_printf/libft/ft_strfromcpy.c.i
+
+.PHONY : ft_printf/libft/ft_strfromcpy.i
+
+# target to preprocess a source file
+ft_printf/libft/ft_strfromcpy.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/libft/ft_strfromcpy.c.i
+.PHONY : ft_printf/libft/ft_strfromcpy.c.i
+
+ft_printf/libft/ft_strfromcpy.s: ft_printf/libft/ft_strfromcpy.c.s
+
+.PHONY : ft_printf/libft/ft_strfromcpy.s
+
+# target to generate assembly for a file
+ft_printf/libft/ft_strfromcpy.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_printf/libft/ft_strfromcpy.c.s
+.PHONY : ft_printf/libft/ft_strfromcpy.c.s
+
 ft_printf/libft/ft_striter.o: ft_printf/libft/ft_striter.c.o
 
 .PHONY : ft_printf/libft/ft_striter.o
@@ -3093,6 +3120,33 @@ src/lem-in.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/lem-in.c.s
 .PHONY : src/lem-in.c.s
 
+src/many_dashes_link.o: src/many_dashes_link.c.o
+
+.PHONY : src/many_dashes_link.o
+
+# target to build an object file
+src/many_dashes_link.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/many_dashes_link.c.o
+.PHONY : src/many_dashes_link.c.o
+
+src/many_dashes_link.i: src/many_dashes_link.c.i
+
+.PHONY : src/many_dashes_link.i
+
+# target to preprocess a source file
+src/many_dashes_link.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/many_dashes_link.c.i
+.PHONY : src/many_dashes_link.c.i
+
+src/many_dashes_link.s: src/many_dashes_link.c.s
+
+.PHONY : src/many_dashes_link.s
+
+# target to generate assembly for a file
+src/many_dashes_link.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/many_dashes_link.c.s
+.PHONY : src/many_dashes_link.c.s
+
 src/map.o: src/map.c.o
 
 .PHONY : src/map.o
@@ -3336,6 +3390,9 @@ help:
 	@echo "... ft_printf/libft/ft_strequ.o"
 	@echo "... ft_printf/libft/ft_strequ.i"
 	@echo "... ft_printf/libft/ft_strequ.s"
+	@echo "... ft_printf/libft/ft_strfromcpy.o"
+	@echo "... ft_printf/libft/ft_strfromcpy.i"
+	@echo "... ft_printf/libft/ft_strfromcpy.s"
 	@echo "... ft_printf/libft/ft_striter.o"
 	@echo "... ft_printf/libft/ft_striter.i"
 	@echo "... ft_printf/libft/ft_striter.s"
@@ -3486,6 +3543,9 @@ help:
 	@echo "... src/lem-in.o"
 	@echo "... src/lem-in.i"
 	@echo "... src/lem-in.s"
+	@echo "... src/many_dashes_link.o"
+	@echo "... src/many_dashes_link.i"
+	@echo "... src/many_dashes_link.s"
 	@echo "... src/map.o"
 	@echo "... src/map.i"
 	@echo "... src/map.s"

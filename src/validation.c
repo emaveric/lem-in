@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/26 15:01:14 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/26 19:31:06 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ int 	is_link(t_lem_in *l_i, int j, int k)
 		l_i->s_l_flag = 1;
 	if (k == l_i->room_num - 1 || j == l_i->room_num - 1)
 		l_i->e_l_flag = 1;
+	l_i->link_arr[j][k] = 1;
+	l_i->link_arr[k][j] = 1;
+	l_i->link_num++;
 	return (0);
 	/*int 	i;
 	int 	flag;
@@ -149,68 +152,3 @@ int 	link_or_room(t_lem_in *l_i, const char *line, int flag)
 	}
 	return (ERROR);
 }
-
-/*
-int 	test_links(t_lem_in *l_i, const char *line)
-{
-	int 	i;
-	int 	j;
-	int 	k;
-	int 	len;
-	char 	*str1;
-	char 	*str2;
-
-	i = 0;
-	k = 0;
-	len = 0;
-	while (line[i] != '\0')
-	{
-		if (k == 0)
-			len++;
-		if (line[i] == '-')
-			k++;
-		i++;
-	}
-	i = 0;
-	j = k;
-	printf("%d, %d\n", len, k);
-	while (j > 1)
-	{
-		str1 = ft_memalloc(len + j);
-		str1 = ft_strncpy(str1, line, len + j - 1);
-		printf("str1 = %s\n", str1);
-		while (i < l_i->room_num)
-		{
-			if (ft_strcmp(l_i->rooms[i]->name, str1) == 0)
-				break;
-			i++;
-		}
-		if ()
-		printf("%d\n", i);
-		free(str1);
-		i = 0;
-		j--;
-	}
-	j = k - j;
-	while (j > 1)
-	{
-		if (k == j)
-		{
-			str2= ft_memalloc(ft_strlen(line) + 1);
-			str2 = ft_strcpy(str2, line);
-			str2 = ft_strcut(str2, '-');
-		}
-		str2 = ft_strjoin("-", str2);
-		printf("str2 = %s\n", str2);
-		while (i < l_i->room_num)
-		{
-			if (ft_strcmp(l_i->rooms[i]->name, str2) == 0)
-				break;
-			i++;
-		}
-		i = 0;
-		j--;
-	}
-	printf("\ntest\n");
-	return (0);
-}*/

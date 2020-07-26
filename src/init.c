@@ -85,6 +85,7 @@ t_lem_in	*init_l_i(void)
 	new->s_l_flag = 0;
 	new->e_l_flag = 0;
 	new->i = 1;
+	new->j = 0;
 	/*new->start = NULL;
 	new->end = NULL;*/
 	if (!(new->rooms = (t_room **)malloc(sizeof(t_room*))))

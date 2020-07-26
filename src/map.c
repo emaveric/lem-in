@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/26 15:10:18 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/26 20:19:23 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,19 @@ int 	get_command(t_lem_in *l_i, char **line, int i)
 	return (0);
 }
 
-int 	get_link(t_lem_in *l_i, char *line, int i)
+int 	get_link(t_lem_in *l_i, char *line, int i, int j)
 {
-	int 	j;
 	int 	k;
 	char 	**str;
 
-	j = -1;
 	k = -1;
 	str = ft_strsplit(line, '-');
+	if (str[2] || !str[0] || !str[1])
+	{
+		if (many_dashes_link(l_i, line, 0) == ERROR)
+			return (ERROR);
+		return (0);
+	}
 	while (i < l_i->room_num)
 	{
 		if (ft_strcmp(l_i->rooms[i]->name, str[0]) == 0 &&
@@ -49,17 +53,8 @@ int 	get_link(t_lem_in *l_i, char *line, int i)
 			k = l_i->rooms[i]->num;
 		i++;
 	}
-	/*if (k == -1 || j == -1 ||
-		l_i->link_arr[j][k] == 1 || l_i->link_arr[k][j] == 1)
-	{
-		//printf("k = %d, j = %d, [j][k] = %d, [k][j] = %d, same link\n", k, j, l_i->link_arr[j][k], l_i->link_arr[k][j]);
-		return (ERROR);
-	}*/
 	if (is_link(l_i, j, k) == ERROR)
 		return (ERROR);
-	l_i->link_arr[j][k] = 1;
-	l_i->link_arr[k][j] = 1;
-	l_i->link_num++;
 	return (0);
 }
 
@@ -109,7 +104,7 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 		else if (link_or_room(l_i, l_i->line[i], 1) == 0)
 		{
 			if (l_i->e_r_flag == 0 || l_i->s_r_flag == 0 ||
-				get_link(l_i, l_i->line[i], 0) == ERROR)
+				get_link(l_i, l_i->line[i], 0, -1) == ERROR)
 			{
 				printf("%d, %s\n????\n", i + 1, l_i->line[i]);
 				return (ERROR);

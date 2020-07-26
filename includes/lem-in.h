@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/25 21:17:43 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/26 20:11:01 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct		s_queue
 typedef struct		s_lem_in
 {
 	int 			i;
+	int 			j; // для линков с несколько -
 	int 			flag;
 	int 			s_r_flag;
 	int 			e_r_flag;
@@ -80,5 +81,6 @@ int 				is_link(t_lem_in *l_i, int j, int k);
 int 				room_num_check(t_lem_in *l_i);
 int 				get_end_or_start_room(t_lem_in *l_i, char **str, int i);
 int 				start_end_room_check(t_lem_in *l_i, int i, char **str);
+int 				many_dashes_link(t_lem_in *l_i, const char *line, int i);
 
 #endif

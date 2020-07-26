@@ -64,6 +64,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/lem-in/ft_printf/libft/ft_strdel.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/ft_printf/libft/ft_strdel.c.o"
   "/Users/emaveric/lem-in/ft_printf/libft/ft_strdup.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/ft_printf/libft/ft_strdup.c.o"
   "/Users/emaveric/lem-in/ft_printf/libft/ft_strequ.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/ft_printf/libft/ft_strequ.c.o"
+  "/Users/emaveric/lem-in/ft_printf/libft/ft_strfromcpy.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/ft_printf/libft/ft_strfromcpy.c.o"
   "/Users/emaveric/lem-in/ft_printf/libft/ft_striter.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/ft_printf/libft/ft_striter.c.o"
   "/Users/emaveric/lem-in/ft_printf/libft/ft_striteri.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/ft_printf/libft/ft_striteri.c.o"
   "/Users/emaveric/lem-in/ft_printf/libft/ft_strjoin.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/ft_printf/libft/ft_strjoin.c.o"
@@ -114,6 +115,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/lem-in/src/get_room.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/src/get_room.c.o"
   "/Users/emaveric/lem-in/src/init.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/src/init.c.o"
   "/Users/emaveric/lem-in/src/lem-in.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/src/lem-in.c.o"
+  "/Users/emaveric/lem-in/src/many_dashes_link.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/src/many_dashes_link.c.o"
   "/Users/emaveric/lem-in/src/map.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/src/map.c.o"
   "/Users/emaveric/lem-in/src/validation.c" "/Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/src/validation.c.o"
   )

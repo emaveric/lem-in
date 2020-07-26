@@ -276,6 +276,9 @@
 		<Unit filename="/Users/emaveric/lem-in/ft_printf/libft/ft_strequ.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/lem-in/ft_printf/libft/ft_strfromcpy.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/lem-in/ft_printf/libft/ft_striter.c">
 			<Option target="lem_in"/>
 		</Unit>
@@ -430,6 +433,9 @@
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/emaveric/lem-in/src/lem-in.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/emaveric/lem-in/src/many_dashes_link.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/emaveric/lem-in/src/map.c">

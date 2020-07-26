@@ -116,4 +116,4 @@ add_executable(lem_in
         ft_printf/src/print_check.c
         ft_printf/author
         ft_printf/Makefile
-        author includes/lem-in.h src/lem-in.c src/validation.c src/init.c src/map.c src/get_room.c src/check.c ft_printf/libft/ft_check_space.c)
+        author includes/lem-in.h src/lem-in.c src/validation.c src/init.c src/map.c src/get_room.c src/check.c ft_printf/libft/ft_check_space.c ft_printf/libft/ft_strfromcpy.c src/many_dashes_link.c)
