@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/25 21:01:10 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/26 15:01:14 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int 	same_name_and_coord_valid(t_lem_in *l_i)
 					(l_i->rooms[i]->x == l_i->rooms[j]->x &&
 					l_i->rooms[i]->y == l_i->rooms[j]->y))
 				{
-					//printf("same\n");
+					printf("same\n");
 					return (ERROR);
 				}
 			j++;
@@ -121,7 +121,7 @@ int 	same_name_and_coord_valid(t_lem_in *l_i)
 	return (0);
 }
 
-int 	link_or_room(t_lem_in *l_i, const char *line)
+int 	link_or_room(t_lem_in *l_i, const char *line, int flag)
 {
 	int 	i;
 
@@ -138,6 +138,9 @@ int 	link_or_room(t_lem_in *l_i, const char *line)
 			return (1);
 	}
 	i = 0;
+	if (flag == 1 && l_i->flag == 0)
+		if (same_name_and_coord_valid(l_i) == ERROR)
+			return (ERROR);
 	while (line[i] != '\0')
 	{
 		if (line[i] == '-' || line[0] == '#')

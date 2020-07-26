@@ -69,7 +69,7 @@ typedef struct		s_lem_in
 
 int					empty_line_check(const char *line);
 int 				get_map(t_lem_in *l_i, int i);
-int 				link_or_room(t_lem_in *l_i, const char *line);
+int 				link_or_room(t_lem_in *l_i, const char *line, int flag);
 int 				coord_valid(t_lem_in *l_i, char **str, int n);
 int					get_room(t_lem_in *l_i, char *line, int i, int j);
 t_lem_in			*init_l_i(void);

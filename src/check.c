@@ -66,9 +66,9 @@ int 	room_num_check(t_lem_in *l_i)
 	i++;
 	while (l_i->line[i])
 	{
-		if (link_or_room(l_i, l_i->line[i]) == ERROR)
+		if (link_or_room(l_i, l_i->line[i], 0) == ERROR)
 			return (ERROR);
-		if (l_i->line[i][0] != '#' && link_or_room(l_i, l_i->line[i]) != 1)
+		if (l_i->line[i][0] != '#' && link_or_room(l_i, l_i->line[i], 0) != 1)
 			break;
 		if (l_i->line[i][0] != '#')
 		{
