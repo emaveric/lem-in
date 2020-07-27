@@ -6,5 +6,5 @@ C_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacO
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/emaveric/lem-in/ft_printf/includes -I/Users/emaveric/lem-in/ft_printf/libft -I/Users/emaveric/lem-in/includes 
+C_INCLUDES = -I/Users/eshor/lem-in_lexa/ft_printf/includes -I/Users/eshor/lem-in_lexa/ft_printf/libft -I/Users/eshor/lem-in_lexa/includes 
 

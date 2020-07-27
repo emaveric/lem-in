@@ -76,10 +76,11 @@ void move_ants(t_lem_in *lem_in)
 				if (lem_in->paths[i]->head->level == MAX_INT)
 					lem_in->ant_end++;
 			}
-			ft_printf("\n");
+
 //			ft_printf("\t\t\t!!! ANTS IN END: %d\n", lem_in->ant_end);
 			i++;
 		}
+		ft_printf("\n");
 //		ft_printf("\t\t\tANTS IN END: %d\n", lem_in->ant_end);
 	}
 

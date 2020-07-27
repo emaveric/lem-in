@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/emaveric/lem-in
+CMAKE_SOURCE_DIR = /Users/eshor/lem-in_lexa
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/emaveric/lem-in/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/eshor/lem-in_lexa/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles /Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -3282,33 +3282,6 @@ src/lem-in.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/lem-in.c.s
 .PHONY : src/lem-in.c.s
 
-src/main.o: src/main.c.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/main.c.o
-.PHONY : src/main.c.o
-
-src/main.i: src/main.c.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/main.c.i
-.PHONY : src/main.c.i
-
-src/main.s: src/main.c.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/main.c.s
-.PHONY : src/main.c.s
-
 src/many_dashes_link.o: src/many_dashes_link.c.o
 
 .PHONY : src/many_dashes_link.o
@@ -3831,9 +3804,6 @@ help:
 	@echo "... src/lem-in.o"
 	@echo "... src/lem-in.i"
 	@echo "... src/lem-in.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
 	@echo "... src/many_dashes_link.o"
 	@echo "... src/many_dashes_link.i"
 	@echo "... src/many_dashes_link.s"

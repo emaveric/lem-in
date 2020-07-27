@@ -116,7 +116,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/src/improve_links.c.o"
   "CMakeFiles/lem_in.dir/src/init.c.o"
   "CMakeFiles/lem_in.dir/src/lem-in.c.o"
-  "CMakeFiles/lem_in.dir/src/main.c.o"
   "CMakeFiles/lem_in.dir/src/many_dashes_link.c.o"
   "CMakeFiles/lem_in.dir/src/map.c.o"
   "CMakeFiles/lem_in.dir/src/move_ants.c.o"
