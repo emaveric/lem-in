@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(ft_printf/includes)
 include_directories(ft_printf/libft)
+include_directories(includes)
 
 add_executable(lem_in
         ft_printf/includes/ft_printf.h
@@ -12,6 +13,7 @@ add_executable(lem_in
         ft_printf/libft/ft_atoi_base.c
         ft_printf/libft/ft_atoi_int_max.c
         ft_printf/libft/ft_bzero.c
+        ft_printf/libft/ft_check_space.c
         ft_printf/libft/ft_clear_table.c
         ft_printf/libft/ft_countwords.c
         ft_printf/libft/ft_div_mod.c
@@ -67,6 +69,7 @@ add_executable(lem_in
         ft_printf/libft/ft_strdel.c
         ft_printf/libft/ft_strdup.c
         ft_printf/libft/ft_strequ.c
+        ft_printf/libft/ft_strfromcpy.c
         ft_printf/libft/ft_striter.c
         ft_printf/libft/ft_striteri.c
         ft_printf/libft/ft_strjoin.c
@@ -116,4 +119,22 @@ add_executable(lem_in
         ft_printf/src/print_check.c
         ft_printf/author
         ft_printf/Makefile
-        author includes/lem-in.h src/lem-in.c src/validation.c src/init.c src/map.c src/get_room.c src/check.c ft_printf/libft/ft_check_space.c ft_printf/libft/ft_strfromcpy.c src/many_dashes_link.c src/test_file.c)
+        includes/lem-in.h
+        src/aux.c
+        src/bfs.c
+        src/check.c
+        src/counts_links.c
+        src/delete_links.c
+        src/form_paths.c
+        src/get_room.c
+        src/improve_links.c
+        src/init.c
+        src/lem-in.c
+        src/many_dashes_link.c
+        src/map.c
+        src/move_ants.c
+        src/queue_funcs.c
+        src/test_file.c
+        src/validation.c
+        author
+        Makefile)

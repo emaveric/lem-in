@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 19:33:42 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/26 20:19:36 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/27 16:10:47 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ int 	second_name(t_lem_in *l_i, char *str1, int i)
 	{
 		if (is_link(l_i, l_i->j, i) == ERROR)
 			return (ERROR);
-		l_i->link_arr[l_i->j][i] = 1;
+		/*l_i->link_arr[l_i->j][i] = 1;
 		l_i->link_arr[i][l_i->j] = 1;
-		l_i->link_num++;
+		l_i->link_num++;*/
+		l_i->j = 0;
+		//printf("i = %d, j = %d\n", i, l_i->j);
 		printf("good\n");
 		return (0);
 	}
@@ -71,10 +73,10 @@ void	len_search(const char *line, t_lem_in *l_i, int k, int *len)
 	int 	i;
 
 	i = 1;
-	if (k != ft_strlen(line))
+	if (k != ft_strlen(line) && l_i->j == 0)
 		i = 0;
 	l_i->j = 0;
-	if (k == ft_strlen(line))
+	if (/*k == ft_strlen(line)*/i == 1)
 		len[0] = 1;
 	else
 		while (line[i] == '-')
@@ -96,16 +98,22 @@ void	len_search(const char *line, t_lem_in *l_i, int k, int *len)
 	//return (j);
 }
 
-int 	only_dashes(const char *line, int i, int k)
+int 	only_dashes(t_lem_in *l_i, const char *line, int i, int k)
 {
 	//printf("line = %s\n", line);
 	while (line[i] == '-')
 		i++;
+	l_i->j = i;
 	while (line[i] != '\0')
 	{
 		if (line[i] == '-')
 			k++;
 		i++;
+	}
+	if (k == 0 && line[l_i->j] != '\0')
+	{
+		printf("J = %d, LINE[J] = %c\n", l_i->j, line[l_i->j]);
+		k = l_i->j;
 	}
 	if (k == 0)
 		k = ft_strlen(line);
@@ -115,10 +123,13 @@ int 	only_dashes(const char *line, int i, int k)
 int 	many_dashes_link(t_lem_in *l_i, const char *line, int i)
 {
 	int 	k;
+	int 	flag;
 	int 	*len;
 	char 	*str1;
 
-	k = only_dashes(line, i, 0);
+	k = only_dashes(l_i, line, i, 0);
+	flag = l_i->j;
+	//printf("K = %d\n", k);
 	/*if (k != ft_strlen(line))
 		i = 0;*/
 	if (!(len = (int *)malloc(sizeof(int) * k + 1)))
@@ -126,12 +137,13 @@ int 	many_dashes_link(t_lem_in *l_i, const char *line, int i)
 	len_search(line, l_i, k, len);
 	//printf("len[%d] = %d\n", l_i->j, len[l_i->j]);
 	len[l_i->j + 1] = -1;
+	//printf("last %d\n", l_i->j + 1);
 	l_i->j = 0;
 	//printf("%d, %d\n", len, k);
 	if ((i = first_name(l_i, line, k, len)) == ERROR)
 		return (ERROR);
 	//printf("j = %d\n", l_i->j);
-	if (k == ft_strlen(line))
+	if (k == ft_strlen(line) || flag != 0)
 	{
 		//j++;
 		k--;
@@ -140,6 +152,7 @@ int 	many_dashes_link(t_lem_in *l_i, const char *line, int i)
 	//printf("len = %d\n", len[k] - len[l_i->j]);
 	if (!(str1 = ft_memalloc(len[k] - len[l_i->j])))
 		return (ERROR);
+	//printf("test\n");
 	str1 = ft_strfromcpy(str1, line, len[l_i->j] + 1);
 	//printf("str2 = %s\n", str1);
 	l_i->j = i;
