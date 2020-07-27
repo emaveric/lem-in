@@ -6,7 +6,7 @@
 #    By: emaveric <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 19:36:08 by emaveric          #+#    #+#              #
-#    Updated: 2020/03/16 16:06:52 by emaveric         ###   ########.fr        #
+#    Updated: 2020/07/27 16:25:28 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRC = ft_atoi.c ft_bzero.c ft_div_mod.c ft_is_whitespaces.c ft_isalnum.c \
 	  ft_pow.c ft_ulltoa.c ft_is_minus_inf.c ft_pow_double.c ft_atoi_base.c \
 	  ft_clear_table.c ft_countwords.c ft_llutoa.c ft_strcmp_free.c \
 	  ft_strcut.c ft_strjoin_free.c ft_strncut.c itoa_base.c ft_free.c \
-	  get_next_line.c ft_atoi_int_max.c ft_check_space.c ft_strfromcpy.c \
+	  get_next_line.c ft_atoi_int_max.c
 
 HEADER = libft.h
 
