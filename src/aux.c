@@ -48,7 +48,7 @@ void print_paths(t_lem_in *lem_in)
 		temp = lem_in->paths[i]->head;
 		while (temp)
 		{
-			ft_printf("room%d\n", temp->num);
+			ft_printf("room%s\n", temp->name);
 			temp = temp->next;
 		}
 		ft_printf("\n");
