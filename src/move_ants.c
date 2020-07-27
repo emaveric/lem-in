@@ -8,6 +8,8 @@ void move_all_in_path(t_lem_in *lem_in, int ant_name, t_room *room, int head_num
 	int ant_temp;
 
 	temp = room;
+	if (temp->level == MAX_INT)
+		return ;
 	if (temp->next->level == MAX_INT && temp->ant_name != -1)
 	{
 		lem_in->ant_end++;
@@ -22,6 +24,23 @@ void move_all_in_path(t_lem_in *lem_in, int ant_name, t_room *room, int head_num
 		temp->prev->ant_name = -1;
 		temp = temp->prev;
 	}
+}
+
+t_room *find_last_room(t_room *head)
+{
+	t_room *temp;
+
+	temp = head;
+	ft_printf("%s\n", temp->name);
+	ft_printf("begin\n");
+
+	if (!temp->next)
+		return (temp);
+	if (!temp->next->next)
+		return (temp);
+	while (temp->next->next)
+		temp = temp->next;
+	return (temp);
 }
 
 void move_ants(t_lem_in *lem_in)
@@ -41,10 +60,8 @@ void move_ants(t_lem_in *lem_in)
 			ant_name = lem_in->paths[i]->head->ant_name;
 //			для каждого пути смотрим стоит ли из него сейчас двигать муравья и двигаем если надо, запоминаем какой был муравей в голове пути
 
-//			ft_printf("ant start: %d, comp: %d\n", lem_in->ant_start, lem_in->paths[i]->comp);
-			tail = lem_in->paths[i]->head;
-			while (tail->next->next)
-				tail = tail->next;
+			ft_printf("ant start: %d, comp: %d\n", lem_in->ant_start, lem_in->paths[i]->comp);
+			tail = find_last_room(lem_in->paths[i]->head);
 			move_all_in_path(lem_in, ant_name, tail, lem_in->paths[i]->head->num);
 			if (lem_in->ant_start > lem_in->paths[i]->comp)
 			{
@@ -52,16 +69,13 @@ void move_ants(t_lem_in *lem_in)
 				ant_name = lem_in->paths[i]->head->ant_name;
 				lem_in->paths[i]->head->ant_name = lem_in->ant_num - lem_in->ant_start + 1;
 				lem_in->ant_start--;
-				ft_printf("ant %d moved to room %d\n", lem_in->paths[i]->head->ant_name, lem_in->paths[i]->head->num);
+				ft_printf("ant %d moved to room %s\n", lem_in->paths[i]->head->ant_name, lem_in->paths[i]->head->name);
 				if (lem_in->paths[i]->head->level == MAX_INT)
 					lem_in->ant_end++;
 			}
-
 			i++;
 		}
-//		print_rooms(lem_in->rooms, lem_in->room_num);
 		ft_printf("\t\t\tANTS IN END: %d\n", lem_in->ant_end);
-
 	}
 
 }
