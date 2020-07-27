@@ -130,7 +130,6 @@ add_executable(lem_in
         src/improve_links.c
         src/init.c
         src/lem-in.c
-        src/main.c
         src/many_dashes_link.c
         src/map.c
         src/move_ants.c
