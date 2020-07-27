@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 15:47:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/22 21:42:37 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/27 16:23:50 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,28 @@ t_queue		*init_queue(void)
 	return (new);
 }
 
-t_link 		*init_link(void)
+int 		**init_link_arr(t_lem_in *l_i)
 {
-	t_link		*new;
+	int 	**new;
+	int 	i;
+	int 	j;
 
-	if (!(new = (t_link *)malloc(sizeof(t_link))))
+	if (!(new = (int **)malloc(sizeof(int *) * l_i->room_num)))
 		return (NULL);
-	new->start = NULL;
-	new->end = NULL;
+	i = 0;
+	j = 0;
+	while (i < l_i->room_num)
+	{
+		if (!(new[i] = (int *)malloc(sizeof(int) * l_i->room_num)))
+			return (NULL);
+		while (j < l_i->room_num)
+		{
+			new[i][j] = 0;
+			j++;
+		}
+		j = 0;
+		i++;
+	}
 	return (new);
 }
 
@@ -43,12 +57,13 @@ t_room		*init_room(void)
 	new->level = -1;
 	new->x = 0;
 	new->y = 0;
+	new->name = NULL;
 	new->num_input = 0;
 	new->num_output = 0;
 	new->visited = 0;
-	new->ant_name = 0;
+	new->ant_name = -1;
 	new->next = NULL;
-	new->name = NULL;
+	new->prev = NULL;
 	return (new);
 }
 
@@ -66,12 +81,19 @@ t_lem_in	*init_l_i(void)
 	new->line = NULL;
 	new->link_arr = NULL;
 	new->flag = 0;
-	new->s_flag = 0;
-	new->e_flag = 0;
+	new->s_r_flag = 0;
+	new->e_r_flag = 0;
+	new->s_l_flag = 0;
+	new->e_l_flag = 0;
 	new->i = 1;
+	new->j = 0;
+	new->paths = NULL;
+	new->path_num = 0;
+	new->bfs_level = 0;
 	/*new->start = NULL;
 	new->end = NULL;*/
-	new->rooms = NULL;
+	if (!(new->rooms = (t_room **)malloc(sizeof(t_room*))))
+		return (NULL);
 	new->links = NULL;
 	return (new);
 }
