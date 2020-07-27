@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/27 12:25:35 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/27 14:22:36 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ int		main(int ac, char **av)
 	}
 	else
 		return (ERROR);
-	print_all(l_i);
+	//print_all(l_i);
 	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/26 20:19:23 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/27 12:48:41 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int		get_ant(t_lem_in *l_i, char *line)
 	int 	j;
 
 	j = 0;
-	//printf("\n%s\n", line);
+	printf("\n%s\n", line);
 	while (line[j] != '\0')
 	{
 		if (ft_isdigit(line[j]) == 0)

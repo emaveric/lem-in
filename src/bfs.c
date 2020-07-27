@@ -38,4 +38,5 @@ int    bfs(t_lem_in *lem_in)
 		}
 	}
 	lem_in->bfs_level--;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/27 12:31:04 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/27 13:51:50 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ typedef struct		s_lem_in
 	int 			link_num;
 	int 			**link_arr;
 	char 			**line;
-	t_room          *start_room;
-	/*t_room			*end;*/
+	/*t_room 			*start;
+	t_room			*end;*/
 	t_room			**rooms;
 	t_link			**links;
 	t_path 			**paths;
@@ -93,7 +93,6 @@ int 				room_num_check(t_lem_in *l_i);
 int 				get_end_or_start_room(t_lem_in *l_i, char **str, int i);
 int 				start_end_room_check(t_lem_in *l_i, int i, char **str);
 int 				many_dashes_link(t_lem_in *l_i, const char *line, int i);
-
 
 /*
 ** queue functions
