@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/26 20:11:01 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/27 12:31:04 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct		s_room
 	int 			num_output;
 	int 			visited;
 	struct s_room	*next;
+	struct s_room	*prev;
 	int 			ant_name;
 }					t_room;
 
@@ -45,6 +46,13 @@ typedef struct		s_queue
 	t_room 			*room;
 	struct s_queue	*next;
 }					t_queue;
+
+typedef struct 		s_path
+{
+	t_room 			*head;
+	int 			len;
+	int				comp;
+}					t_path;
 
 typedef struct		s_lem_in
 {
@@ -62,10 +70,13 @@ typedef struct		s_lem_in
 	int 			link_num;
 	int 			**link_arr;
 	char 			**line;
-	/*t_room 			*start;
-	t_room			*end;*/
+	t_room          *start_room;
+	/*t_room			*end;*/
 	t_room			**rooms;
 	t_link			**links;
+	t_path 			**paths;
+	int 			path_num;
+	int				bfs_level;
 }					t_lem_in;
 
 int					empty_line_check(const char *line);
@@ -82,5 +93,52 @@ int 				room_num_check(t_lem_in *l_i);
 int 				get_end_or_start_room(t_lem_in *l_i, char **str, int i);
 int 				start_end_room_check(t_lem_in *l_i, int i, char **str);
 int 				many_dashes_link(t_lem_in *l_i, const char *line, int i);
+
+
+/*
+** queue functions
+ */
+t_queue             *new_queue_node(t_room *room);
+void                push_node(t_queue **queue, t_queue *node);
+t_room              *pop_node(t_queue **queue);
+void                free_queue(t_queue **queue);
+
+
+int                bfs(t_lem_in *lem_in);
+
+/*
+ * improving the links block
+ */
+void 	delete_useless(t_lem_in *lem_in);
+void 	count_input_output(t_lem_in *lem_in);
+void 	delete_dead_ends(t_lem_in *lem_in);
+int has_output_forks(t_lem_in *lem_in, int room_id);
+void delete_input_forks(t_lem_in *lem_in);
+void delete_output_forks(t_lem_in *lem_in);
+int find_shortest(t_lem_in *lem_in, int room_id);
+void 	define_next(t_lem_in *lem_in);
+
+/*
+ * operations with paths
+ */
+int 	form_paths(t_lem_in *lem_in);
+void 	sort_paths(t_path **paths, int num);
+void 	define_comp_num(t_path **paths, int num);
+
+
+/*
+ * move ants
+ */
+void move_all_in_path(t_lem_in *lem_in, int ant_name, t_room *room, int head_num);
+void move_ants(t_lem_in *lem_in);
+
+/*
+ * auxiliary functions; delete later
+ */
+void print_links(int **arr,  int len, t_room **rooms);
+void print_rooms(t_room **rooms, int len);
+void print_paths(t_lem_in *lem_in);
+void print_all(t_lem_in *lem_in);
+void print_link_arr(int **arr, int len);
 
 #endif

@@ -112,6 +112,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/src/lem-in.c.o"
   "CMakeFiles/lem_in.dir/src/many_dashes_link.c.o"
   "CMakeFiles/lem_in.dir/src/map.c.o"
+  "CMakeFiles/lem_in.dir/src/test_file.c.o"
   "CMakeFiles/lem_in.dir/src/validation.c.o"
   "lem_in"
   "lem_in.pdb"

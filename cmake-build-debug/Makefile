@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/emaveric/lem-in
+CMAKE_SOURCE_DIR = /Users/eshor/lem-in_lexa
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/emaveric/lem-in/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/eshor/lem-in_lexa/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles /Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -3174,6 +3174,33 @@ src/map.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/map.c.s
 .PHONY : src/map.c.s
 
+src/test_file.o: src/test_file.c.o
+
+.PHONY : src/test_file.o
+
+# target to build an object file
+src/test_file.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/test_file.c.o
+.PHONY : src/test_file.c.o
+
+src/test_file.i: src/test_file.c.i
+
+.PHONY : src/test_file.i
+
+# target to preprocess a source file
+src/test_file.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/test_file.c.i
+.PHONY : src/test_file.c.i
+
+src/test_file.s: src/test_file.c.s
+
+.PHONY : src/test_file.s
+
+# target to generate assembly for a file
+src/test_file.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/test_file.c.s
+.PHONY : src/test_file.c.s
+
 src/validation.o: src/validation.c.o
 
 .PHONY : src/validation.o
@@ -3549,6 +3576,9 @@ help:
 	@echo "... src/map.o"
 	@echo "... src/map.i"
 	@echo "... src/map.s"
+	@echo "... src/test_file.o"
+	@echo "... src/test_file.i"
+	@echo "... src/test_file.s"
 	@echo "... src/validation.o"
 	@echo "... src/validation.i"
 	@echo "... src/validation.s"

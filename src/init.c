@@ -61,7 +61,7 @@ t_room		*init_room(void)
 	new->num_input = 0;
 	new->num_output = 0;
 	new->visited = 0;
-	new->ant_name = 0;
+	new->ant_name = -1;
 	new->next = NULL;
 	return (new);
 }
