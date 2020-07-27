@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/27 13:54:36 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/27 15:09:56 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void 	define_next(t_lem_in *lem_in);
 int 	form_paths(t_lem_in *lem_in);
 void 	sort_paths(t_path **paths, int num);
 void 	define_comp_num(t_path **paths, int num);
-
+int		does_path_end(t_room *head);
 
 /*
  * move ants
@@ -141,5 +141,6 @@ void print_rooms(t_room **rooms, int len);
 void print_paths(t_lem_in *lem_in);
 void print_all(t_lem_in *lem_in);
 void print_link_arr(int **arr, int len);
+void print_queue(t_queue *q);
 
 #endif

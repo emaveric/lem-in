@@ -43,6 +43,29 @@ void 	define_comp_num(t_path **paths, int num)
 	}
 }
 
+int does_path_end(t_room *head)
+{
+	t_room *temp;
+	t_room *prev;
+
+	temp = head;
+	prev = NULL;
+	while (temp->next)
+	{
+		temp->prev = prev;
+		prev = temp;
+		temp = temp->next;
+	}
+	if (temp->level == MAX_INT)
+		return (1);
+	else
+	{
+		ft_printf("path can't reach the end\n");
+		return(ERROR);
+	}
+
+}
+
 int 	form_paths(t_lem_in *lem_in)
 {
 	int i;
@@ -54,14 +77,20 @@ int 	form_paths(t_lem_in *lem_in)
 	while (i < lem_in->room_num)
 	{
 		if (lem_in->link_arr[0][i] == 1)
-			lem_in->path_num++;
+		{
+			if (does_path_end(lem_in->rooms[i]) == 1)
+				lem_in->path_num++;
+			else
+			{
+				lem_in->link_arr[0][i] = 0;
+				lem_in->link_arr[i][0] = 0;
+			}
+		}
 		i++;
 	}
 	lem_in->paths = (t_path**)malloc(sizeof(t_path*) * lem_in->path_num);
 	if (!lem_in->paths)
-	{
 		return (-1);
-	}
 	path_counter = 0;
 	i = 1;
 	while (i < lem_in->room_num)

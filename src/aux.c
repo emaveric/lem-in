@@ -75,3 +75,16 @@ void print_link_arr(int **arr, int len)
 		i++;
 	}
 }
+
+void print_queue(t_queue *q)
+{
+	t_queue *temp;
+
+	temp = q;
+	ft_printf("print queue\n");
+	while (temp)
+	{
+		ft_printf("%s\n", temp->room->name);
+		temp = temp->next;
+	}
+}
