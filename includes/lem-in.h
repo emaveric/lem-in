@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/27 18:15:08 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/28 16:17:33 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ int		does_path_end(t_room *head);
  * move ants
  */
 t_room *find_last_room(t_room *head);
-void move_all_in_path(t_lem_in *lem_in, int ant_name, t_room *room, int head_num);
+void move_all_in_path(t_lem_in *lem_in, t_room *room, int *is_start);
 void move_ants(t_lem_in *lem_in);
 
 /*

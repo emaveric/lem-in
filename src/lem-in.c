@@ -62,6 +62,7 @@ int		main(int ac, char **av)
 	}
 	else
 		return (ERROR);
+	ft_printf("my seg\n");
 	print_all(l_i);
 	exit(0);
 }

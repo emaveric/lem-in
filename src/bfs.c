@@ -29,7 +29,7 @@ int    bfs(t_lem_in *lem_in)
 					free_queue(&queue);
 					return (-1);
 				}
-				ft_printf("level changed\n");
+//				ft_printf("level changed\n");
 				node->room->level = lem_in->bfs_level;
 				node->room->visited = 1;
 				push_node(&queue, node);

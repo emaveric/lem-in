@@ -33,24 +33,34 @@ void 	delete_dead_ends(t_lem_in *lem_in)
 	int i;
 	int j;
 
-	i = 0;
+	i = 1;
 	while (i < lem_in->room_num)
 	{
-		if ((lem_in->rooms[i]->num_output == 0 && lem_in->rooms[i]->num_input != 0 && i != lem_in->room_num - 1)
-		|| (lem_in->rooms[i]->num_output != 0 && lem_in->rooms[i]->num_input == 0 && i != 0))
+		//входы есть, а выходов нет
+		if (lem_in->rooms[i]->num_output == 0 && lem_in->rooms[i]->num_input != 0 && i != lem_in->room_num - 1)
 		{
-			j = 0;
+			int j = 0;
 			while (j < lem_in->room_num)
 			{
 				if (lem_in->link_arr[i][j] == 1)
 				{
 					lem_in->link_arr[i][j] = 0;
 					lem_in->link_arr[j][i] = 0;
-					if (lem_in->rooms[j]->level > lem_in->rooms[i]->level)
-						lem_in->rooms[j]->num_input -= 1;
-					else
-						lem_in->rooms[j]->num_output -= 1;
-					ft_printf("useless link room%s--room%s deleted\n", lem_in->rooms[i]->name, lem_in->rooms[j]->name);
+				}
+				j++;
+			}
+			ft_printf("dead end in room %s deleted\n", lem_in->rooms[i]->name);
+		}
+		//выходы есть, а входов нет
+		else if (lem_in->rooms[i]->num_output != 0 && lem_in->rooms[i]->num_input == 0)
+		{
+			int j = 0;
+			while (j < lem_in->room_num)
+			{
+				if (lem_in->link_arr[i][j] == 1)
+				{
+					lem_in->link_arr[i][j] = 0;
+					lem_in->link_arr[j][i] = 0;
 				}
 				j++;
 			}
@@ -71,9 +81,17 @@ int has_output_forks(t_lem_in *lem_in, int room_id)
 	i = 0;
 	res = 0;
 	if (room_id == 0)
+	{
+		ft_printf("0 output forks in path\n");
 		return (0);
+	}
+
 	if (lem_in->rooms[room_id]->num_output > 1)
+	{
+		ft_printf("room %s has %d output forks in path\n", lem_in->rooms[room_id]->name, lem_in->rooms[room_id]->num_output);
 		return (1);
+	}
+
 	else
 	{
 		while (i < lem_in->room_num)
@@ -125,7 +143,8 @@ void delete_input_forks(t_lem_in *lem_in)
 			{
 				if (lem_in->link_arr[room->num][j] == 1 && lem_in->rooms[j]->level < room->level)
 				{
-					last_of_worst = j;
+					if (best_room_id == -1)
+						last_of_worst = j;
 					if (has_output_forks(lem_in, j) == 0)
 						best_room_id = j;
 				}
@@ -134,7 +153,8 @@ void delete_input_forks(t_lem_in *lem_in)
 			if (best_room_id == -1)
 				best_room_id = last_of_worst;
 			j = 0;
-//			ft_printf("current room: %s\n", room->name);
+			ft_printf("current room: %s\n", room->name);
+			ft_printf("best room: %s\n", lem_in->rooms[best_room_id]->name);
 			while (j < lem_in->room_num)
 			{
 				if (lem_in->link_arr[room->num][j] == 1 && lem_in->rooms[j]->level < room->level
@@ -144,7 +164,7 @@ void delete_input_forks(t_lem_in *lem_in)
 					lem_in->link_arr[j][room->num] = 0;
 					room->num_input--;
 					lem_in->rooms[j]->num_output--;
-//					ft_printf("input fork room%s--room%s deleted\n", room->name, lem_in->rooms[j]->name);
+					ft_printf("input fork room%s--room%s deleted\n", room->name, lem_in->rooms[j]->name);
 				}
 				j++;
 			}
@@ -211,7 +231,7 @@ void delete_output_forks(t_lem_in *lem_in)
 				node = new_queue_node(lem_in->rooms[j]);
 				node->room->visited = 3;
 				push_node(&queue, node);
-//				ft_printf("room added to queue: %s\n", node->room->name);
+				ft_printf("room added to queue: %s\n", node->room->name);
 			}
 			j++;
 		}

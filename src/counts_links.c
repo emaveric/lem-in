@@ -13,7 +13,7 @@ void 	count_input_output(t_lem_in *lem_in)
 		{
 			if (i < j && lem_in->link_arr[i][j] == 1)
 			{
-				ft_printf("link exists\n");
+//				ft_printf("link exists\n");
 				if (lem_in->rooms[i]->level < lem_in->rooms[j]->level)
 				{
 					lem_in->rooms[i]->num_output += 1;
