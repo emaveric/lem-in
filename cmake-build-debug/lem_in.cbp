@@ -431,6 +431,9 @@
 		<Unit filename="/Users/eshor/lem-in_lexa/src/aux.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/eshor/lem-in_lexa/src/begin_delete.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/eshor/lem-in_lexa/src/bfs.c">
 			<Option target="lem_in"/>
 		</Unit>
@@ -438,6 +441,9 @@
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/eshor/lem-in_lexa/src/counts_links.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/eshor/lem-in_lexa/src/delete_input_forks.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/eshor/lem-in_lexa/src/delete_links.c">
@@ -470,7 +476,7 @@
 		<Unit filename="/Users/eshor/lem-in_lexa/src/queue_funcs.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/eshor/lem-in_lexa/src/test_file.c">
+		<Unit filename="/Users/eshor/lem-in_lexa/src/start_algo.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/eshor/lem-in_lexa/src/validation.c">

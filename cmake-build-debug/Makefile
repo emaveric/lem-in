@@ -3039,6 +3039,33 @@ src/aux.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/aux.c.s
 .PHONY : src/aux.c.s
 
+src/begin_delete.o: src/begin_delete.c.o
+
+.PHONY : src/begin_delete.o
+
+# target to build an object file
+src/begin_delete.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/begin_delete.c.o
+.PHONY : src/begin_delete.c.o
+
+src/begin_delete.i: src/begin_delete.c.i
+
+.PHONY : src/begin_delete.i
+
+# target to preprocess a source file
+src/begin_delete.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/begin_delete.c.i
+.PHONY : src/begin_delete.c.i
+
+src/begin_delete.s: src/begin_delete.c.s
+
+.PHONY : src/begin_delete.s
+
+# target to generate assembly for a file
+src/begin_delete.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/begin_delete.c.s
+.PHONY : src/begin_delete.c.s
+
 src/bfs.o: src/bfs.c.o
 
 .PHONY : src/bfs.o
@@ -3119,6 +3146,33 @@ src/counts_links.s: src/counts_links.c.s
 src/counts_links.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/counts_links.c.s
 .PHONY : src/counts_links.c.s
+
+src/delete_input_forks.o: src/delete_input_forks.c.o
+
+.PHONY : src/delete_input_forks.o
+
+# target to build an object file
+src/delete_input_forks.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/delete_input_forks.c.o
+.PHONY : src/delete_input_forks.c.o
+
+src/delete_input_forks.i: src/delete_input_forks.c.i
+
+.PHONY : src/delete_input_forks.i
+
+# target to preprocess a source file
+src/delete_input_forks.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/delete_input_forks.c.i
+.PHONY : src/delete_input_forks.c.i
+
+src/delete_input_forks.s: src/delete_input_forks.c.s
+
+.PHONY : src/delete_input_forks.s
+
+# target to generate assembly for a file
+src/delete_input_forks.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/delete_input_forks.c.s
+.PHONY : src/delete_input_forks.c.s
 
 src/delete_links.o: src/delete_links.c.o
 
@@ -3390,32 +3444,32 @@ src/queue_funcs.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/queue_funcs.c.s
 .PHONY : src/queue_funcs.c.s
 
-src/test_file.o: src/test_file.c.o
+src/start_algo.o: src/start_algo.c.o
 
-.PHONY : src/test_file.o
+.PHONY : src/start_algo.o
 
 # target to build an object file
-src/test_file.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/test_file.c.o
-.PHONY : src/test_file.c.o
+src/start_algo.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/start_algo.c.o
+.PHONY : src/start_algo.c.o
 
-src/test_file.i: src/test_file.c.i
+src/start_algo.i: src/start_algo.c.i
 
-.PHONY : src/test_file.i
+.PHONY : src/start_algo.i
 
 # target to preprocess a source file
-src/test_file.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/test_file.c.i
-.PHONY : src/test_file.c.i
+src/start_algo.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/start_algo.c.i
+.PHONY : src/start_algo.c.i
 
-src/test_file.s: src/test_file.c.s
+src/start_algo.s: src/start_algo.c.s
 
-.PHONY : src/test_file.s
+.PHONY : src/start_algo.s
 
 # target to generate assembly for a file
-src/test_file.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/test_file.c.s
-.PHONY : src/test_file.c.s
+src/start_algo.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/start_algo.c.s
+.PHONY : src/start_algo.c.s
 
 src/validation.o: src/validation.c.o
 
@@ -3777,6 +3831,9 @@ help:
 	@echo "... src/aux.o"
 	@echo "... src/aux.i"
 	@echo "... src/aux.s"
+	@echo "... src/begin_delete.o"
+	@echo "... src/begin_delete.i"
+	@echo "... src/begin_delete.s"
 	@echo "... src/bfs.o"
 	@echo "... src/bfs.i"
 	@echo "... src/bfs.s"
@@ -3786,6 +3843,9 @@ help:
 	@echo "... src/counts_links.o"
 	@echo "... src/counts_links.i"
 	@echo "... src/counts_links.s"
+	@echo "... src/delete_input_forks.o"
+	@echo "... src/delete_input_forks.i"
+	@echo "... src/delete_input_forks.s"
 	@echo "... src/delete_links.o"
 	@echo "... src/delete_links.i"
 	@echo "... src/delete_links.s"
@@ -3816,9 +3876,9 @@ help:
 	@echo "... src/queue_funcs.o"
 	@echo "... src/queue_funcs.i"
 	@echo "... src/queue_funcs.s"
-	@echo "... src/test_file.o"
-	@echo "... src/test_file.i"
-	@echo "... src/test_file.s"
+	@echo "... src/start_algo.o"
+	@echo "... src/start_algo.i"
+	@echo "... src/start_algo.s"
 	@echo "... src/validation.o"
 	@echo "... src/validation.i"
 	@echo "... src/validation.s"

@@ -134,7 +134,6 @@ add_executable(lem_in
         src/map.c
         src/move_ants.c
         src/queue_funcs.c
-        src/test_file.c
         src/validation.c
         author
-        Makefile)
+        Makefile src/start_algo.c src/begin_delete.c src/delete_input_forks.c)

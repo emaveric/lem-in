@@ -112,9 +112,11 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/eshor/lem-in_lexa/ft_printf/src/pf_libft.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/ft_printf/src/pf_libft.c.o"
   "/Users/eshor/lem-in_lexa/ft_printf/src/print_check.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/ft_printf/src/print_check.c.o"
   "/Users/eshor/lem-in_lexa/src/aux.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/aux.c.o"
+  "/Users/eshor/lem-in_lexa/src/begin_delete.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/begin_delete.c.o"
   "/Users/eshor/lem-in_lexa/src/bfs.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/bfs.c.o"
   "/Users/eshor/lem-in_lexa/src/check.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/check.c.o"
   "/Users/eshor/lem-in_lexa/src/counts_links.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/counts_links.c.o"
+  "/Users/eshor/lem-in_lexa/src/delete_input_forks.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/delete_input_forks.c.o"
   "/Users/eshor/lem-in_lexa/src/delete_links.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/delete_links.c.o"
   "/Users/eshor/lem-in_lexa/src/form_paths.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/form_paths.c.o"
   "/Users/eshor/lem-in_lexa/src/get_room.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/get_room.c.o"
@@ -125,7 +127,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/eshor/lem-in_lexa/src/map.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/map.c.o"
   "/Users/eshor/lem-in_lexa/src/move_ants.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/move_ants.c.o"
   "/Users/eshor/lem-in_lexa/src/queue_funcs.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/queue_funcs.c.o"
-  "/Users/eshor/lem-in_lexa/src/test_file.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/test_file.c.o"
+  "/Users/eshor/lem-in_lexa/src/start_algo.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/start_algo.c.o"
   "/Users/eshor/lem-in_lexa/src/validation.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/validation.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

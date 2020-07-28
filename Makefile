@@ -6,7 +6,7 @@
 #    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/23 16:43:36 by emaveric          #+#    #+#              #
-#    Updated: 2020/07/27 18:15:08 by eshor            ###   ########.fr        #
+#    Updated: 2020/07/28 16:59:58 by eshor            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ OBJ_DIR = ./obj/
 
 SRC_NAME =	lem-in.c init.c get_room.c map.c validation.c check.c move_ants.c \
 			many_dashes_link.c bfs.c aux.c counts_links.c form_paths.c \
-			improve_links.c delete_links.c test_file.c queue_funcs.c
+			improve_links.c delete_links.c start_algo.c queue_funcs.c \
+			begin_delete.c delete_input_forks.c
 
 HEADER = $(addprefix $(INC_DIR), $(HEADER_NAME))
 

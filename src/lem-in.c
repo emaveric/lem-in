@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/27 18:15:08 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/28 14:52:11 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ int		main(int ac, char **av)
 	else
 		return (ERROR);
 	ft_printf("my seg\n");
-	print_all(l_i);
+	start_algo(l_i);
 	exit(0);
 }

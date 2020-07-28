@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/28 16:17:33 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/28 16:41:20 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void                push_node(t_queue **queue, t_queue *node);
 t_room              *pop_node(t_queue **queue);
 void                free_queue(t_queue **queue);
 
-
+int start_algo(t_lem_in *lem_in);
 int                bfs(t_lem_in *lem_in);
 
 /*
@@ -113,7 +113,7 @@ void 	delete_useless(t_lem_in *lem_in);
 void 	count_input_output(t_lem_in *lem_in);
 void 	delete_dead_ends(t_lem_in *lem_in);
 int has_output_forks(t_lem_in *lem_in, int room_id);
-void delete_input_forks(t_lem_in *lem_in);
+int delete_input_forks(t_lem_in *lem_in);
 void delete_output_forks(t_lem_in *lem_in);
 int find_shortest(t_lem_in *lem_in, int room_id);
 void 	define_next(t_lem_in *lem_in);
@@ -139,7 +139,6 @@ void move_ants(t_lem_in *lem_in);
 void print_links(int **arr,  int len, t_room **rooms);
 void print_rooms(t_room **rooms, int len);
 void print_paths(t_lem_in *lem_in);
-void print_all(t_lem_in *lem_in);
 void print_link_arr(int **arr, int len);
 void print_queue(t_queue *q);
 
