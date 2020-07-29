@@ -3228,6 +3228,33 @@ src/form_paths.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/form_paths.c.s
 .PHONY : src/form_paths.c.s
 
+src/free_funcs.o: src/free_funcs.c.o
+
+.PHONY : src/free_funcs.o
+
+# target to build an object file
+src/free_funcs.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/free_funcs.c.o
+.PHONY : src/free_funcs.c.o
+
+src/free_funcs.i: src/free_funcs.c.i
+
+.PHONY : src/free_funcs.i
+
+# target to preprocess a source file
+src/free_funcs.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/free_funcs.c.i
+.PHONY : src/free_funcs.c.i
+
+src/free_funcs.s: src/free_funcs.c.s
+
+.PHONY : src/free_funcs.s
+
+# target to generate assembly for a file
+src/free_funcs.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/free_funcs.c.s
+.PHONY : src/free_funcs.c.s
+
 src/get_room.o: src/get_room.c.o
 
 .PHONY : src/get_room.o
@@ -3852,6 +3879,9 @@ help:
 	@echo "... src/form_paths.o"
 	@echo "... src/form_paths.i"
 	@echo "... src/form_paths.s"
+	@echo "... src/free_funcs.o"
+	@echo "... src/free_funcs.i"
+	@echo "... src/free_funcs.s"
 	@echo "... src/get_room.o"
 	@echo "... src/get_room.i"
 	@echo "... src/get_room.s"

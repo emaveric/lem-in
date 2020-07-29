@@ -452,6 +452,9 @@
 		<Unit filename="/Users/eshor/lem-in_lexa/src/form_paths.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/eshor/lem-in_lexa/src/free_funcs.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/eshor/lem-in_lexa/src/get_room.c">
 			<Option target="lem_in"/>
 		</Unit>

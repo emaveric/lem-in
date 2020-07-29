@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/28 14:52:11 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/29 12:56:06 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		main(int ac, char **av)
 {
 	t_lem_in	*l_i;
 	char 		tmp;
+	char *str;
 
 	if (!(l_i = init_l_i()))
 		return (0);
@@ -62,7 +63,7 @@ int		main(int ac, char **av)
 	}
 	else
 		return (ERROR);
-	ft_printf("my seg\n");
 	start_algo(l_i);
+	free_all(&l_i);
 	exit(0);
 }

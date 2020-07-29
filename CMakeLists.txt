@@ -136,4 +136,4 @@ add_executable(lem_in
         src/queue_funcs.c
         src/validation.c
         author
-        Makefile src/start_algo.c src/begin_delete.c src/delete_input_forks.c)
+        Makefile src/start_algo.c src/begin_delete.c src/delete_input_forks.c src/free_funcs.c)

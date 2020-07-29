@@ -23,7 +23,7 @@ OBJ_DIR = ./obj/
 SRC_NAME =	lem-in.c init.c get_room.c map.c validation.c check.c move_ants.c \
 			many_dashes_link.c bfs.c aux.c counts_links.c form_paths.c \
 			improve_links.c delete_links.c start_algo.c queue_funcs.c \
-			begin_delete.c delete_input_forks.c
+			begin_delete.c delete_input_forks.c free_funcs.c
 
 HEADER = $(addprefix $(INC_DIR), $(HEADER_NAME))
 

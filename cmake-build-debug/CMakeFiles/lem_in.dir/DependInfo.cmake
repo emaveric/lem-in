@@ -119,6 +119,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/eshor/lem-in_lexa/src/delete_input_forks.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/delete_input_forks.c.o"
   "/Users/eshor/lem-in_lexa/src/delete_links.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/delete_links.c.o"
   "/Users/eshor/lem-in_lexa/src/form_paths.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/form_paths.c.o"
+  "/Users/eshor/lem-in_lexa/src/free_funcs.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/free_funcs.c.o"
   "/Users/eshor/lem-in_lexa/src/get_room.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/get_room.c.o"
   "/Users/eshor/lem-in_lexa/src/improve_links.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/improve_links.c.o"
   "/Users/eshor/lem-in_lexa/src/init.c" "/Users/eshor/lem-in_lexa/cmake-build-debug/CMakeFiles/lem_in.dir/src/init.c.o"

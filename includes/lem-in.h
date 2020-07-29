@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/28 16:41:20 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/29 12:23:07 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,6 @@ typedef struct		s_room
 	struct s_room	*prev;
 	int 			ant_name;
 }					t_room;
-
-typedef struct		s_link
-{
-	t_room 			*start;
-	t_room 			*end;
-}					t_link;
 
 typedef struct		s_queue
 {
@@ -70,10 +64,7 @@ typedef struct		s_lem_in
 	int 			link_num;
 	int 			**link_arr;
 	char 			**line;
-	t_room          *start_room;
-	/*t_room			*end;*/
 	t_room			**rooms;
-	t_link			**links;
 	t_path 			**paths;
 	int 			path_num;
 	int				bfs_level;
@@ -132,6 +123,8 @@ int		does_path_end(t_room *head);
 t_room *find_last_room(t_room *head);
 void move_all_in_path(t_lem_in *lem_in, t_room *room, int *is_start);
 void move_ants(t_lem_in *lem_in);
+
+void free_all(t_lem_in **lem_in);
 
 /*
  * auxiliary functions; delete later
