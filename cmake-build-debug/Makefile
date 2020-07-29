@@ -3444,6 +3444,33 @@ src/move_ants.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/move_ants.c.s
 .PHONY : src/move_ants.c.s
 
+src/path_funcs.o: src/path_funcs.c.o
+
+.PHONY : src/path_funcs.o
+
+# target to build an object file
+src/path_funcs.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/path_funcs.c.o
+.PHONY : src/path_funcs.c.o
+
+src/path_funcs.i: src/path_funcs.c.i
+
+.PHONY : src/path_funcs.i
+
+# target to preprocess a source file
+src/path_funcs.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/path_funcs.c.i
+.PHONY : src/path_funcs.c.i
+
+src/path_funcs.s: src/path_funcs.c.s
+
+.PHONY : src/path_funcs.s
+
+# target to generate assembly for a file
+src/path_funcs.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/path_funcs.c.s
+.PHONY : src/path_funcs.c.s
+
 src/queue_funcs.o: src/queue_funcs.c.o
 
 .PHONY : src/queue_funcs.o
@@ -3903,6 +3930,9 @@ help:
 	@echo "... src/move_ants.o"
 	@echo "... src/move_ants.i"
 	@echo "... src/move_ants.s"
+	@echo "... src/path_funcs.o"
+	@echo "... src/path_funcs.i"
+	@echo "... src/path_funcs.s"
 	@echo "... src/queue_funcs.o"
 	@echo "... src/queue_funcs.i"
 	@echo "... src/queue_funcs.s"

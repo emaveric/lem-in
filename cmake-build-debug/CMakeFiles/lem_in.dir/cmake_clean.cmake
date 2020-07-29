@@ -122,6 +122,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/src/many_dashes_link.c.o"
   "CMakeFiles/lem_in.dir/src/map.c.o"
   "CMakeFiles/lem_in.dir/src/move_ants.c.o"
+  "CMakeFiles/lem_in.dir/src/path_funcs.c.o"
   "CMakeFiles/lem_in.dir/src/queue_funcs.c.o"
   "CMakeFiles/lem_in.dir/src/start_algo.c.o"
   "CMakeFiles/lem_in.dir/src/validation.c.o"

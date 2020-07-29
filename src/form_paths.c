@@ -1,52 +1,9 @@
 #include "../includes/lem-in.h"
 
-void 	sort_paths(t_path **paths, int num)
+int		does_path_end(t_room *head)
 {
-	int i;
-	int j;
-	t_path *temp;
-
-	i = 0;
-	while (i < num - 1)
-	{
-		j = i + 1;
-		while (j < num)
-		{
-			if (paths[i]->len > paths[j]->len)
-			{
-				temp = paths[i];
-				paths[i] = paths[j];
-				paths[j] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-}
-
-void 	define_comp_num(t_path **paths, int num)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (i < num)
-	{
-		paths[i]->comp = 0;
-		j = 0;
-		while (j < i)
-		{
-			paths[i]->comp += paths[i]->len - paths[j]->len;
-			j++;
-		}
-		i++;
-	}
-}
-
-int does_path_end(t_room *head)
-{
-	t_room *temp;
-	t_room *prev;
+	t_room	*temp;
+	t_room	*prev;
 
 	temp = head;
 	prev = NULL;
@@ -60,18 +17,14 @@ int does_path_end(t_room *head)
 	if (temp->level == MAX_INT)
 		return (1);
 	else
-		return(ERROR);
-
+		return (ERROR);
 }
 
-int 	form_paths(t_lem_in *lem_in)
+void	get_path_num(t_lem_in *lem_in)
 {
 	int i;
-	int path_counter;
-	int len;
-	t_room *temp;
 
-	i =  1;
+	i = 1;
 	while (i < lem_in->room_num)
 	{
 		if (lem_in->link_arr[0][i] == 1)
@@ -86,30 +39,47 @@ int 	form_paths(t_lem_in *lem_in)
 		}
 		i++;
 	}
+}
+
+int		form_one(t_lem_in *lem_in, int i, int path_counter)
+{
+	t_room	*temp;
+	int		len;
+
+	len = 0;
+	lem_in->paths[path_counter] = (t_path*)malloc(sizeof(t_path));
+	if (!lem_in->paths[path_counter])
+		return (ERROR);
+	lem_in->paths[path_counter]->head = lem_in->rooms[i];
+	temp = lem_in->rooms[i];
+	while (temp)
+	{
+		len++;
+		temp = temp->next;
+	}
+	lem_in->paths[path_counter]->len = len;
+	return (0);
+}
+
+int		form_paths(t_lem_in *lem_in)
+{
+	int		i;
+	int		path_counter;
+
+	get_path_num(lem_in);
 	lem_in->paths = (t_path**)malloc(sizeof(t_path*) * lem_in->path_num);
 	if (!lem_in->paths)
-		return (-1);
+		return (ERROR);
 	path_counter = 0;
 	i = 1;
 	while (i < lem_in->room_num)
 	{
 		if (lem_in->link_arr[0][i] == 1)
 		{
-			len = 0;
-			lem_in->paths[path_counter] = (t_path*)malloc(sizeof(t_path));
-			if (!lem_in->paths[path_counter])
-				return (-1);
-			lem_in->paths[path_counter]->head = lem_in->rooms[i];
-			temp = lem_in->rooms[i];
-			while (temp)
-			{
-				len++;
-				temp = temp->next;
-			}
-			lem_in->paths[path_counter]->len = len;
+			form_one(lem_in, i, path_counter);
 			path_counter++;
 		}
 		i++;
 	}
-	return(0);
+	return (0);
 }
