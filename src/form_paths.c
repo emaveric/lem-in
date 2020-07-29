@@ -50,10 +50,8 @@ int does_path_end(t_room *head)
 
 	temp = head;
 	prev = NULL;
-	ft_printf("path starting in room %s\n", head->name);
 	while (temp->next)
 	{
-		ft_printf("room %s -> ", temp->name);
 		temp->prev = prev;
 		prev = temp;
 		temp = temp->next;
@@ -62,10 +60,7 @@ int does_path_end(t_room *head)
 	if (temp->level == MAX_INT)
 		return (1);
 	else
-	{
-		ft_printf("can't reach the end\n");
 		return(ERROR);
-	}
 
 }
 

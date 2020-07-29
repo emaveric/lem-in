@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/29 12:23:07 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/29 12:28:04 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void 	count_input_output(t_lem_in *lem_in);
 void 	delete_dead_ends(t_lem_in *lem_in);
 int has_output_forks(t_lem_in *lem_in, int room_id);
 int delete_input_forks(t_lem_in *lem_in);
-void delete_output_forks(t_lem_in *lem_in);
+int delete_output_forks(t_lem_in *lem_in);
 int find_shortest(t_lem_in *lem_in, int room_id);
 void 	define_next(t_lem_in *lem_in);
 
