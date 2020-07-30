@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/29 12:28:04 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/30 13:18:36 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ typedef struct		s_lem_in
 	int 			ant_end;
 	int 			room_num; // кол-во
 	int 			link_num;
-	int 			**link_arr;
+	char 			**link_arr;
 	char 			**line;
 	t_room			**rooms;
 	t_path 			**paths;
@@ -77,7 +77,7 @@ int 				coord_valid(t_lem_in *l_i, char **str, int n);
 int					get_room(t_lem_in *l_i, char *line, int i, int j);
 t_lem_in			*init_l_i(void);
 t_room				*init_room(void);
-int 				**init_link_arr(t_lem_in *l_i);
+char 		**init_link_arr(t_lem_in *l_i);
 int 				same_name_and_coord_valid(t_lem_in *l_i);
 int 				is_link(t_lem_in *l_i, int j, int k);
 int 				room_num_check(t_lem_in *l_i);
@@ -124,7 +124,7 @@ t_room *find_last_room(t_room *head);
 void move_all_in_path(t_lem_in *lem_in, t_room *room, int *is_start);
 void move_ants(t_lem_in *lem_in);
 
-void free_all(t_lem_in **lem_in);
+void free_all(t_lem_in *lem_in);
 
 /*
  * auxiliary functions; delete later

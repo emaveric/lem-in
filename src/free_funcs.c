@@ -27,20 +27,20 @@ void free_paths(t_path **paths, int num)
 	free(paths);
 }
 
-void free_all(t_lem_in **lem_in)
+void free_all(t_lem_in *lem_in)
 {
 	int i;
 
 	i = 0;
-	while (i < (*lem_in)->room_num)
+	while (i < (lem_in)->room_num)
 	{
-		free((*lem_in)->link_arr[i]);
+		free((lem_in)->link_arr[i]);
 		i++;
 	}
-	free((*lem_in)->link_arr);
-	(*lem_in)->link_arr = NULL;
-	free_rooms((*lem_in)->rooms, (*lem_in)->room_num);
-	free_paths((*lem_in)->paths, (*lem_in)->path_num);
-	free(*lem_in);
+	free((lem_in)->link_arr);
+	(lem_in)->link_arr = NULL;
+	free_rooms((lem_in)->rooms, (lem_in)->room_num);
+	free_paths((lem_in)->paths, (lem_in)->path_num);
+	free(lem_in);
 	//free line
 }

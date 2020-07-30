@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/29 12:56:06 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/30 13:48:47 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 int		map_reading(int fd, t_lem_in *l_i)
 {
-    char 	buff[B_SIZE + 1];
+	char *buff;
+//    char 	buff[B_SIZE + 1];
     int 	data;
-    int 	i;
 
+    buff = (char*)malloc(B_SIZE);
     if ((data = read(fd, buff, B_SIZE)) < 32)
 	{
-    	printf("\n%s\n%d\n", buff, data);
+//    	printf("\n%s\n%d\n", buff, data);
     	return (ERROR); // минимально возможное кол-во символов на валидной карте - 32
 	}
     buff[data] = '\0';
-    i = 0;
     if (empty_line_check(buff) == ERROR)
 	{
     	printf("\nempty line\n");
@@ -36,10 +36,10 @@ int		map_reading(int fd, t_lem_in *l_i)
     	printf("error in map reading\n");
     	return (ERROR);
 	}
-    //printf("\nr_num %d\n", l_i->room_num);
     if (get_map(l_i, 0) == ERROR)
     	return (ERROR);
-    printf("\nOK\n");
+//    printf("\nOK\n");
+    free(buff);
     return (0);
 }
 
@@ -64,6 +64,5 @@ int		main(int ac, char **av)
 	else
 		return (ERROR);
 	start_algo(l_i);
-	free_all(&l_i);
 	exit(0);
 }

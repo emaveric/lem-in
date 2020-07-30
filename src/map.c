@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/27 18:15:08 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/30 13:38:14 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,13 @@ int 	get_link(t_lem_in *l_i, char *line, int i, int j)
 	}
 	if (is_link(l_i, j, k) == ERROR)
 		return (ERROR);
+	i = 0;
+	while(str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 	return (0);
 }
 
@@ -63,7 +70,7 @@ int		get_ant(t_lem_in *l_i, char *line)
 	int 	j;
 
 	j = 0;
-	printf("\n%s\n", line);
+//	printf("\n%s\n", line);
 	while (line[j] != '\0')
 	{
 		if (ft_isdigit(line[j]) == 0)
@@ -125,6 +132,8 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 
 int		get_map(t_lem_in *l_i, int i)
 {
+	if (!(l_i->rooms = (t_room **)malloc(sizeof(t_room*) * l_i->room_num)))
+		return (ERROR);
 	while (i < l_i->room_num)
 	{
 		if (!(l_i->rooms[i] = init_room()))

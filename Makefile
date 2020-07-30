@@ -30,7 +30,7 @@ HEADER = $(addprefix $(INC_DIR), $(HEADER_NAME))
 SRC = $(addprefix $(SRC_DIR), $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_NAME:.c=.o))
 
-FLAGS =
+FLAGS = -g
 GCC_PRINTF = -L ./ft_printf -l ftprintf
 
 all: $(LEM-IN)

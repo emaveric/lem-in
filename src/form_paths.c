@@ -13,7 +13,6 @@ int		does_path_end(t_room *head)
 		prev = temp;
 		temp = temp->next;
 	}
-	ft_printf("\n");
 	if (temp->level == MAX_INT)
 		return (1);
 	else

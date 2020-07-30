@@ -6,36 +6,25 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 15:47:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/29 13:32:09 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/30 13:20:28 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem-in.h"
 
-t_queue		*init_queue(void)
+char 		**init_link_arr(t_lem_in *l_i)
 {
-	t_queue		*new;
-
-	if (!(new = (t_queue *)malloc(sizeof(t_queue))))
-		return (NULL);
-	new->next = NULL;
-	new->room = NULL;
-	return (new);
-}
-
-int 		**init_link_arr(t_lem_in *l_i)
-{
-	int 	**new;
+	char	**new;
 	int 	i;
 	int 	j;
 
-	if (!(new = (int **)malloc(sizeof(int *) * l_i->room_num)))
+	if (!(new = (char **)malloc(sizeof(char *) * l_i->room_num)))
 		return (NULL);
 	i = 0;
 	j = 0;
 	while (i < l_i->room_num)
 	{
-		if (!(new[i] = (int *)malloc(sizeof(int) * l_i->room_num)))
+		if (!(new[i] = (char *)malloc(sizeof(char) * l_i->room_num)))
 			return (NULL);
 		while (j < l_i->room_num)
 		{
@@ -52,7 +41,7 @@ t_room		*init_room(void)
 {
 	t_room		*new;
 
-	if (!(new = (t_room *)malloc(sizeof(t_room))))
+	if (!(new = (t_room *)malloc(sizeof(struct s_room))))
 		return (NULL);
 	new->level = -1;
 	new->x = 0;
@@ -70,7 +59,7 @@ t_lem_in	*init_l_i(void)
 {
 	t_lem_in	*new;
 
-	if (!(new = (t_lem_in *)malloc(sizeof(t_lem_in))))
+	if (!(new = (t_lem_in *)malloc(sizeof(struct s_lem_in))))
 		return (NULL);
 	new->ant_num = 0;
 	new->ant_start = 0;
@@ -86,8 +75,7 @@ t_lem_in	*init_l_i(void)
 	new->e_l_flag = 0;
 	new->i = 1;
 	new->j = 0;
-	if (!(new->rooms = (t_room **)malloc(sizeof(t_room*))))
-		return (NULL);
+
 	return (new);
 }
 
