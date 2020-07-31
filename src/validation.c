@@ -43,7 +43,7 @@ int 	coord_valid(t_lem_in *l_i, char **str, int n)
 int 	is_link(t_lem_in *l_i, int j, int k)
 {
 	if (k == -1 || j == -1 ||
-		l_i->link_arr[j][k] == 1 || l_i->link_arr[k][j] == 1)
+		l_i->link_arr[j][k] == 3 || l_i->link_arr[k][j] == 3)
 	{
 		//printf("k = %d, j = %d, [j][k] = %d, [k][j] = %d, same link\n", k, j, l_i->link_arr[j][k], l_i->link_arr[k][j]);
 		return (ERROR);
@@ -52,8 +52,8 @@ int 	is_link(t_lem_in *l_i, int j, int k)
 		l_i->s_l_flag = 1;
 	if (k == l_i->room_num - 1 || j == l_i->room_num - 1)
 		l_i->e_l_flag = 1;
-	l_i->link_arr[j][k] = 1;
-	l_i->link_arr[k][j] = 1;
+	l_i->link_arr[j][k] = 3;
+	l_i->link_arr[k][j] = 3;
 	l_i->link_num++;
 	return (0);
 	/*int 	i;

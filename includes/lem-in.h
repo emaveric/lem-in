@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/30 19:08:50 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/31 14:33:43 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,15 @@ void 	delete_dead_ends(t_lem_in *lem_in);
 t_path *create_path(t_room *head, int len);
 void add_path(t_path **paths, t_path *new);
 t_path *find_shortest(t_lem_in *lem_in);
+int pathfinder(t_lem_in *lem_in);
+int 	does_path_end(t_lem_in *lem_in, int room_id);
+int pathfinder(t_lem_in *lem_in);
 
+/*
+ * edmonds-karp
+ */
+int are_end_inputs_filled(t_lem_in *lem_in);
+int	edmonds_karp(t_lem_in *lem_in);
 
 /*
  * dfs
@@ -126,7 +134,7 @@ void move_all_in_path(t_lem_in *lem_in, t_room *room, int *is_start);
 void move_ants(t_lem_in *lem_in);
 
 void free_all(t_lem_in *lem_in);
-
+void free_paths(t_path **path);
 /*
  * auxiliary functions; delete later
  */

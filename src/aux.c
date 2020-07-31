@@ -12,7 +12,7 @@ void print_links(char **arr,  int len, t_room **rooms)
 		j = 0;
 		while (j < len)
 		{
-			if ((arr[i][j] == 1 || arr[i][j] == 2) && i < j)
+			if ((arr[i][j] == 3 || arr[i][j] == 2) && i < j)
 			{
 				ft_printf("room %s -- room %s\n", rooms[i]->name, rooms[j]->name);
 			}
@@ -66,12 +66,21 @@ void print_link_arr(char **arr, int len)
 
 	i = 0;
 	j = 0;
+	ft_printf("x\t");
 	while (i < len)
 	{
+		ft_printf("%d\t", i);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	while (i < len)
+	{
+		ft_printf("%d\t", i);
 		j = 0;
 		while (j < len)
 		{
-			ft_printf("%d ", arr[i][j]);
+			ft_printf("%d\t", arr[i][j]);
 			j++;
 		}
 		ft_printf("\n");

@@ -14,17 +14,18 @@ void free_rooms(t_room **rooms,  int num)
 	free(rooms);
 }
 
-void free_paths(t_path **paths, int num)
+void free_paths(t_path **path)
 {
-	int i;
+	t_path *temp;
 
-	i = 0;
-	while (i < num)
+	temp = *path;
+	while (temp)
 	{
-		free(paths[i]);
-		i++;
+		*path = temp;
+		free(*path);
+		temp = temp->next;
 	}
-	free(paths);
+	*path = NULL;
 }
 
 void free_all(t_lem_in *lem_in)
@@ -40,7 +41,7 @@ void free_all(t_lem_in *lem_in)
 	free((lem_in)->link_arr);
 	(lem_in)->link_arr = NULL;
 	free_rooms((lem_in)->rooms, (lem_in)->room_num);
-	free_paths((lem_in)->paths, (lem_in)->path_num);
+//	free_paths((lem_in)->paths, (lem_in)->path_num);
 	free(lem_in);
 	//free line
 }
