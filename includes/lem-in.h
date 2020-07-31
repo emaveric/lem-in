@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/30 13:18:36 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/30 19:08:50 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct 		s_path
 	t_room 			*head;
 	int 			len;
 	int				comp;
+	struct s_path 	*next;
 }					t_path;
 
 typedef struct		s_lem_in
@@ -65,7 +66,7 @@ typedef struct		s_lem_in
 	char 			**link_arr;
 	char 			**line;
 	t_room			**rooms;
-	t_path 			**paths;
+	t_path 			*paths;
 	int 			path_num;
 	int				bfs_level;
 }					t_lem_in;
@@ -103,19 +104,19 @@ int                bfs(t_lem_in *lem_in);
 void 	delete_useless(t_lem_in *lem_in);
 void 	count_input_output(t_lem_in *lem_in);
 void 	delete_dead_ends(t_lem_in *lem_in);
-int has_output_forks(t_lem_in *lem_in, int room_id);
-int delete_input_forks(t_lem_in *lem_in);
-int delete_output_forks(t_lem_in *lem_in);
-int find_shortest(t_lem_in *lem_in, int room_id);
-void 	define_next(t_lem_in *lem_in);
 
 /*
  * operations with paths
  */
-int 	form_paths(t_lem_in *lem_in);
-void 	sort_paths(t_path **paths, int num);
-void 	define_comp_num(t_path **paths, int num);
-int		does_path_end(t_room *head);
+t_path *create_path(t_room *head, int len);
+void add_path(t_path **paths, t_path *new);
+t_path *find_shortest(t_lem_in *lem_in);
+
+
+/*
+ * dfs
+ */
+int is_room_in_path(t_lem_in *lem_in, int room_id);
 
 /*
  * move ants
@@ -129,10 +130,10 @@ void free_all(t_lem_in *lem_in);
 /*
  * auxiliary functions; delete later
  */
-void print_links(int **arr,  int len, t_room **rooms);
+void print_links(char **arr,  int len, t_room **rooms);
 void print_rooms(t_room **rooms, int len);
 void print_paths(t_lem_in *lem_in);
-void print_link_arr(int **arr, int len);
+void print_link_arr(char **arr, int len);
 void print_queue(t_queue *q);
 
 #endif

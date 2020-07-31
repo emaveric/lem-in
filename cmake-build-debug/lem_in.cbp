@@ -443,10 +443,10 @@
 		<Unit filename="/Users/eshor/lem-in/src/counts_links.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/eshor/lem-in/src/delete_input_forks.c">
+		<Unit filename="/Users/eshor/lem-in/src/dfs.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/eshor/lem-in/src/delete_links.c">
+		<Unit filename="/Users/eshor/lem-in/src/edmonds-karp.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/eshor/lem-in/src/form_paths.c">

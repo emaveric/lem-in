@@ -1500,22 +1500,9 @@ CMakeFiles/lem_in.dir/src/counts_links.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/counts_links.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/eshor/lem-in/src/counts_links.c -o CMakeFiles/lem_in.dir/src/counts_links.c.s
 
-CMakeFiles/lem_in.dir/src/delete_links.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/src/delete_links.c.o: ../src/delete_links.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/lem_in.dir/src/delete_links.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/delete_links.c.o   -c /Users/eshor/lem-in/src/delete_links.c
-
-CMakeFiles/lem_in.dir/src/delete_links.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/delete_links.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/eshor/lem-in/src/delete_links.c > CMakeFiles/lem_in.dir/src/delete_links.c.i
-
-CMakeFiles/lem_in.dir/src/delete_links.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/delete_links.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/eshor/lem-in/src/delete_links.c -o CMakeFiles/lem_in.dir/src/delete_links.c.s
-
 CMakeFiles/lem_in.dir/src/form_paths.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/form_paths.c.o: ../src/form_paths.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/lem_in.dir/src/form_paths.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/lem_in.dir/src/form_paths.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/form_paths.c.o   -c /Users/eshor/lem-in/src/form_paths.c
 
 CMakeFiles/lem_in.dir/src/form_paths.c.i: cmake_force
@@ -1528,7 +1515,7 @@ CMakeFiles/lem_in.dir/src/form_paths.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/get_room.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/get_room.c.o: ../src/get_room.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/lem_in.dir/src/get_room.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/lem_in.dir/src/get_room.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/get_room.c.o   -c /Users/eshor/lem-in/src/get_room.c
 
 CMakeFiles/lem_in.dir/src/get_room.c.i: cmake_force
@@ -1541,7 +1528,7 @@ CMakeFiles/lem_in.dir/src/get_room.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/improve_links.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/improve_links.c.o: ../src/improve_links.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/lem_in.dir/src/improve_links.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/lem_in.dir/src/improve_links.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/improve_links.c.o   -c /Users/eshor/lem-in/src/improve_links.c
 
 CMakeFiles/lem_in.dir/src/improve_links.c.i: cmake_force
@@ -1554,7 +1541,7 @@ CMakeFiles/lem_in.dir/src/improve_links.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/init.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/init.c.o: ../src/init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/lem_in.dir/src/init.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/lem_in.dir/src/init.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/init.c.o   -c /Users/eshor/lem-in/src/init.c
 
 CMakeFiles/lem_in.dir/src/init.c.i: cmake_force
@@ -1567,7 +1554,7 @@ CMakeFiles/lem_in.dir/src/init.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/lem-in.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/lem-in.c.o: ../src/lem-in.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/lem_in.dir/src/lem-in.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/lem_in.dir/src/lem-in.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/lem-in.c.o   -c /Users/eshor/lem-in/src/lem-in.c
 
 CMakeFiles/lem_in.dir/src/lem-in.c.i: cmake_force
@@ -1580,7 +1567,7 @@ CMakeFiles/lem_in.dir/src/lem-in.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/many_dashes_link.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/many_dashes_link.c.o: ../src/many_dashes_link.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/lem_in.dir/src/many_dashes_link.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/lem_in.dir/src/many_dashes_link.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/many_dashes_link.c.o   -c /Users/eshor/lem-in/src/many_dashes_link.c
 
 CMakeFiles/lem_in.dir/src/many_dashes_link.c.i: cmake_force
@@ -1593,7 +1580,7 @@ CMakeFiles/lem_in.dir/src/many_dashes_link.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/map.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/map.c.o: ../src/map.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/lem_in.dir/src/map.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/lem_in.dir/src/map.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/map.c.o   -c /Users/eshor/lem-in/src/map.c
 
 CMakeFiles/lem_in.dir/src/map.c.i: cmake_force
@@ -1606,7 +1593,7 @@ CMakeFiles/lem_in.dir/src/map.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/move_ants.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/move_ants.c.o: ../src/move_ants.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/lem_in.dir/src/move_ants.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/lem_in.dir/src/move_ants.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/move_ants.c.o   -c /Users/eshor/lem-in/src/move_ants.c
 
 CMakeFiles/lem_in.dir/src/move_ants.c.i: cmake_force
@@ -1619,7 +1606,7 @@ CMakeFiles/lem_in.dir/src/move_ants.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/queue_funcs.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/queue_funcs.c.o: ../src/queue_funcs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/lem_in.dir/src/queue_funcs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/lem_in.dir/src/queue_funcs.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/queue_funcs.c.o   -c /Users/eshor/lem-in/src/queue_funcs.c
 
 CMakeFiles/lem_in.dir/src/queue_funcs.c.i: cmake_force
@@ -1632,7 +1619,7 @@ CMakeFiles/lem_in.dir/src/queue_funcs.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/validation.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/validation.c.o: ../src/validation.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/lem_in.dir/src/validation.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/lem_in.dir/src/validation.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/validation.c.o   -c /Users/eshor/lem-in/src/validation.c
 
 CMakeFiles/lem_in.dir/src/validation.c.i: cmake_force
@@ -1645,7 +1632,7 @@ CMakeFiles/lem_in.dir/src/validation.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/start_algo.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/start_algo.c.o: ../src/start_algo.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/lem_in.dir/src/start_algo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/lem_in.dir/src/start_algo.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/start_algo.c.o   -c /Users/eshor/lem-in/src/start_algo.c
 
 CMakeFiles/lem_in.dir/src/start_algo.c.i: cmake_force
@@ -1658,7 +1645,7 @@ CMakeFiles/lem_in.dir/src/start_algo.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/begin_delete.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/begin_delete.c.o: ../src/begin_delete.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/lem_in.dir/src/begin_delete.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/lem_in.dir/src/begin_delete.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/begin_delete.c.o   -c /Users/eshor/lem-in/src/begin_delete.c
 
 CMakeFiles/lem_in.dir/src/begin_delete.c.i: cmake_force
@@ -1669,22 +1656,9 @@ CMakeFiles/lem_in.dir/src/begin_delete.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/begin_delete.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/eshor/lem-in/src/begin_delete.c -o CMakeFiles/lem_in.dir/src/begin_delete.c.s
 
-CMakeFiles/lem_in.dir/src/delete_input_forks.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/src/delete_input_forks.c.o: ../src/delete_input_forks.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/lem_in.dir/src/delete_input_forks.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/delete_input_forks.c.o   -c /Users/eshor/lem-in/src/delete_input_forks.c
-
-CMakeFiles/lem_in.dir/src/delete_input_forks.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/delete_input_forks.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/eshor/lem-in/src/delete_input_forks.c > CMakeFiles/lem_in.dir/src/delete_input_forks.c.i
-
-CMakeFiles/lem_in.dir/src/delete_input_forks.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/delete_input_forks.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/eshor/lem-in/src/delete_input_forks.c -o CMakeFiles/lem_in.dir/src/delete_input_forks.c.s
-
 CMakeFiles/lem_in.dir/src/free_funcs.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/free_funcs.c.o: ../src/free_funcs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/lem_in.dir/src/free_funcs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/lem_in.dir/src/free_funcs.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/free_funcs.c.o   -c /Users/eshor/lem-in/src/free_funcs.c
 
 CMakeFiles/lem_in.dir/src/free_funcs.c.i: cmake_force
@@ -1697,7 +1671,7 @@ CMakeFiles/lem_in.dir/src/free_funcs.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/path_funcs.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/path_funcs.c.o: ../src/path_funcs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/lem_in.dir/src/path_funcs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/lem_in.dir/src/path_funcs.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/path_funcs.c.o   -c /Users/eshor/lem-in/src/path_funcs.c
 
 CMakeFiles/lem_in.dir/src/path_funcs.c.i: cmake_force
@@ -1707,6 +1681,32 @@ CMakeFiles/lem_in.dir/src/path_funcs.c.i: cmake_force
 CMakeFiles/lem_in.dir/src/path_funcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/path_funcs.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/eshor/lem-in/src/path_funcs.c -o CMakeFiles/lem_in.dir/src/path_funcs.c.s
+
+CMakeFiles/lem_in.dir/src/edmonds-karp.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/edmonds-karp.c.o: ../src/edmonds-karp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/lem_in.dir/src/edmonds-karp.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/edmonds-karp.c.o   -c /Users/eshor/lem-in/src/edmonds-karp.c
+
+CMakeFiles/lem_in.dir/src/edmonds-karp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/edmonds-karp.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/eshor/lem-in/src/edmonds-karp.c > CMakeFiles/lem_in.dir/src/edmonds-karp.c.i
+
+CMakeFiles/lem_in.dir/src/edmonds-karp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/edmonds-karp.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/eshor/lem-in/src/edmonds-karp.c -o CMakeFiles/lem_in.dir/src/edmonds-karp.c.s
+
+CMakeFiles/lem_in.dir/src/dfs.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/dfs.c.o: ../src/dfs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/lem_in.dir/src/dfs.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/dfs.c.o   -c /Users/eshor/lem-in/src/dfs.c
+
+CMakeFiles/lem_in.dir/src/dfs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/dfs.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/eshor/lem-in/src/dfs.c > CMakeFiles/lem_in.dir/src/dfs.c.i
+
+CMakeFiles/lem_in.dir/src/dfs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/dfs.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/eshor/lem-in/src/dfs.c -o CMakeFiles/lem_in.dir/src/dfs.c.s
 
 # Object files for target lem_in
 lem_in_OBJECTS = \
@@ -1821,7 +1821,6 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/src/bfs.c.o" \
 "CMakeFiles/lem_in.dir/src/check.c.o" \
 "CMakeFiles/lem_in.dir/src/counts_links.c.o" \
-"CMakeFiles/lem_in.dir/src/delete_links.c.o" \
 "CMakeFiles/lem_in.dir/src/form_paths.c.o" \
 "CMakeFiles/lem_in.dir/src/get_room.c.o" \
 "CMakeFiles/lem_in.dir/src/improve_links.c.o" \
@@ -1834,9 +1833,10 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/src/validation.c.o" \
 "CMakeFiles/lem_in.dir/src/start_algo.c.o" \
 "CMakeFiles/lem_in.dir/src/begin_delete.c.o" \
-"CMakeFiles/lem_in.dir/src/delete_input_forks.c.o" \
 "CMakeFiles/lem_in.dir/src/free_funcs.c.o" \
-"CMakeFiles/lem_in.dir/src/path_funcs.c.o"
+"CMakeFiles/lem_in.dir/src/path_funcs.c.o" \
+"CMakeFiles/lem_in.dir/src/edmonds-karp.c.o" \
+"CMakeFiles/lem_in.dir/src/dfs.c.o"
 
 # External object files for target lem_in
 lem_in_EXTERNAL_OBJECTS =
@@ -1952,7 +1952,6 @@ lem_in: CMakeFiles/lem_in.dir/src/aux.c.o
 lem_in: CMakeFiles/lem_in.dir/src/bfs.c.o
 lem_in: CMakeFiles/lem_in.dir/src/check.c.o
 lem_in: CMakeFiles/lem_in.dir/src/counts_links.c.o
-lem_in: CMakeFiles/lem_in.dir/src/delete_links.c.o
 lem_in: CMakeFiles/lem_in.dir/src/form_paths.c.o
 lem_in: CMakeFiles/lem_in.dir/src/get_room.c.o
 lem_in: CMakeFiles/lem_in.dir/src/improve_links.c.o
@@ -1965,9 +1964,10 @@ lem_in: CMakeFiles/lem_in.dir/src/queue_funcs.c.o
 lem_in: CMakeFiles/lem_in.dir/src/validation.c.o
 lem_in: CMakeFiles/lem_in.dir/src/start_algo.c.o
 lem_in: CMakeFiles/lem_in.dir/src/begin_delete.c.o
-lem_in: CMakeFiles/lem_in.dir/src/delete_input_forks.c.o
 lem_in: CMakeFiles/lem_in.dir/src/free_funcs.c.o
 lem_in: CMakeFiles/lem_in.dir/src/path_funcs.c.o
+lem_in: CMakeFiles/lem_in.dir/src/edmonds-karp.c.o
+lem_in: CMakeFiles/lem_in.dir/src/dfs.c.o
 lem_in: CMakeFiles/lem_in.dir/build.make
 lem_in: CMakeFiles/lem_in.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/eshor/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Linking C executable lem_in"

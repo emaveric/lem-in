@@ -124,7 +124,6 @@ add_executable(lem_in
         src/bfs.c
         src/check.c
         src/counts_links.c
-        src/delete_links.c
         src/form_paths.c
         src/get_room.c
         src/improve_links.c
@@ -136,4 +135,4 @@ add_executable(lem_in
         src/queue_funcs.c
         src/validation.c
         author
-        Makefile src/start_algo.c src/begin_delete.c src/delete_input_forks.c src/free_funcs.c src/path_funcs.c)
+        Makefile src/start_algo.c src/begin_delete.c src/free_funcs.c src/path_funcs.c src/edmonds-karp.c src/dfs.c)

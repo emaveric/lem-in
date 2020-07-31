@@ -1,17 +1,18 @@
 #include "../includes/lem-in.h"
 
-void print_links(int **arr,  int len, t_room **rooms)
+void print_links(char **arr,  int len, t_room **rooms)
 {
 	int i;
 	int j;
 
+	ft_printf("PRINT LINKS\n");
 	i = 0;
 	while (i < len)
 	{
 		j = 0;
 		while (j < len)
 		{
-			if (arr[i][j] == 1 && i < j)
+			if ((arr[i][j] == 1 || arr[i][j] == 2) && i < j)
 			{
 				ft_printf("room %s -- room %s\n", rooms[i]->name, rooms[j]->name);
 			}
@@ -40,23 +41,25 @@ void print_paths(t_lem_in *lem_in)
 {
 	int i;
 	t_room *temp;
+	t_path *t;
 
 	i = 0;
-	while (i < lem_in->path_num)
+	t = lem_in->paths;
+	while (t)
 	{
-		ft_printf("path%d, len %d, comp %d\n", i, lem_in->paths[i]->len, lem_in->paths[i]->comp);
-		temp = lem_in->paths[i]->head;
+		ft_printf("path%d, len %d, comp %d\n", i, 0, t->len, t->comp);
+		temp = t->head;
 		while (temp)
 		{
 			ft_printf("room%s\n", temp->name);
 			temp = temp->next;
 		}
+		t = t->next;
 		ft_printf("\n");
-		i++;
 	}
 }
 
-void print_link_arr(int **arr, int len)
+void print_link_arr(char **arr, int len)
 {
 	int i;
 	int j;

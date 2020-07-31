@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/30 13:48:47 by eshor            ###   ########.fr       */
+/*   Updated: 2020/07/30 14:09:52 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ int		main(int ac, char **av)
 	else
 		return (ERROR);
 	start_algo(l_i);
+	//sleep(500);
 	exit(0);
 }

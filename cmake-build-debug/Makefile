@@ -3147,59 +3147,59 @@ src/counts_links.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/counts_links.c.s
 .PHONY : src/counts_links.c.s
 
-src/delete_input_forks.o: src/delete_input_forks.c.o
+src/dfs.o: src/dfs.c.o
 
-.PHONY : src/delete_input_forks.o
-
-# target to build an object file
-src/delete_input_forks.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/delete_input_forks.c.o
-.PHONY : src/delete_input_forks.c.o
-
-src/delete_input_forks.i: src/delete_input_forks.c.i
-
-.PHONY : src/delete_input_forks.i
-
-# target to preprocess a source file
-src/delete_input_forks.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/delete_input_forks.c.i
-.PHONY : src/delete_input_forks.c.i
-
-src/delete_input_forks.s: src/delete_input_forks.c.s
-
-.PHONY : src/delete_input_forks.s
-
-# target to generate assembly for a file
-src/delete_input_forks.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/delete_input_forks.c.s
-.PHONY : src/delete_input_forks.c.s
-
-src/delete_links.o: src/delete_links.c.o
-
-.PHONY : src/delete_links.o
+.PHONY : src/dfs.o
 
 # target to build an object file
-src/delete_links.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/delete_links.c.o
-.PHONY : src/delete_links.c.o
+src/dfs.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dfs.c.o
+.PHONY : src/dfs.c.o
 
-src/delete_links.i: src/delete_links.c.i
+src/dfs.i: src/dfs.c.i
 
-.PHONY : src/delete_links.i
+.PHONY : src/dfs.i
 
 # target to preprocess a source file
-src/delete_links.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/delete_links.c.i
-.PHONY : src/delete_links.c.i
+src/dfs.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dfs.c.i
+.PHONY : src/dfs.c.i
 
-src/delete_links.s: src/delete_links.c.s
+src/dfs.s: src/dfs.c.s
 
-.PHONY : src/delete_links.s
+.PHONY : src/dfs.s
 
 # target to generate assembly for a file
-src/delete_links.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/delete_links.c.s
-.PHONY : src/delete_links.c.s
+src/dfs.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dfs.c.s
+.PHONY : src/dfs.c.s
+
+src/edmonds-karp.o: src/edmonds-karp.c.o
+
+.PHONY : src/edmonds-karp.o
+
+# target to build an object file
+src/edmonds-karp.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/edmonds-karp.c.o
+.PHONY : src/edmonds-karp.c.o
+
+src/edmonds-karp.i: src/edmonds-karp.c.i
+
+.PHONY : src/edmonds-karp.i
+
+# target to preprocess a source file
+src/edmonds-karp.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/edmonds-karp.c.i
+.PHONY : src/edmonds-karp.c.i
+
+src/edmonds-karp.s: src/edmonds-karp.c.s
+
+.PHONY : src/edmonds-karp.s
+
+# target to generate assembly for a file
+src/edmonds-karp.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/edmonds-karp.c.s
+.PHONY : src/edmonds-karp.c.s
 
 src/form_paths.o: src/form_paths.c.o
 
@@ -3897,12 +3897,12 @@ help:
 	@echo "... src/counts_links.o"
 	@echo "... src/counts_links.i"
 	@echo "... src/counts_links.s"
-	@echo "... src/delete_input_forks.o"
-	@echo "... src/delete_input_forks.i"
-	@echo "... src/delete_input_forks.s"
-	@echo "... src/delete_links.o"
-	@echo "... src/delete_links.i"
-	@echo "... src/delete_links.s"
+	@echo "... src/dfs.o"
+	@echo "... src/dfs.i"
+	@echo "... src/dfs.s"
+	@echo "... src/edmonds-karp.o"
+	@echo "... src/edmonds-karp.i"
+	@echo "... src/edmonds-karp.s"
 	@echo "... src/form_paths.o"
 	@echo "... src/form_paths.i"
 	@echo "... src/form_paths.s"
