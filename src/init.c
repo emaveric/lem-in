@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 15:47:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/30 13:20:28 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/02 17:47:38 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ t_room		*init_room(void)
 	new->num_input = 0;
 	new->num_output = 0;
 	new->visited = 0;
+	new->flag = 0;
+	new->label = 0;
 	new->ant_name = -1;
 	new->next = NULL;
 	return (new);

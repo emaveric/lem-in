@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/31 14:33:43 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/02 17:47:38 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct		s_room
 	int 			num_input;
 	int 			num_output;
 	int 			visited;
+	int 			flag;
+	int 			label;
 	struct s_room	*next;
 	struct s_room	*prev;
 	int 			ant_name;
