@@ -6,12 +6,11 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 16:15:39 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/04 13:22:30 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/04 14:33:44 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem-in.h"
-
 
 void 	get_label(t_lem_in *l_i, t_room *room, int i, int j)
 {
@@ -48,6 +47,7 @@ int 	change_links(t_lem_in *l_i, t_room **room, int i)
 
 int 	back_path(t_lem_in *l_i, t_room *room, int i, int j)
 {
+	l_i->flag = 3;
 	while (i < l_i->room_num)
 	{
 		if (((l_i->link_arr[room->num][i] == 1 && room->level ==
@@ -101,7 +101,7 @@ int		dfs_p2(t_lem_in *l_i, t_room *room, t_queue **queue, int i)
 
 	if (l_i->link_arr[room->num][i] == 3 && room->flag == 1 &&
 		l_i->rooms[i]->level > 0 &&
-		l_i->rooms[i]->level > room->level + 1)
+		l_i->rooms[i]->level >= room->level + 1)
 	{
 		reset_links(l_i, i);
 		return (back_path(l_i, room, 0, -1));
@@ -111,6 +111,7 @@ int		dfs_p2(t_lem_in *l_i, t_room *room, t_queue **queue, int i)
 		free_queue(&(*queue));
 		return (ERROR);
 	}
+	printf("i = %d test2\n", i);
 	if (l_i->link_arr[room->num][i] == 3)
 		node->room->level = room->level + 1;
 	if (l_i->link_arr[room->num][i] == 2 && room->flag == 0)
@@ -120,8 +121,10 @@ int		dfs_p2(t_lem_in *l_i, t_room *room, t_queue **queue, int i)
 	}
 	//node->room->level = l_i->bfs_level;
 	node->room->flag = room->flag;
-	node->room->visited = (*queue)->room->visited;
-	push_node(&(*queue), node);
+	node->room->visited = room->visited;
+	printf("vis %d\n", node->room->visited);
+	push_node(queue, node);
+	printf("test3\n");
 	return (0);
 }
 
@@ -136,22 +139,27 @@ int 	dfs(t_lem_in *l_i, int i, int j)
 	l_i->rooms[0]->visited += 1;
 	if (!(queue = new_queue_node(l_i->rooms[0])))
 		return (ERROR);
-	while (queue)
+	while (l_i->flag == 3)
 	{
-		i = 0;
-		room = pop_node(&queue);
-		while (++i < l_i->room_num)
+		l_i->flag = 0;
+		while (queue)
 		{
-			if (l_i->link_arr[room->num][i] != 1 && l_i->link_arr[room->num][i] != 0
-			&& (l_i->rooms[room->num]->visited != l_i->rooms[i]->visited))
+			i = 0;
+			room = pop_node(&queue);
+			while (++i < l_i->room_num)
 			{
-				if ((j = dfs_p2(l_i, room, &queue, i)) == ERROR)
-					return (ERROR);
-				else if (j == 1)
-					break;
+				if (l_i->link_arr[room->num][i] != 1 && l_i->link_arr[room->num][i] != 0
+				&& (l_i->rooms[room->num]->visited != l_i->rooms[i]->visited))
+				{
+					printf("\ntest1\n");
+					if ((j = dfs_p2(l_i, room, &queue, i)) == ERROR)
+						return (ERROR);
+					else if (j == 1)
+						break;
+				}
+				else
+					get_label(l_i, room, i, 1);
 			}
-			else
-				get_label(l_i, room, i, 1);
 		}
 	}
 	return (0);

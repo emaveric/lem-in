@@ -121,12 +121,10 @@ add_executable(lem_in
         ft_printf/Makefile
         includes/lem-in.h
         src/aux.c
-        src/bfs.c
         src/check.c
         src/counts_links.c
         src/form_paths.c
         src/get_room.c
-        src/improve_links.c
         src/init.c
         src/lem-in.c
         src/many_dashes_link.c
@@ -135,4 +133,4 @@ add_executable(lem_in
         src/queue_funcs.c
         src/validation.c
         author
-        Makefile src/start_algo.c src/begin_delete.c src/free_funcs.c src/path_funcs.c src/edmonds-karp.c src/dfs.c src/dfs_2.c)
+        Makefile src/start_algo.c src/begin_delete.c src/free_funcs.c src/path_funcs.c src/edmonds-karp.c src/dfs.c)

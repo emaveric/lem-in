@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/eshor/lem-in
+CMAKE_SOURCE_DIR = /Users/emaveric/lem-in
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/eshor/lem-in/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/emaveric/lem-in/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshor/lem-in/cmake-build-debug/CMakeFiles /Users/eshor/lem-in/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/eshor/lem-in/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -3066,33 +3066,6 @@ src/begin_delete.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/begin_delete.c.s
 .PHONY : src/begin_delete.c.s
 
-src/bfs.o: src/bfs.c.o
-
-.PHONY : src/bfs.o
-
-# target to build an object file
-src/bfs.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/bfs.c.o
-.PHONY : src/bfs.c.o
-
-src/bfs.i: src/bfs.c.i
-
-.PHONY : src/bfs.i
-
-# target to preprocess a source file
-src/bfs.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/bfs.c.i
-.PHONY : src/bfs.c.i
-
-src/bfs.s: src/bfs.c.s
-
-.PHONY : src/bfs.s
-
-# target to generate assembly for a file
-src/bfs.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/bfs.c.s
-.PHONY : src/bfs.c.s
-
 src/check.o: src/check.c.o
 
 .PHONY : src/check.o
@@ -3281,33 +3254,6 @@ src/get_room.s: src/get_room.c.s
 src/get_room.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/get_room.c.s
 .PHONY : src/get_room.c.s
-
-src/improve_links.o: src/improve_links.c.o
-
-.PHONY : src/improve_links.o
-
-# target to build an object file
-src/improve_links.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/improve_links.c.o
-.PHONY : src/improve_links.c.o
-
-src/improve_links.i: src/improve_links.c.i
-
-.PHONY : src/improve_links.i
-
-# target to preprocess a source file
-src/improve_links.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/improve_links.c.i
-.PHONY : src/improve_links.c.i
-
-src/improve_links.s: src/improve_links.c.s
-
-.PHONY : src/improve_links.s
-
-# target to generate assembly for a file
-src/improve_links.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/improve_links.c.s
-.PHONY : src/improve_links.c.s
 
 src/init.o: src/init.c.o
 
@@ -3888,9 +3834,6 @@ help:
 	@echo "... src/begin_delete.o"
 	@echo "... src/begin_delete.i"
 	@echo "... src/begin_delete.s"
-	@echo "... src/bfs.o"
-	@echo "... src/bfs.i"
-	@echo "... src/bfs.s"
 	@echo "... src/check.o"
 	@echo "... src/check.i"
 	@echo "... src/check.s"
@@ -3912,9 +3855,6 @@ help:
 	@echo "... src/get_room.o"
 	@echo "... src/get_room.i"
 	@echo "... src/get_room.s"
-	@echo "... src/improve_links.o"
-	@echo "... src/improve_links.i"
-	@echo "... src/improve_links.s"
 	@echo "... src/init.o"
 	@echo "... src/init.i"
 	@echo "... src/init.s"

@@ -54,7 +54,7 @@ typedef struct 		s_path
 typedef struct		s_lem_in
 {
 	int 			i;
-	int 			j; // для линков с несколько -
+	int 			j; // для линков с несколько '-'
 	int 			flag;
 	int 			s_r_flag;
 	int 			e_r_flag;
