@@ -9,6 +9,7 @@ void	flag_correction(t_lem_in *l_i)
 	{
 		l_i->rooms[i]->flag = 0;
 		l_i->rooms[i]->label = 0;
+		l_i->rooms[i]->prev = NULL;
 		i++;
 	}
 }
@@ -57,16 +58,22 @@ int start_algo(t_lem_in *lem_in)
 		return (ERROR);
 	// print_rooms(lem_in->rooms, lem_in->room_num);
 	lem_in->flag = 3;
-	dfs(lem_in, 0, 0);
+	if (dfs(lem_in, 0, 0) == ERROR)
+	{
+		ft_printf("ashibka\n");
+		return (ERROR);
+	}
+
 //	print_link_arr(lem_in->link_arr, lem_in->room_num);
 	if (pathfinder(lem_in) == ERROR)
 		return (ERROR);
 	// temp = lem_in->paths;
 	// print_link_arr(lem_in->link_arr, lem_in->room_num);
+//	print_paths(lem_in);
 	sort_paths(lem_in->paths, lem_in->path_num);
 	define_comp_num(lem_in->paths, lem_in->path_num);
 	
-	// print_paths(lem_in);
+//	 print_paths(lem_in);
     // ft_printf("path num: %d\n", lem_in->path_num);
 	// ft_printf("paths printed\n");
 //	if (form_paths(lem_in) == ERROR)

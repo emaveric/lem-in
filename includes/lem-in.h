@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/04 15:06:24 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/04 18:50:36 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ int pathfinder(t_lem_in *lem_in);
  * edmonds-karp
  */
 int	edmonds_karp(t_lem_in *lem_in);
-void	find_path_backwards(t_lem_in *lem_in, int room_id);
+void	find_path_backwards(t_lem_in *lem_in, int room_id, int flag);
 void	refresh_visited_and_lvl(t_room **rooms, int num);
 int	find_level(t_lem_in *lem_in, int prev, int curr);
 /*

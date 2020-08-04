@@ -37,21 +37,24 @@ void	refresh_visited_and_lvl(t_room **rooms, int num)
 	rooms[num - 1]->visited = 0;
 }
 
-void	find_path_backwards(t_lem_in *lem_in, int room_id)
+void	find_path_backwards(t_lem_in *lem_in, int room_id, int flag)
 {
 	int prev;
 
 	while (room_id != 0)
 	{
-		// ft_printf("now room %s\n", lem_in->rooms[room_id]->name);
+//		if (flag == 1)
+//			ft_printf("now room %s\n", lem_in->rooms[room_id]->name);
 		prev = lem_in->rooms[room_id]->prev->num;
-		// ft_printf("prev room %s\n", lem_in->rooms[prev]->name);
+//		if (prev == 0)
+//			ft_printf("start\n");
+//		 ft_printf("prev room %s\n", lem_in->rooms[prev]->name);
 		if (lem_in->link_arr[prev][room_id] == 3)
 		{
 			lem_in->link_arr[prev][room_id] = 1;
 			lem_in->link_arr[room_id][prev] = 2;
 		}
-		else if (lem_in->link_arr[prev][room_id] == 2)
+		else if (lem_in->link_arr[prev][room_id] == 2 || lem_in->link_arr[prev][room_id] == 1)
 		{
 			lem_in->link_arr[prev][room_id] = 3;
 			lem_in->link_arr[room_id][prev] = 3;
@@ -122,7 +125,7 @@ int	edmonds_karp(t_lem_in *lem_in)
 		if (lem_in->rooms[lem_in->room_num - 1]->visited == 0)
 			break;
 		// ft_printf("finding path backward\n");
-		find_path_backwards(lem_in, room->num);
+		find_path_backwards(lem_in, room->num, 0);
         // ft_printf("one path found\n");
 		// print_link_arr(lem_in->link_arr, lem_in->room_num);
 		
