@@ -91,7 +91,7 @@ int	edmonds_karp(t_lem_in *lem_in)
 				lem_in->link_arr[room->num][i] == 3 && is_room_in_path(lem_in, room->num) == 1)
 				{
 					i++;
-                    ft_printf("room %s is already in path\n", room->name);
+                    // ft_printf("room %s is already in path\n", room->name);
 					continue;
 				}
 				else if (i == lem_in->room_num - 1 && lem_in->link_arr[room->num][i] == 3)
