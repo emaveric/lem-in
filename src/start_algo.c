@@ -1,5 +1,34 @@
 #include "../includes/lem-in.h"
 
+void 	level_correction(t_lem_in *l_i, int flag, int k)
+{
+	int 	i;
+	int 	j;
+
+	i = 1;
+	while (k != 0)
+	{
+		k = 0;
+		flag = 0;
+		j = i;
+		while (j < l_i->room_num - 1)
+		{
+			if (l_i->link_arr[k][j] == 1)
+			{
+				if (flag == 0)
+				{
+					i = j + 1;
+					flag = 1;
+				}
+				l_i->rooms[j]->level = l_i->rooms[k]->level + 1;
+				k = j;
+				j = 1;
+			}
+			j++;
+		}
+	}
+}
+
 int start_algo(t_lem_in *lem_in)
 {
 	t_path *temp;

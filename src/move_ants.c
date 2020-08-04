@@ -81,6 +81,7 @@ void	move_ants(t_lem_in *l_i)
 				move_from_start(l_i, i, &is_start);
 			i++;
 		}
+//		ft_printf("ANTS IN END: %d\n", l_i->ant_end);
 		ft_printf("\n");
 	}
 }
