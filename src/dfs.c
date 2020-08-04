@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 16:15:39 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/04 18:29:59 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/04 19:10:02 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ int		dfs_p2(t_lem_in *l_i, t_room *room, t_queue **queue, int i)
 		free_queue(&(*queue));
 		return (ERROR);
 	}
-	if (l_i->link_arr[room->num][i] == 3)
+	if (l_i->link_arr[room->num][i] == 3 && i != l_i->room_num - 1)
 		node->room->level = room->level + 1;
 	if (l_i->link_arr[room->num][i] == 2 && room->flag == 0)
 	{
@@ -153,8 +153,8 @@ int 	dfs(t_lem_in *l_i, int i, int j)
 		l_i->rooms[0]->visited += 1;
 		if (!(queue = new_queue_node(l_i->rooms[0])))
 			return (ERROR);
-		level_correction(l_i, 0, 1);
-		print_rooms(l_i->rooms, l_i->room_num);
+		level_correction(l_i, 0, 1, 1);
+		//print_rooms(l_i->rooms, l_i->room_num);
 		l_i->flag = 0;
 		while (queue)
 		{
@@ -174,8 +174,7 @@ int 	dfs(t_lem_in *l_i, int i, int j)
 					get_label(l_i, room, i, 1);
 			}
 		}
-		if (queue)
-			free_queue(&queue);
+		free_queue(&queue);
 	}
 	return (0);
 }

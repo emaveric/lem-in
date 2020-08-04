@@ -1,11 +1,23 @@
 #include "../includes/lem-in.h"
 
-void 	level_correction(t_lem_in *l_i, int flag, int k)
+void	flag_correction(t_lem_in *l_i)
 {
 	int 	i;
+
+	i = 0;
+	while (i < l_i->room_num)
+	{
+		l_i->rooms[i]->flag = 0;
+		l_i->rooms[i]->label = 0;
+		i++;
+	}
+}
+
+void 	level_correction(t_lem_in *l_i, int flag, int k, int i)
+{
 	int 	j;
 
-	i = 1;
+	flag_correction(l_i);
 	while (k != 0)
 	{
 		k = 0;
