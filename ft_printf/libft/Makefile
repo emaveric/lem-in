@@ -6,7 +6,7 @@
 #    By: emaveric <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 19:36:08 by emaveric          #+#    #+#              #
-#    Updated: 2020/07/31 16:06:01 by emaveric         ###   ########.fr        #
+#    Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,22 +25,22 @@ SRC = ft_atoi.c ft_bzero.c ft_div_mod.c ft_is_whitespaces.c ft_isalnum.c \
 	  ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c \
 	  ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c \
 	  ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c ft_num_to_str.c \
-	  ft_numlen.c ft_num_to_str.c ulltoa_base.c ft_isnan.c number_len_ll.c \
+	  ft_numlen.c ulltoa_base.c ft_isnan.c number_len_ll.c \
 	  ft_isinf.c ft_lltoa.c ft_putnbr_max.c number_len_ull.c to_uppercase.c \
 	  ft_pow.c ft_ulltoa.c ft_is_minus_inf.c ft_pow_double.c ft_atoi_base.c \
 	  ft_clear_table.c ft_countwords.c ft_llutoa.c ft_strcmp_free.c \
 	  ft_strcut.c ft_strjoin_free.c ft_strncut.c itoa_base.c ft_free.c \
 	  get_next_line.c ft_atoi_int_max.c ft_check_space.c ft_strfromcpy.c \
 
-HEADER = libft.h
+HEADER = ./includes/
 
 OBJ = $(SRC:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS =
 
 all: $(NAME)
 
-$(NAME): $(HEADER) $(OBJ)
+$(NAME): $(OBJ)
 				@gcc $(FLAGS) -I $(HEADER) -c $(SRC)
 				ar rc $(NAME) $(OBJ)
 				ranlib $(NAME)

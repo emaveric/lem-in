@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 17:49:48 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/31 16:06:01 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ static int		nbr_len(unsigned long long int n)
 	return (len);
 }
 
-static char		ft_str_int(char *s, unsigned long long int n, int len)
+char		ft_str_int(char *s, unsigned long long int n, int len)
 {
 	while (len--)
 	{
 		s[len] = (n % 10) + 48;
 		n = n / 10;
 	}
-	return ((char)s);
+	return ((char)*s);
 }
 
 char			*ft_ulltoa(unsigned long long int n)

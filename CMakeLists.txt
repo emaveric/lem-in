@@ -135,4 +135,4 @@ add_executable(lem_in
         src/queue_funcs.c
         src/validation.c
         author
-        Makefile src/start_algo.c src/begin_delete.c src/free_funcs.c src/path_funcs.c src/edmonds-karp.c src/dfs.c)
+        Makefile src/start_algo.c src/begin_delete.c src/free_funcs.c src/path_funcs.c src/edmonds-karp.c src/dfs.c src/dfs_2.c)

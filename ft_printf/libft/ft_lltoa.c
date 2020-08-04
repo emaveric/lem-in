@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 17:41:03 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/31 16:06:01 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char		ft_str_int(char *s, long long int n, int len, int neg)
 	}
 	if (neg)
 		s[0] = '-';
-	return ((char)s);
+	return ((char)*s);
 }
 
 char			*ft_lltoa(long long int n)

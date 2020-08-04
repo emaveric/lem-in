@@ -50,36 +50,36 @@ t_room	*find_last_room(t_room *head)
 	return (temp);
 }
 
-void	move_from_start(t_lem_in *l_i, t_path **path, int *is_start)
+void	move_from_start(t_lem_in *l_i, int i, int *is_start)
 {
-	(*path)->head->ant_name = l_i->ant_num - l_i->ant_start + 1;
+	l_i->paths[i]->head->ant_name = l_i->ant_num - l_i->ant_start + 1;
 	l_i->ant_start--;
 	print_space(is_start);
-	ft_printf("L%d-%s", (*path)->head->ant_name,
-			  (*path)->head->name);
-	if ((*path)->head->level == MAX_INT)
+	ft_printf("L%d-%s", l_i->paths[i]->head->ant_name,
+			l_i->paths[i]->head->name);
+	if (l_i->paths[i]->head->level == MAX_INT)
 		l_i->ant_end++;
 }
 
 void	move_ants(t_lem_in *l_i)
 {
+	int		i;
 	int		is_start;
 	t_room	*tail;
-	t_path *temp;
 
 	while (l_i->ant_end != l_i->ant_num)
 	{
-		temp = l_i->paths;
+		i = 0;
 		is_start = 1;
-		while (temp)
+		while (i < l_i->path_num)
 		{
 			if (l_i->ant_end == l_i->ant_num)
 				break ;
-			tail = find_last_room(temp->head);
+			tail = find_last_room(l_i->paths[i]->head);
 			move_all_in_path(l_i, tail, &is_start);
-			if (l_i->ant_start > temp->comp)
-				move_from_start(l_i, &temp, &is_start);
-			temp = temp->next;
+			if (l_i->ant_start > l_i->paths[i]->comp)
+				move_from_start(l_i, i, &is_start);
+			i++;
 		}
 		ft_printf("\n");
 	}

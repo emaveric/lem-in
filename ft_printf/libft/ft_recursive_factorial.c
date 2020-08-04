@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 15:33:23 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/31 16:06:01 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int		ft_recursive_factorial(int nb)
 {
-	int i;
-
-	i = nb;
 	if (nb >= 13 || nb < 0)
 		return (0);
 	if (nb == 1 || nb == 0)

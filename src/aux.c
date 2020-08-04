@@ -41,21 +41,19 @@ void print_paths(t_lem_in *lem_in)
 {
 	int i;
 	t_room *temp;
-	t_path *t;
 
 	i = 0;
-	t = lem_in->paths;
-	while (t)
+	while (i < lem_in->path_num)
 	{
-		ft_printf("path%d, len %d, comp %d\n", i, 0, t->len, t->comp);
-		temp = t->head;
+		ft_printf("path %d, len %d, comp %d\n", i, lem_in->paths[i]->len, lem_in->paths[i]->comp);
+		temp = lem_in->paths[i]->head;
 		while (temp)
 		{
 			ft_printf("room%s\n", temp->name);
 			temp = temp->next;
 		}
-		t = t->next;
 		ft_printf("\n");
+		i++;
 	}
 }
 

@@ -6,13 +6,14 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 22:50:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/31 16:06:01 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # define BUFF_SIZE 10
+# define SIZE_MAX 10000000
 
 # include <stdlib.h>
 # include <unistd.h>

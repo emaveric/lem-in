@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
+#    By: eshor <eshor@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/23 16:43:36 by emaveric          #+#    #+#              #
-#    Updated: 2020/07/30 19:58:30 by eshor            ###   ########.fr        #
+#    Updated: 2020/08/04 13:51:12 by eshor            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ SRC_DIR = ./src/
 OBJ_DIR = ./obj/
 
 SRC_NAME =	lem-in.c init.c get_room.c map.c validation.c check.c move_ants.c \
-			many_dashes_link.c bfs.c aux.c counts_links.c form_paths.c \
-			improve_links.c start_algo.c queue_funcs.c edmonds-karp.c\
+			many_dashes_link.c aux.c counts_links.c form_paths.c \
+			start_algo.c queue_funcs.c edmonds-karp.c\
 			begin_delete.c free_funcs.c path_funcs.c dfs.c
 
 HEADER = $(addprefix $(INC_DIR), $(HEADER_NAME))

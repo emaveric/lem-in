@@ -3,36 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   dfs.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 16:15:39 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/02 20:12:20 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/04 13:22:30 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem-in.h"
 
-int		is_room_in_path(t_lem_in *lem_in, int room_id)
-{
-	int i;
-	int from;
-	int to;
-
-	i = 0;
-	to = 0;
-	from = 0;
-	while (i < lem_in->room_num)
-	{
-		if (lem_in->link_arr[i][room_id] == 1 && lem_in->link_arr[room_id][i] == 2)
-			from = 1;
-		if (lem_in->link_arr[i][room_id] == 2 && lem_in->link_arr[room_id][i] == 1)
-			to = 1;
-		i++;
-	}
-	if (from == 1 && to == 1)
-		return (1);
-	return (0);
-}
 
 void 	get_label(t_lem_in *l_i, t_room *room, int i, int j)
 {
@@ -125,7 +104,7 @@ int		dfs_p2(t_lem_in *l_i, t_room *room, t_queue **queue, int i)
 		l_i->rooms[i]->level > room->level + 1)
 	{
 		reset_links(l_i, i);
-		return (back_path(l_i, room, 0, -1))
+		return (back_path(l_i, room, 0, -1));
 	}
 	else if (!(node = new_queue_node(l_i->rooms[i])))
 	{
@@ -163,7 +142,7 @@ int 	dfs(t_lem_in *l_i, int i, int j)
 		room = pop_node(&queue);
 		while (++i < l_i->room_num)
 		{
-			if (l_i->link_arr[room->num][i] != 1
+			if (l_i->link_arr[room->num][i] != 1 && l_i->link_arr[room->num][i] != 0
 			&& (l_i->rooms[room->num]->visited != l_i->rooms[i]->visited))
 			{
 				if ((j = dfs_p2(l_i, room, &queue, i)) == ERROR)

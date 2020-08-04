@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem-in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/02 17:47:38 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/04 13:28:05 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct		s_room
 	int 			num_input;
 	int 			num_output;
 	int 			visited;
-	int 			flag;
-	int 			label;
+	int				flag;
+	int				label;
 	struct s_room	*next;
 	struct s_room	*prev;
 	int 			ant_name;
@@ -68,7 +68,7 @@ typedef struct		s_lem_in
 	char 			**link_arr;
 	char 			**line;
 	t_room			**rooms;
-	t_path 			*paths;
+	t_path 			**paths;
 	int 			path_num;
 	int				bfs_level;
 }					t_lem_in;
@@ -110,24 +110,27 @@ void 	delete_dead_ends(t_lem_in *lem_in);
 /*
  * operations with paths
  */
+void	sort_paths(t_path **paths, int num);
+void	define_comp_num(t_path **paths, int num);
 t_path *create_path(t_room *head, int len);
 void add_path(t_path **paths, t_path *new);
 t_path *find_shortest(t_lem_in *lem_in);
-int pathfinder(t_lem_in *lem_in);
 int 	does_path_end(t_lem_in *lem_in, int room_id);
 int pathfinder(t_lem_in *lem_in);
 
 /*
  * edmonds-karp
  */
-int are_end_inputs_filled(t_lem_in *lem_in);
 int	edmonds_karp(t_lem_in *lem_in);
-
+void	find_path_backwards(t_lem_in *lem_in, int room_id);
+void	refresh_visited_and_lvl(t_room **rooms, int num);
+int	find_level(t_lem_in *lem_in, int prev, int curr);
 /*
  * dfs
  */
 int is_room_in_path(t_lem_in *lem_in, int room_id);
-
+int 	dfs(t_lem_in *l_i, int i, int j);
+int	dfs_2(t_lem_in *lem_in);
 /*
  * move ants
  */
