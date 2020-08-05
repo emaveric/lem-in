@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/27 18:15:08 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/05 15:37:46 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,43 @@ int 	coord_valid(t_lem_in *l_i, char **str, int n)
 int 	is_link(t_lem_in *l_i, int j, int k)
 {
 	if (k == -1 || j == -1 ||
-		l_i->link_arr[j][k] == 3 || l_i->link_arr[k][j] == 3)
+		l_i->link_arr[j][k + 1] == 3 || l_i->link_arr[k][j + 1] == 3)
 	{
 		//printf("k = %d, j = %d, [j][k] = %d, [k][j] = %d, same link\n", k, j, l_i->link_arr[j][k], l_i->link_arr[k][j]);
 		return (ERROR);
 	}
-	if (k == 0 || j == 0)
-		l_i->s_l_flag = 1;
-	if (k == l_i->room_num - 1 || j == l_i->room_num - 1)
-		l_i->e_l_flag = 1;
-	l_i->link_arr[j][k] = 3;
-	l_i->link_arr[k][j] = 3;
+	if (k != 0 && j != 0 && k != l_i->room_num - 1 && j != l_i->room_num - 1)
+	{
+		l_i->link_arr[j][k + 1] = 4;
+		l_i->link_arr[k + 1][j] = 3;
+		l_i->link_arr[j + 1][k] = 3;
+		l_i->link_arr[k][j + 1] = 4;
+		l_i->link_num++;
+	}
+	else
+	{
+		if (k == 0 || j == 0)
+		{
+			l_i->link_arr[j][k] = 3;
+			l_i->link_arr[k][j] = 3;
+			l_i->s_l_flag = 1;
+		}
+		if (k == l_i->room_num - 1)
+		{
+			l_i->link_arr[j + 1][k] = 3;
+			l_i->e_l_flag = 1;
+		}
+		if (j == l_i->room_num - 1)
+		{
+			l_i->link_arr[k + 1][j] = 3;
+			l_i->e_l_flag = 1;
+		}
+		/*if (k == l_i->room_num - 1 || j == l_i->room_num - 1)
+		{
+			l_i->link_arr[k][j] = 3;
+			l_i->e_l_flag = 1;
+		}*/
+	}
 	l_i->link_num++;
 	return (0);
 	/*int 	i;
@@ -110,7 +136,8 @@ int 	same_name_and_coord_valid(t_lem_in *l_i)
 		{
 			if (i != j)
 				if (ft_strcmp(l_i->rooms[i]->name, l_i->rooms[j]->name) == 0 ||
-					(l_i->rooms[i]->x == l_i->rooms[j]->x &&
+					(l_i->rooms[i]->d_flag != l_i->rooms[j]->num &&
+					l_i->rooms[i]->x == l_i->rooms[j]->x &&
 					l_i->rooms[i]->y == l_i->rooms[j]->y))
 				{
 					printf("same\n");

@@ -32,6 +32,7 @@ typedef struct		s_room
 	int 			visited;
 	int				flag;
 	int				label;
+	int 			d_flag;
 	struct s_room	*next;
 	struct s_room	*prev;
 	int 			ant_name;

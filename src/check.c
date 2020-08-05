@@ -78,6 +78,7 @@ int 	room_num_check(t_lem_in *l_i)
 		}
 		i++;
 	}
+	l_i->room_num = (l_i->room_num - 2) * 2;
 	if (l_i->room_num < 2)
 		return (ERROR);
 	return (0);

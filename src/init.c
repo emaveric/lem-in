@@ -53,6 +53,7 @@ t_room		*init_room(void)
 	new->flag = 0;
 	new->label = 0;
 	new->ant_name = -1;
+	new->d_flag = 0;
 	new->next = NULL;
 	return (new);
 }
@@ -77,7 +78,6 @@ t_lem_in	*init_l_i(void)
 	new->e_l_flag = 0;
 	new->i = 1;
 	new->j = 0;
-
 	return (new);
 }
 
