@@ -30,7 +30,7 @@ void	refresh_visited_and_lvl(t_room **rooms, int num)
 	while (i < num - 1)
 	{
 		rooms[i]->visited = 0;
-		// rooms[i]->level = -1;
+		rooms[i]->level = -1;
 		rooms[i]->prev = NULL;
 		i++;
 	}
@@ -79,6 +79,8 @@ int	edmonds_karp(t_lem_in *lem_in)
 	int i;
     int n_turns;
     int n_new;
+    t_path **paths;
+    int num;
 
     n_turns = MAX_INT;
 	while (1)
@@ -92,13 +94,7 @@ int	edmonds_karp(t_lem_in *lem_in)
 			i = 0;
 			while (i < lem_in->room_num)
 			{
-				if (room->num != 0 && lem_in->link_arr[room->prev->num][room->num] == 3 &&
-				lem_in->link_arr[room->num][i] == 3 && is_room_in_path(lem_in, room->num) == 1)
-				{
-					i++;
-					continue;
-				}
-				else if (i == lem_in->room_num - 1 && lem_in->link_arr[room->num][i] == 3)
+				if (i == lem_in->room_num - 1 && lem_in->link_arr[room->num][i] == 3)
 				{
 					lem_in->link_arr[room->num][i] = 1;
 					lem_in->link_arr[i][room->num] = 2;
@@ -124,16 +120,31 @@ int	edmonds_karp(t_lem_in *lem_in)
 				i++;
 			}
 		}
-        if (pathfinder(lem_in) == ERROR)
+        if ((lem_in->paths = pathfinder(lem_in, &num)) == NULL)
+        {
+            // ft_printf("error in pathfinder\n");
             return (ERROR);
-        sort_paths(lem_in->paths, lem_in->path_num);
-        define_comp_num(lem_in->paths, lem_in->path_num);
+        }
+        
 		n_new = count_turns(lem_in);
+        // ft_printf("old: %d\n new: %d\n", n_turns, n_new);
         if (n_new < n_turns)
+        {
+            paths = lem_in->paths;
+            lem_in->paths = NULL;
+            num = lem_in->path_num;
+            lem_in->path_num = 0;
             n_turns = n_new;
+        }
         else
             break;
         
 	}
+    // ft_printf("reassigning paths\n");
+    lem_in->paths = paths;
+    
+    lem_in->path_num = num;
+    // sort_paths(lem_in->paths, lem_in->path_num);
+    // define_comp_num(lem_in->paths, lem_in->path_num);
 	return (0);
 }

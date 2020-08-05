@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 16:26:09 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/05 18:54:37 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ t_path *create_path(t_room *head, int len);
 void add_path(t_path **paths, t_path *new);
 t_path *find_shortest(t_lem_in *lem_in);
 int 	does_path_end(t_lem_in *lem_in, int room_id);
-int pathfinder(t_lem_in *lem_in);
+t_path **pathfinder(t_lem_in *lem_in, int *num);
 
 /*
  * edmonds-karp
@@ -138,7 +138,7 @@ int	dfs_2(t_lem_in *lem_in);
  * move ants
  */
 t_room *find_last_room(t_room *head);
-void move_all_in_path(t_lem_in *lem_in, t_room *room, int *is_start);
+void	move_all_in_path(t_lem_in *l_i, t_room *room, int *is_start, int even);
 void move_ants(t_lem_in *lem_in);
 
 void free_all(t_lem_in *lem_in);

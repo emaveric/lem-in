@@ -18,7 +18,7 @@ int 	does_path_end(t_lem_in *lem_in, int room_id)
 	int len;
 
 	len = 0;
-//	ft_printf("room %s\n", lem_in->rooms[room_id]->name);
+	// ft_printf("PATH STARTING IN ROOM %s\n", lem_in->rooms[room_id]->name);
 	while (1)
 	{
 		i = 1;
@@ -26,12 +26,13 @@ int 	does_path_end(t_lem_in *lem_in, int room_id)
 		{
 			if (lem_in->link_arr[room_id][i] == 1)
 			{
-//				ft_printf("room %s\n", lem_in->rooms[i]->name);
+				// ft_printf("room %s\n", lem_in->rooms[i]->name);
 				len++;
 				if (i == lem_in->room_num - 1)
 				{
-//					ft_printf("\n\n\n");
-					return (len + 1);
+                    // ft_printf("LEN: %d\n", (len + 1) / 2);
+					// ft_printf("\n\n\n");
+					return ((len + 1) / 2);
 				}
 				room_id = i;
 				break ;
@@ -40,7 +41,7 @@ int 	does_path_end(t_lem_in *lem_in, int room_id)
 		}
 		if (i == lem_in->room_num)
 		{
-//			ft_printf("\n\n\n");
+			// ft_printf("\n\n\n");
 			return (ERROR);
 		}
 	}
@@ -88,7 +89,7 @@ int	get_num_paths(t_lem_in *lem_in)
 	return(num);
 }
 
-int pathfinder(t_lem_in *lem_in)
+t_path **pathfinder(t_lem_in *lem_in, int *num)
 {
 	int i;
 	int len;
@@ -97,7 +98,7 @@ int pathfinder(t_lem_in *lem_in)
 	lem_in->path_num = get_num_paths(lem_in);
 	lem_in->paths = (t_path**)malloc(sizeof(t_path*) * lem_in->path_num);
 	if (!lem_in->paths)
-		return (ERROR);
+		return (NULL);
 	i = 1;
 	lem_in->path_num = 0;
 	while (i < lem_in->room_num)
@@ -105,14 +106,19 @@ int pathfinder(t_lem_in *lem_in)
 		if (lem_in->link_arr[0][i] == 1 && (len = does_path_end(lem_in, i)) != ERROR)
 		{
 			one_path = create_path(lem_in->rooms[i], len);
+            // ft_printf("NOW LEN IS %d\n", one_path->len);
 //			ft_printf("path starting in room %s created\n", lem_in->rooms[i]->name);
 			if (!one_path)
-				return (ERROR);
+				return (NULL);
 			set_next_prev(lem_in, i);
 			lem_in->paths[lem_in->path_num] = one_path;
 			lem_in->path_num++;
 		}
 		i++;
 	}
-	return (0);
+    sort_paths(lem_in->paths, lem_in->path_num);
+    define_comp_num(lem_in->paths, lem_in->path_num);
+    // ft_printf("printing paths in pathfinder\n");
+    // print_paths(lem_in);
+	return (lem_in->paths);
 }
