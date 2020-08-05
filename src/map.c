@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/04 12:22:42 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/05 17:54:42 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ int 	get_map_p2(t_lem_in *l_i, int i)
 	}
 	else
 	{
+		//printf("%s\n", l_i->line[i]);
 		if (link_or_room(l_i, l_i->line[i], 0) == ERROR)
 		{
 			printf("\n??\n");
@@ -154,15 +155,15 @@ int		get_map(t_lem_in *l_i, int i)
 			return (ERROR);
 		if (l_i->i >= l_i->room_num)
 		{
-			printf("l_i->i = %d, room_num = %d, %s\n", l_i->i, l_i->room_num, l_i->line[i]);
-			printf("\n!!\n");
+			ft_printf("l_i->i = %d, room_num = %d, %s\n", l_i->i, l_i->room_num, l_i->line[i]);
+			ft_printf("\n!!\n");
 			return (ERROR);
 		}
 		i++;
 	}
 	if (l_i->s_l_flag == 0 || l_i->e_l_flag == 0)
 	{
-		printf("\nno links\n");
+		ft_printf("\nno links\n");
 		return (ERROR);
 	}
 	return (0);

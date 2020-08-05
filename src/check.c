@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:24:14 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/04 12:22:42 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/05 17:53:10 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int 	room_num_check(t_lem_in *l_i)
 	i++;
 	while (l_i->line[i])
 	{
+		//printf("%s\n", l_i->line[i]);
 		if (link_or_room(l_i, l_i->line[i], 0) == ERROR)
 			return (ERROR);
 		if (l_i->line[i][0] != '#' && link_or_room(l_i, l_i->line[i], 0) != 1)
@@ -78,7 +79,9 @@ int 	room_num_check(t_lem_in *l_i)
 		}
 		i++;
 	}
-	l_i->room_num = (l_i->room_num - 2) * 2;
+	//printf("num = %d\n", l_i->room_num);
+	l_i->room_num = (l_i->room_num - 1) * 2;
+	//l_i->room_num = (l_i->room_num) * 2;
 	if (l_i->room_num < 2)
 		return (ERROR);
 	return (0);

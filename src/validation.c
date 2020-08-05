@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 15:37:46 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/05 17:57:03 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,14 +135,16 @@ int 	same_name_and_coord_valid(t_lem_in *l_i)
 		while (j < l_i->room_num)
 		{
 			if (i != j)
+			{
 				if (ft_strcmp(l_i->rooms[i]->name, l_i->rooms[j]->name) == 0 ||
-					(l_i->rooms[i]->d_flag != l_i->rooms[j]->num &&
-					l_i->rooms[i]->x == l_i->rooms[j]->x &&
-					l_i->rooms[i]->y == l_i->rooms[j]->y))
-				{
-					printf("same\n");
-					return (ERROR);
-				}
+				(l_i->rooms[i]->x == l_i->rooms[j]->x &&
+				l_i->rooms[i]->y == l_i->rooms[j]->y))
+					if (l_i->rooms[i]->d_flag != l_i->rooms[j]->num)
+					{
+						printf("same\n");
+						return (ERROR);
+					}
+			}
 			j++;
 		}
 		j = 0;
@@ -171,6 +173,7 @@ int 	link_or_room(t_lem_in *l_i, const char *line, int flag)
 	if (flag == 1 && l_i->flag == 0)
 		if (same_name_and_coord_valid(l_i) == ERROR)
 			return (ERROR);
+	//printf("%s\n", line);
 	while (line[i] != '\0')
 	{
 		if (line[i] == '-' || line[0] == '#')
