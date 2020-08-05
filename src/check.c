@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:24:14 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 17:53:10 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/05 18:04:33 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,14 @@ int 	room_num_check(t_lem_in *l_i)
 	i++;
 	while (l_i->line[i])
 	{
-		//printf("%s\n", l_i->line[i]);
+		if (l_i->line[i][0] == '#')
+		{
+			if (get_command(l_i, l_i->line, i) == ERROR)
+			{
+				printf("double flag\n");
+				return (ERROR);
+			}
+		}
 		if (link_or_room(l_i, l_i->line[i], 0) == ERROR)
 			return (ERROR);
 		if (l_i->line[i][0] != '#' && link_or_room(l_i, l_i->line[i], 0) != 1)
@@ -79,10 +86,8 @@ int 	room_num_check(t_lem_in *l_i)
 		}
 		i++;
 	}
-	//printf("num = %d\n", l_i->room_num);
 	l_i->room_num = (l_i->room_num - 1) * 2;
-	//l_i->room_num = (l_i->room_num) * 2;
-	if (l_i->room_num < 2)
+	if (l_i->room_num < 2 || l_i->e_r_flag == 0 || l_i->s_r_flag == 0)
 		return (ERROR);
 	return (0);
 }

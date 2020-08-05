@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 17:54:42 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/05 18:16:11 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int 	get_command(t_lem_in *l_i, char **line, int i)
 {
+	if (ft_strcmp(line[i], "##end") == 0 && ft_strcmp(line[i - 1], "##start") == 0)
+		return (ERROR);
 	if (ft_strcmp(line[i], "##end") == 0)
 	{
 		if (l_i->e_r_flag == 1)
@@ -93,17 +95,20 @@ int		get_ant(t_lem_in *l_i, char *line)
 
 int 	get_map_p2(t_lem_in *l_i, int i)
 {
-	if (l_i->line[i][0] == '#')
+	/*if (l_i->line[i][0] == '#')
 	{
 		if (get_command(l_i, l_i->line, i) == ERROR)
 		{
 			printf("double flag\n");
 			return (ERROR);
 		}
-	}
-	else
-	{
+	}*/
+	/*else
+	{*/
 		//printf("%s\n", l_i->line[i]);
+	//printf("%s\n", l_i->line[i]);
+	if (l_i->line[i][0] != '#')
+	{
 		if (link_or_room(l_i, l_i->line[i], 0) == ERROR)
 		{
 			printf("\n??\n");

@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 17:57:03 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/05 18:09:48 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,7 @@ int 	link_or_room(t_lem_in *l_i, const char *line, int flag)
 	if (flag == 1 && l_i->flag == 0)
 		if (same_name_and_coord_valid(l_i) == ERROR)
 			return (ERROR);
-	//printf("%s\n", line);
+	//printf("%s flag %d\n", line, flag);
 	while (line[i] != '\0')
 	{
 		if (line[i] == '-' || line[0] == '#')

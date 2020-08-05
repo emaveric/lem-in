@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/04 18:50:36 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/05 18:04:33 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,10 @@ int 				get_map(t_lem_in *l_i, int i);
 int 				link_or_room(t_lem_in *l_i, const char *line, int flag);
 int 				coord_valid(t_lem_in *l_i, char **str, int n);
 int					get_room(t_lem_in *l_i, char *line, int i, int j);
+int 				get_command(t_lem_in *l_i, char **line, int i);
 t_lem_in			*init_l_i(void);
 t_room				*init_room(void);
-char 		**init_link_arr(t_lem_in *l_i);
+char 				**init_link_arr(t_lem_in *l_i);
 int 				same_name_and_coord_valid(t_lem_in *l_i);
 int 				is_link(t_lem_in *l_i, int j, int k);
 int 				room_num_check(t_lem_in *l_i);
