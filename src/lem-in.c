@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 20:12:02 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/05 21:13:01 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int		map_reading(int fd, t_lem_in *l_i)
     	printf("error in map reading\n");
     	return (ERROR);
 	}
-   // printf("num = %d\n\n\n", l_i->room_num);
+  //  printf("num = %d\n\n\n", l_i->room_num);
     if (get_map(l_i, 0) == ERROR)
     	return (ERROR);
-    //printf("\nOK\n");
+   // printf("\nOK\n");
     free(buff);
     return (0);
 }
