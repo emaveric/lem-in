@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 16:18:48 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/05 20:11:08 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/05 21:40:47 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ void	count_move_all_in_path(t_lem_in *l_i, t_room *room, int *is_start, int even
 	temp = room;
 	if (temp->level == MAX_INT)
 		return ;
-	if (temp->next->level == MAX_INT && temp->ant_name != -1)
+	if (temp->temp_next->level == MAX_INT && temp->ant_name != -1)
 	{
 		l_i->ant_end++;
 		if (l_i->ant_end == l_i->ant_num)
 			return ;
 	}
-	while (temp->prev)
+	while (temp->temp_prev)
 	{
-		temp->ant_name = temp->prev->ant_name;
+		temp->ant_name = temp->temp_prev->ant_name;
 		// if (temp->ant_name != -1 && k % 2 == 1)
 		// {
         //     if (even == 1)
@@ -39,8 +39,8 @@ void	count_move_all_in_path(t_lem_in *l_i, t_room *room, int *is_start, int even
         //     }
 		// }
         k++;
-		temp->prev->ant_name = -1;
-		temp = temp->prev;
+		temp->temp_prev->ant_name = -1;
+		temp = temp->temp_prev;
 	}
 }
 
@@ -67,6 +67,20 @@ void    no_ants(t_lem_in *lem_in)
     }   
 }
 
+t_room	*count_find_last_room(t_room *head)
+{
+	t_room *temp;
+
+	temp = head;
+	if (!temp->temp_next)
+		return (temp);
+	if (!temp->temp_next->temp_next)
+		return (temp);
+	while (temp->temp_next->temp_next)
+		temp = temp->temp_next;
+	return (temp);
+}
+
 int	count_turns(t_lem_in *l_i)
 {
 	int		i;
@@ -86,7 +100,7 @@ int	count_turns(t_lem_in *l_i)
                 count++;
 				break ;
             }
-			tail = find_last_room(l_i->paths[i]->head);
+			tail = count_find_last_room(l_i->paths[i]->head);
             count_move_all_in_path(l_i, tail, &is_start, 0);
 			count_move_all_in_path(l_i, tail, &is_start, 1);
 			if (l_i->ant_start > l_i->paths[i]->comp)

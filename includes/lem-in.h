@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 21:12:52 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/05 21:37:57 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct		s_room
 	int 			d_flag;
 	struct s_room	*next;
 	struct s_room	*prev;
+    struct s_room   *temp_next;
+    struct s_room   *temp_prev;
 	int 			ant_name;
 }					t_room;
 

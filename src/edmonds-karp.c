@@ -31,7 +31,7 @@ void	refresh_visited_and_lvl(t_room **rooms, int num)
 	{
 		rooms[i]->visited = 0;
 		rooms[i]->level = -1;
-		rooms[i]->prev = NULL;
+		rooms[i]->temp_prev = NULL;
 		i++;
 	}
 	rooms[num - 1]->visited = 0;
@@ -45,7 +45,7 @@ void	find_path_backwards(t_lem_in *lem_in, int room_id, int flag)
 	{
 //		if (flag == 1)
 //			ft_printf("now room %s\n", lem_in->rooms[room_id]->name);
-		prev = lem_in->rooms[room_id]->prev->num;
+		prev = lem_in->rooms[room_id]->temp_prev->num;
 //		if (prev == 0)
 //			ft_printf("start\n");
 //		 ft_printf("prev room %s\n", lem_in->rooms[prev]->name);
@@ -69,6 +69,20 @@ int	find_level(t_lem_in *lem_in, int prev, int curr)
 		return (lem_in->rooms[prev]->level + 1);
 	else
 		return (lem_in->rooms[prev]->level - 1);
+}
+
+void    set_true_prev(t_lem_in *lem_in)
+{
+    int i;
+
+    i = 0;
+    // ft_printf("SET TRUE PREV\n");
+    while (i < lem_in->room_num)
+    {
+        lem_in->rooms[i]->prev = lem_in->rooms[i]->temp_prev;
+        lem_in->rooms[i]->next = lem_in->rooms[i]->temp_next;
+        i++;
+    }
 }
 
 int	edmonds_karp(t_lem_in *lem_in)
@@ -112,7 +126,7 @@ int	edmonds_karp(t_lem_in *lem_in)
 						free_queue(&q);
 						return (ERROR);
 					}
-					new->room->prev = room;
+					new->room->temp_prev = room;
 					new->room->visited = 1;
 					new->room->level = find_level(lem_in, room->num, new->room->num);
 					push_node(&q, new);
@@ -135,6 +149,7 @@ int	edmonds_karp(t_lem_in *lem_in)
             num = lem_in->path_num;
             lem_in->path_num = 0;
             n_turns = n_new;
+            set_true_prev(lem_in);
         }
         else
             break;

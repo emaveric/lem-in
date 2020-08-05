@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 15:47:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/04 12:22:42 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/05 22:01:02 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ t_room		*init_room(void)
 	new->ant_name = -1;
 	new->d_flag = 0;
 	new->next = NULL;
+    new->temp_next = NULL;
+    new->prev = NULL;
+    new->temp_prev = NULL;
 	return (new);
 }
 

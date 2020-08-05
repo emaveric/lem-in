@@ -87,13 +87,14 @@ void	move_ants(t_lem_in *l_i)
 			if (l_i->ant_end == l_i->ant_num)
 				break ;
 			tail = find_last_room(l_i->paths[i]->head);
+            // ft_printf("tail: %s\n", tail->name);
 			move_all_in_path(l_i, tail, &is_start, 0);
             move_all_in_path(l_i, tail, &is_start, 1);
 			if (l_i->ant_start > l_i->paths[i]->comp)
 				move_from_start(l_i, i, &is_start);
 			i++;
 		}
-//		ft_printf("ANTS IN END: %d\n", l_i->ant_end);
+		// ft_printf("ANTS IN END: %d\n", l_i->ant_end);
 		ft_printf("\n");
 	}
 }

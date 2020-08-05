@@ -18,7 +18,6 @@ int 	does_path_end(t_lem_in *lem_in, int room_id)
 	int len;
 
 	len = 0;
-	// ft_printf("PATH STARTING IN ROOM %s\n", lem_in->rooms[room_id]->name);
 	while (1)
 	{
 		i = 1;
@@ -26,12 +25,9 @@ int 	does_path_end(t_lem_in *lem_in, int room_id)
 		{
 			if (lem_in->link_arr[room_id][i] == 1)
 			{
-				// ft_printf("room %s\n", lem_in->rooms[i]->name);
 				len++;
 				if (i == lem_in->room_num - 1)
 				{
-                    // ft_printf("LEN: %d\n", (len + 1) / 2);
-					// ft_printf("\n\n\n");
 					return ((len + 1) / 2);
 				}
 				room_id = i;
@@ -41,7 +37,6 @@ int 	does_path_end(t_lem_in *lem_in, int room_id)
 		}
 		if (i == lem_in->room_num)
 		{
-			// ft_printf("\n\n\n");
 			return (ERROR);
 		}
 	}
@@ -52,7 +47,7 @@ void set_next_prev(t_lem_in *lem_in, int room_id)
 {
 	int i;
 
-	lem_in->rooms[room_id]->prev = NULL;
+	lem_in->rooms[room_id]->temp_prev = NULL;
 	while (room_id != lem_in->room_num - 1)
 	{
 		i = 1;
@@ -61,9 +56,9 @@ void set_next_prev(t_lem_in *lem_in, int room_id)
 			if (lem_in->link_arr[room_id][i] == 1)
 			{
 //				ft_printf("in set: room %s\n", lem_in->rooms[room_id]->name);
-				lem_in->rooms[room_id]->next = lem_in->rooms[i];
+				lem_in->rooms[room_id]->temp_next = lem_in->rooms[i];
 				if (i != lem_in->room_num - 1)
-					lem_in->rooms[i]->prev = lem_in->rooms[room_id];
+					lem_in->rooms[i]->temp_prev = lem_in->rooms[room_id];
 				room_id = i;
 				break;
 			}
@@ -107,7 +102,7 @@ t_path **pathfinder(t_lem_in *lem_in, int *num)
 		{
 			one_path = create_path(lem_in->rooms[i], len);
             // ft_printf("NOW LEN IS %d\n", one_path->len);
-//			ft_printf("path starting in room %s created\n", lem_in->rooms[i]->name);
+			// ft_printf("path starting in room %s created\n", lem_in->rooms[i]->name);
 			if (!one_path)
 				return (NULL);
 			set_next_prev(lem_in, i);
