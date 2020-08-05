@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem-in.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/30 14:09:52 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/05 16:05:02 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int		main(int ac, char **av)
 	}
 	else
 		return (ERROR);
+    ft_printf("validation finished\n");
 	start_algo(l_i);
 	//sleep(500);
 	exit(0);
