@@ -52,12 +52,13 @@ int start_algo(t_lem_in *lem_in)
     {
 		return (ERROR);
     }
-    print_paths(lem_in);
+    // print_paths(lem_in);
     // pathfinder(lem_in, &(lem_in->path_num));
 	if (lem_in->path_num == 0)
     {
         return (ERROR);
     }
+    ft_printf("\n");
 	move_ants(lem_in);
 	return (0);
 }

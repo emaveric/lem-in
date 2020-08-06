@@ -2,8 +2,7 @@ diff -r Maps/Bfs_one_path/-dev-urandom Result/-dev-urandom
 0a1
 > error in map reading
 diff -r Maps/Bfs_one_path/1.map Result/1.map
-7,107d6
-< 
+8,107c8,107
 < L1-end 
 < L2-end 
 < L3-end 
@@ -104,9 +103,109 @@ diff -r Maps/Bfs_one_path/1.map Result/1.map
 < L98-end 
 < L99-end 
 < L100-end 
+---
+> L1-end
+> L2-end
+> L3-end
+> L4-end
+> L5-end
+> L6-end
+> L7-end
+> L8-end
+> L9-end
+> L10-end
+> L11-end
+> L12-end
+> L13-end
+> L14-end
+> L15-end
+> L16-end
+> L17-end
+> L18-end
+> L19-end
+> L20-end
+> L21-end
+> L22-end
+> L23-end
+> L24-end
+> L25-end
+> L26-end
+> L27-end
+> L28-end
+> L29-end
+> L30-end
+> L31-end
+> L32-end
+> L33-end
+> L34-end
+> L35-end
+> L36-end
+> L37-end
+> L38-end
+> L39-end
+> L40-end
+> L41-end
+> L42-end
+> L43-end
+> L44-end
+> L45-end
+> L46-end
+> L47-end
+> L48-end
+> L49-end
+> L50-end
+> L51-end
+> L52-end
+> L53-end
+> L54-end
+> L55-end
+> L56-end
+> L57-end
+> L58-end
+> L59-end
+> L60-end
+> L61-end
+> L62-end
+> L63-end
+> L64-end
+> L65-end
+> L66-end
+> L67-end
+> L68-end
+> L69-end
+> L70-end
+> L71-end
+> L72-end
+> L73-end
+> L74-end
+> L75-end
+> L76-end
+> L77-end
+> L78-end
+> L79-end
+> L80-end
+> L81-end
+> L82-end
+> L83-end
+> L84-end
+> L85-end
+> L86-end
+> L87-end
+> L88-end
+> L89-end
+> L90-end
+> L91-end
+> L92-end
+> L93-end
+> L94-end
+> L95-end
+> L96-end
+> L97-end
+> L98-end
+> L99-end
+> L100-end
 diff -r Maps/Bfs_one_path/10_lots_of_comments.map Result/10_lots_of_comments.map
-44,103c44,102
-< 
+45,103c45,103
 < L1-room1 
 < L1-room2 L2-room1 
 < L1-room3 L2-room2 L3-room1 
@@ -228,8 +327,7 @@ diff -r Maps/Bfs_one_path/10_lots_of_comments.map Result/10_lots_of_comments.map
 > L49-end L50-room9
 > L50-end
 diff -r Maps/Bfs_one_path/2.map Result/2.map
-9,110c9,109
-< 
+10,110c10,110
 < L1-room1 
 < L1-end L2-room1 
 < L2-end L3-room1 
@@ -632,8 +730,7 @@ diff -r Maps/Bfs_one_path/20.map Result/20.map
 > 47, 5-15
 > ????
 diff -r Maps/Bfs_one_path/5.map Result/5.map
-15,119c15,118
-< 
+16,119c16,119
 < L1-room1 
 < L1-room2 L2-room1 
 < L1-room3 L2-room2 L3-room1 
