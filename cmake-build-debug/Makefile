@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/emaveric/lem-in
+CMAKE_SOURCE_DIR = /Users/emaveric/lem_in
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/emaveric/lem-in/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/emaveric/lem_in/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem_in/cmake-build-debug/CMakeFiles /Users/emaveric/lem_in/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem-in/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emaveric/lem_in/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -3201,6 +3201,33 @@ src/form_paths.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/form_paths.c.s
 .PHONY : src/form_paths.c.s
 
+src/free.o: src/free.c.o
+
+.PHONY : src/free.o
+
+# target to build an object file
+src/free.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/free.c.o
+.PHONY : src/free.c.o
+
+src/free.i: src/free.c.i
+
+.PHONY : src/free.i
+
+# target to preprocess a source file
+src/free.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/free.c.i
+.PHONY : src/free.c.i
+
+src/free.s: src/free.c.s
+
+.PHONY : src/free.s
+
+# target to generate assembly for a file
+src/free.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/free.c.s
+.PHONY : src/free.c.s
+
 src/free_funcs.o: src/free_funcs.c.o
 
 .PHONY : src/free_funcs.o
@@ -3849,6 +3876,9 @@ help:
 	@echo "... src/form_paths.o"
 	@echo "... src/form_paths.i"
 	@echo "... src/form_paths.s"
+	@echo "... src/free.o"
+	@echo "... src/free.i"
+	@echo "... src/free.s"
 	@echo "... src/free_funcs.o"
 	@echo "... src/free_funcs.i"
 	@echo "... src/free_funcs.s"

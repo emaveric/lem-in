@@ -113,6 +113,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/src/dfs.c.o"
   "CMakeFiles/lem_in.dir/src/edmonds-karp.c.o"
   "CMakeFiles/lem_in.dir/src/form_paths.c.o"
+  "CMakeFiles/lem_in.dir/src/free.c.o"
   "CMakeFiles/lem_in.dir/src/free_funcs.c.o"
   "CMakeFiles/lem_in.dir/src/get_room.c.o"
   "CMakeFiles/lem_in.dir/src/init.c.o"

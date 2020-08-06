@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/06 17:10:14 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/06 17:42:39 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,12 @@ t_room				*init_room(void);
 char 				**init_link_arr(t_lem_in *l_i);
 int 				same_name_and_coord_valid(t_lem_in *l_i);
 int 				is_link(t_lem_in *l_i, int j, int k);
-int 				room_num_check(t_lem_in *l_i);
+int 				room_num_check(t_lem_in *l_i, int i);
 int 				get_end_or_start_room(t_lem_in *l_i, char **str, int i);
 int 				start_end_room_check(t_lem_in *l_i, int i, char **str);
 int 				many_dashes_link(t_lem_in *l_i, const char *line, int i);
 void 				level_correction(t_lem_in *l_i, int flag, int k, int i);
+void 				str_free(char **str, int i);
 
 /*
 ** queue functions

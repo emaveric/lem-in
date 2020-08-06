@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 21:21:10 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/06 17:32:02 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/06 17:43:08 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,24 +60,11 @@ int		get_room(t_lem_in *l_i, char *line, int i, int j)
 	while (str[j])
 		j++;
 	if (j != 3)
-	{
-		printf ("j = %d\n", j);
 		return (ERROR);
-	}
-	j = start_end_room_check(l_i, i - 1, str);
-	if (j == ERROR)
+	if ((j = start_end_room_check(l_i, i - 1, str)) == ERROR)
 		return (ERROR);
 	else if (j == 0)
-	{
-		i = 0;
-		while(str[i])
-		{
-			free(str[i]);
-			i++;
-		}
-		free(str);
 		return (0);
-	}
 	if (!(l_i->rooms[l_i->i]->name = ft_memalloc(ft_strlen(str[0]) + 1)))
 		return (ERROR);
 	ft_strcpy(l_i->rooms[l_i->i]->name, str[0]);
@@ -88,13 +75,7 @@ int		get_room(t_lem_in *l_i, char *line, int i, int j)
 	l_i->rooms[l_i->i - 1]->d_flag = l_i->i;
 	if (get_out_room(l_i, str) == ERROR)
 		return (ERROR);
-	i = 0;
-	while(str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
+	str_free(str, 0);
 	//printf("%s\n", line);
 	return (0);
 }

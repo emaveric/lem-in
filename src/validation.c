@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 18:09:48 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:04:40 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,41 @@ int 	coord_valid(t_lem_in *l_i, char **str, int n)
 	return (0);
 }
 
+int 	is_link_error(t_lem_in *l_i, int j, int k)
+{
+	if (k == -1 || j == -1)
+		return (ERROR);
+	if (k == 0 || j == 0)
+	{
+		if (l_i->link_arr[j][k] == 3 || l_i->link_arr[k][j] == 3)
+			return (ERROR);
+	}
+	if (k == l_i->room_num - 1)
+		if (l_i->link_arr[j + 1][k] == 3)
+			return (ERROR);
+	if (j == l_i->room_num - 1)
+		if (l_i->link_arr[k + 1][j] == 3)
+			return (ERROR);
+	if 	(l_i->link_arr[j][k + 1] == 4 || l_i->link_arr[k][j + 1] == 4)
+		return (ERROR);
+	return (0);
+}
+
 int 	is_link(t_lem_in *l_i, int j, int k)
 {
-	if (k == -1 || j == -1 ||
-		l_i->link_arr[j][k + 1] == 3 || l_i->link_arr[k][j + 1] == 3)
-	{
-		//printf("k = %d, j = %d, [j][k] = %d, [k][j] = %d, same link\n", k, j, l_i->link_arr[j][k], l_i->link_arr[k][j]);
+//	printf("num = %d	", l_i->room_num);
+//	printf("k = %d, j = %d, %d %d	", k, j, l_i->link_arr[j][k + 1], l_i->link_arr[k][j + 1]);
+	/*if (k == -1 || j == -1 || l_i->link_arr[j][k + 1] != 0 ||
+		l_i->link_arr[j + 1][k] != 0 || l_i->link_arr[k][j] != 0)
+		return (ERROR);*/
+	if (is_link_error(l_i, j, k) == ERROR)
 		return (ERROR);
-	}
 	if (k != 0 && j != 0 && k != l_i->room_num - 1 && j != l_i->room_num - 1)
 	{
 		l_i->link_arr[j][k + 1] = 4;
 		l_i->link_arr[k + 1][j] = 3;
 		l_i->link_arr[j + 1][k] = 3;
 		l_i->link_arr[k][j + 1] = 4;
-		l_i->link_num++;
 	}
 	else
 	{
@@ -74,53 +94,9 @@ int 	is_link(t_lem_in *l_i, int j, int k)
 			l_i->link_arr[k + 1][j] = 3;
 			l_i->e_l_flag = 1;
 		}
-		/*if (k == l_i->room_num - 1 || j == l_i->room_num - 1)
-		{
-			l_i->link_arr[k][j] = 3;
-			l_i->e_l_flag = 1;
-		}*/
 	}
-	l_i->link_num++;
+	//printf("k = %d, j = %d, %d %d\n", k, j, l_i->link_arr[j][k + 1], l_i->link_arr[k][j + 1]);
 	return (0);
-	/*int 	i;
-	int 	flag;
-	int 	j;
-
-
-	i = 0;
-	flag = 0;
-	while (i < l_i->room_num)
-	{
-		if (l_i->link_arr[0][i] == 1)
-		{
-			flag = 1;
-			break;
-		}
-		i++;
-	}
-	if (flag == 0)
-		return (ERROR);
-	i = 0;
-	while (i < l_i->room_num)
-	{
-		if (l_i->link_arr[l_i->room_num - 1][i] == 1)
-			return (0);
-		i++;
-	} ^ проверка на линки в начальной и конечной комнатах */
-	/*i = 0;
-	j = 0;
-	while (i < l_i->room_num)
-	{
-		while (j < l_i->room_num)
-		{
-			if (l_i->link_arr[i][j] == 1 && l_i->link_arr[j][i] == 1)
-				return (0);
-			j++;
-		}
-		i++;
-		j = 0;
-	}*/
-	return (ERROR);
 }
 
 int 	same_name_and_coord_valid(t_lem_in *l_i)
