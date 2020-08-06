@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_room.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 21:21:10 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 17:53:23 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/06 17:32:02 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ int 	get_end_or_start_room(t_lem_in *l_i, char **str, int i)
 
 int 	get_out_room(t_lem_in *l_i, char **str)
 {
-	if (!(l_i->rooms[l_i->i]->name = ft_memalloc(ft_strlen(str[0]) + 2)))
-		return (ERROR);
-	l_i->rooms[l_i->i]->name = ft_strjoin(str[0], "'");
+	// if (!(l_i->rooms[l_i->i]->name = ft_memalloc(ft_strlen(str[0]) + 2)))
+	// 	return (ERROR);
+    if (!(l_i->rooms[l_i->i]->name = ft_strjoin(str[0], "'")))
+	    return (ERROR);
 	if (l_i->rooms[l_i->i]->name[0] == 'L' || l_i->rooms[l_i->i]->name[0] == '#')
 		return (ERROR);
 	if (coord_valid(l_i, str, l_i->i) == ERROR)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   many_dashes_link.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 19:33:42 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/27 18:15:08 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/06 17:34:01 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int 	second_name(t_lem_in *l_i, char *str1, int i)
 			break;
 		i++;
 	}
+    free(str1);
 	//printf("test i = %d\n", i);
 	if (i < l_i->room_num)
 	{

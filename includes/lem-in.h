@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 21:37:57 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/06 17:10:14 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void 	delete_dead_ends(t_lem_in *lem_in);
 /*
  * operations with paths
  */
-void	sort_paths(t_path **paths, int num);
+void	sort_paths(t_path **paths, int left, int right);
 void	define_comp_num(t_path **paths, int num);
 t_path *create_path(t_room *head, int len);
 void add_path(t_path **paths, t_path *new);
@@ -143,16 +143,15 @@ int	dfs_2(t_lem_in *lem_in);
 t_room *find_last_room(t_room *head);
 void	move_all_in_path(t_lem_in *l_i, t_room *room, int *is_start, int even);
 void move_ants(t_lem_in *lem_in);
-
-void free_all(t_lem_in *lem_in);
-void free_paths(t_path **path);
+void free_paths(t_path **paths,  int num);
+void free_all(t_lem_in **lem_in);
 /*
  * auxiliary functions; delete later
  */
 void print_links(char **arr,  int len, t_room **rooms);
 void print_rooms(t_room **rooms, int len);
-void print_paths(t_lem_in *lem_in);
 void print_link_arr(char **arr, int len);
 void print_queue(t_queue *q);
+void print_paths(t_lem_in *lem_in);
 
 #endif

@@ -48,31 +48,15 @@ int start_algo(t_lem_in *lem_in)
 	int k;
 	lem_in->rooms[0]->level = 0;
 	lem_in->rooms[lem_in->room_num - 1]->level = MAX_INT;
-
-	// if (bfs(lem_in) == ERROR)
-	// 	return (ERROR);
-	// delete_useless(lem_in);
-	// count_input_output(lem_in);
-	// delete_dead_ends(lem_in);
 	if (edmonds_karp(lem_in) == ERROR)
     {
 		return (ERROR);
     }
-
-
-	// temp = lem_in->paths;
-	// print_link_arr(lem_in->link_arr, lem_in->room_num);
-//	print_paths(lem_in);
-	// sort_paths(lem_in->paths, lem_in->path_num);
-	// define_comp_num(lem_in->paths, lem_in->path_num);
-	
-	// print_paths(lem_in);
-    // ft_printf("room %s, room %s\n", lem_in->paths[0]->head->next->next->name, lem_in->paths[0]->head->next->next->prev->name);
+    // pathfinder(lem_in, &(lem_in->path_num));
 	if (lem_in->path_num == 0)
     {
         return (ERROR);
     }
-		
 	move_ants(lem_in);
 	return (0);
 }

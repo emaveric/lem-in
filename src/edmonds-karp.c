@@ -1,27 +1,5 @@
 #include "../includes/lem-in.h"
 
-int is_room_in_path(t_lem_in *lem_in, int room_id)
-{
-	int i;
-	int from;
-	int to;
-
-	i = 0;
-	to = 0;
-	from = 0;
-	while (i < lem_in->room_num)
-	{
-		if (lem_in->link_arr[i][room_id] == 1 && lem_in->link_arr[room_id][i] == 2)
-			from = 1;
-		if (lem_in->link_arr[i][room_id] == 2 && lem_in->link_arr[room_id][i] == 1)
-			to = 1;
-		i++;
-	}
-	if (from == 1 && to == 1)
-		return (1);
-	return (0);
-}
-
 void	refresh_visited_and_lvl(t_room **rooms, int num)
 {
 	int i;
@@ -43,12 +21,7 @@ void	find_path_backwards(t_lem_in *lem_in, int room_id, int flag)
 
 	while (room_id != 0)
 	{
-//		if (flag == 1)
-//			ft_printf("now room %s\n", lem_in->rooms[room_id]->name);
 		prev = lem_in->rooms[room_id]->temp_prev->num;
-//		if (prev == 0)
-//			ft_printf("start\n");
-//		 ft_printf("prev room %s\n", lem_in->rooms[prev]->name);
 		if (lem_in->link_arr[prev][room_id] == 3)
 		{
 			lem_in->link_arr[prev][room_id] = 1;
@@ -76,7 +49,6 @@ void    set_true_prev(t_lem_in *lem_in)
     int i;
 
     i = 0;
-    // ft_printf("SET TRUE PREV\n");
     while (i < lem_in->room_num)
     {
         lem_in->rooms[i]->prev = lem_in->rooms[i]->temp_prev;
@@ -96,6 +68,7 @@ int	edmonds_karp(t_lem_in *lem_in)
     t_path **paths;
     int num;
 
+    paths = NULL;
     n_turns = MAX_INT;
 	while (1)
 	{
@@ -135,15 +108,12 @@ int	edmonds_karp(t_lem_in *lem_in)
 			}
 		}
         if ((lem_in->paths = pathfinder(lem_in, &num)) == NULL)
-        {
-            // ft_printf("error in pathfinder\n");
             return (ERROR);
-        }
-        
 		n_new = count_turns(lem_in);
-        // ft_printf("old: %d\n new: %d\n", n_turns, n_new);
         if (n_new < n_turns)
         {
+            if (paths != NULL)
+                free_paths(paths, num);
             paths = lem_in->paths;
             lem_in->paths = NULL;
             num = lem_in->path_num;
@@ -152,14 +122,12 @@ int	edmonds_karp(t_lem_in *lem_in)
             set_true_prev(lem_in);
         }
         else
+        {
+            free_paths(lem_in->paths, lem_in->path_num);
             break;
-        
+        }
 	}
-    // ft_printf("reassigning paths\n");
     lem_in->paths = paths;
-    
     lem_in->path_num = num;
-    // sort_paths(lem_in->paths, lem_in->path_num);
-    // define_comp_num(lem_in->paths, lem_in->path_num);
 	return (0);
 }
