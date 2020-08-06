@@ -6,7 +6,7 @@
 #    By: eshor <eshor@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/23 16:43:36 by emaveric          #+#    #+#              #
-#    Updated: 2020/08/06 17:42:20 by eshor            ###   ########.fr        #
+#    Updated: 2020/08/06 17:46:04 by eshor            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC_NAME =	lem-in.c init.c get_room.c map.c validation.c check.c move_ants.c \
 			many_dashes_link.c aux.c counts_links.c form_paths.c \
 			start_algo.c queue_funcs.c edmonds-karp.c\
 			begin_delete.c free_funcs.c path_funcs.c turn_funcs.c \
-			free.c
+			
 
 HEADER = $(addprefix $(INC_DIR), $(HEADER_NAME))
 

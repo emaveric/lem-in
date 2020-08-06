@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/06 15:04:40 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/06 17:49:22 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,18 @@ int 	is_link_error(t_lem_in *l_i, int j, int k)
 		if (l_i->link_arr[j][k] == 3 || l_i->link_arr[k][j] == 3)
 			return (ERROR);
 	}
-	if (k == l_i->room_num - 1)
-		if (l_i->link_arr[j + 1][k] == 3)
-			return (ERROR);
-	if (j == l_i->room_num - 1)
-		if (l_i->link_arr[k + 1][j] == 3)
-			return (ERROR);
-	if 	(l_i->link_arr[j][k + 1] == 4 || l_i->link_arr[k][j + 1] == 4)
-		return (ERROR);
+    if (k == l_i->room_num - 1 || j == l_i->room_num - 1)
+    {
+        if (k == l_i->room_num - 1)
+            if (l_i->link_arr[j + 1][k] == 3)
+                return (ERROR);
+        if (j == l_i->room_num - 1)
+            if (l_i->link_arr[k + 1][j] == 3)
+                return (ERROR);
+    }
+    else
+        if 	(l_i->link_arr[j][k + 1] == 4 || l_i->link_arr[k][j + 1] == 4)
+            return (ERROR);
 	return (0);
 }
 

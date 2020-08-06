@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/06 17:43:37 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/06 17:52:42 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ int		map_reading(int fd, t_lem_in *l_i)
     	return (ERROR);
     //printf("\nOK\n");
     i = 0;
-    while (l_i->line[i])
-	{
-    	ft_printf("%s\n", l_i->line[i]);
-    	i++;
-	}
+    // while (l_i->line[i])
+	// {
+    // 	ft_printf("%s\n", l_i->line[i]);
+    // 	i++;
+	// }
     free(buff);
     return (0);
 }
@@ -55,7 +55,6 @@ int		main(int ac, char **av)
 {
 	t_lem_in	*l_i;
 	char 		tmp;
-	char *str;
 
 	if (!(l_i = init_l_i()))
 		return (0);
