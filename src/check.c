@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:24:14 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 18:04:33 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/06 14:23:58 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ int 	start_end_room_check(t_lem_in *l_i, int i, char **str)
 				return (ERROR);
 			}*/
 			if (get_end_or_start_room(l_i, str, i + 1) == ERROR)
+			{
+				str_free(str, 0);
 				return (ERROR);
+			}
+			str_free(str, 0);
 			return (0);
 		}
 		i--;
@@ -56,11 +60,8 @@ int 	start_end_room_check(t_lem_in *l_i, int i, char **str)
 	return (1);
 }
 
-int 	room_num_check(t_lem_in *l_i)
+int 	room_num_check(t_lem_in *l_i, int i)
 {
-	int 	i;
-
-	i = 0;
 	while (l_i->line[i][0] == '#')
 		i++;
 	i++;

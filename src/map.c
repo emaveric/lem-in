@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 18:16:11 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/06 14:38:39 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,9 @@ int 	get_link(t_lem_in *l_i, char *line, int i, int j)
 			k = l_i->rooms[i]->num;
 		i++;
 	}
+	str_free(str, 0);
 	if (is_link(l_i, j, k) == ERROR)
 		return (ERROR);
-	i = 0;
-	while(str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
 	return (0);
 }
 
@@ -140,12 +134,9 @@ int		get_map(t_lem_in *l_i, int i)
 {
 	if (!(l_i->rooms = (t_room **)malloc(sizeof(t_room*) * l_i->room_num)))
 		return (ERROR);
-	while (i < l_i->room_num)
-	{
+	while (++i < l_i->room_num)
 		if (!(l_i->rooms[i] = init_room()))
 			return (ERROR);
-		i++;
-	}
 	if (!(l_i->link_arr = init_link_arr(l_i)))
 		return (ERROR);
 	i = 0;

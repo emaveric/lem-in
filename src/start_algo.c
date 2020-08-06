@@ -66,7 +66,7 @@ int start_algo(t_lem_in *lem_in)
 	// sort_paths(lem_in->paths, lem_in->path_num);
 	// define_comp_num(lem_in->paths, lem_in->path_num);
 	
-	// print_paths(lem_in);
+	 //print_paths(lem_in);
     // ft_printf("room %s, room %s\n", lem_in->paths[0]->head->next->next->name, lem_in->paths[0]->head->next->next->prev->name);
 	if (lem_in->path_num == 0)
     {

@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 21:13:01 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/06 16:37:17 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		map_reading(int fd, t_lem_in *l_i)
 	char *buff;
 //    char 	buff[B_SIZE + 1];
     int 	data;
+	int 	i;
 
     buff = (char*)malloc(B_SIZE);
     if ((data = read(fd, buff, B_SIZE)) < 32)
@@ -31,15 +32,21 @@ int		map_reading(int fd, t_lem_in *l_i)
     	return (ERROR);
 	}
     l_i->line = ft_strsplit(buff, '\n');
-    if (room_num_check(l_i) == ERROR)
+    if (room_num_check(l_i, 0) == ERROR)
 	{
     	printf("error in map reading\n");
     	return (ERROR);
 	}
   //  printf("num = %d\n\n\n", l_i->room_num);
-    if (get_map(l_i, 0) == ERROR)
+    if (get_map(l_i, -1) == ERROR)
     	return (ERROR);
-   // printf("\nOK\n");
+    //printf("\nOK\n");
+    i = 0;
+    while (l_i->line[i])
+	{
+    	ft_printf("%s\n", l_i->line[i]);
+    	i++;
+	}
     free(buff);
     return (0);
 }
@@ -64,7 +71,7 @@ int		main(int ac, char **av)
 	}
 	else
 		return (ERROR);
-	start_algo(l_i);
+	//start_algo(l_i);
 	//sleep(500);
 	exit(0);
 }
