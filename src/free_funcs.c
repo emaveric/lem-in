@@ -11,7 +11,8 @@ void    free_rooms(t_lem_in **lem_in)
         free((*lem_in)->rooms[i]);
         i++;
     }
-    free((*lem_in)->rooms);
+    if ((*lem_in)->rooms)
+        free((*lem_in)->rooms);
 }
 
 void 	str_free(char **str, int i)
@@ -21,7 +22,8 @@ void 	str_free(char **str, int i)
 		free(str[i]);
 		i++;
 	}
-	free(str);
+    if (str)
+	    free(str);
 }
 
 void free_all(t_lem_in **lem_in)
@@ -34,7 +36,8 @@ void free_all(t_lem_in **lem_in)
         free((*lem_in)->link_arr[i]);
         i++;
     }
-    free((*lem_in)->link_arr);
+    if ((*lem_in)->link_arr)
+        free((*lem_in)->link_arr);
     free_rooms(lem_in);
     free_paths((*lem_in)->paths, (*lem_in)->path_num);
     str_free((*lem_in)->line, 0);
@@ -51,6 +54,7 @@ void free_paths(t_path **paths,  int num)
         free(paths[i]);
         i++;
     }
-    free(paths);
+    if (paths)
+        free(paths);
     paths = NULL;
 }

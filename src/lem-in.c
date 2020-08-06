@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/06 17:52:42 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/06 19:48:26 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 int		map_reading(int fd, t_lem_in *l_i)
 {
 	char *buff;
-//    char 	buff[B_SIZE + 1];
+    // char 	buff[B_SIZE + 1];
     int 	data;
 	int 	i;
 
-    buff = (char*)malloc(B_SIZE + 1);
+    buff = (char*)ft_memalloc(B_SIZE + 1);
     if ((data = read(fd, buff, B_SIZE)) < 32)
 	{
 //    	printf("\n%s\n%d\n", buff, data);
@@ -42,11 +42,11 @@ int		map_reading(int fd, t_lem_in *l_i)
     	return (ERROR);
     //printf("\nOK\n");
     i = 0;
-    // while (l_i->line[i])
-	// {
-    // 	ft_printf("%s\n", l_i->line[i]);
-    // 	i++;
-	// }
+    while (l_i->line[i])
+	{
+    	ft_printf("%s\n", l_i->line[i]);
+    	i++;
+	}
     free(buff);
     return (0);
 }
@@ -72,5 +72,6 @@ int		main(int ac, char **av)
 		return (ERROR);
 	start_algo(l_i);
     free_all(&l_i);
-	exit(0);
+    // sleep(3);
+	return (0);
 }

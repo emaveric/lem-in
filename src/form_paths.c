@@ -18,6 +18,10 @@ int 	does_path_end(t_lem_in *lem_in, int room_id)
 	int len;
 
 	len = 0;
+    if (room_id == lem_in->room_num - 1)
+    {
+        return (1);
+    }
 	while (1)
 	{
 		i = 1;
@@ -88,6 +92,7 @@ t_path **pathfinder(t_lem_in *lem_in, int *num)
 	t_path *one_path;
 
 	lem_in->path_num = get_num_paths(lem_in);
+    print_link_arr(lem_in->link_arr, lem_in->room_num);
 	lem_in->paths = (t_path**)malloc(sizeof(t_path*) * lem_in->path_num);
 	if (!lem_in->paths)
 		return (NULL);
