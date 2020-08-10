@@ -57,7 +57,7 @@ int		room_num_check(t_lem_in *l_i, int i)
 	{
 		if (l_i->line[i][0] == '#')
 			if (get_command(l_i, l_i->line, i) == ERROR)
-				return (error(5, NULL));
+				return (ERROR);
 		if (link_or_room(l_i, l_i->line[i], 0) == ERROR)
 			return (ERROR);
 		if (l_i->line[i][0] != '#' && link_or_room(l_i, l_i->line[i], 0) != 1)

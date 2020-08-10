@@ -37,7 +37,6 @@ GCC_PRINTF = -L ./ft_printf -l ftprintf
 all: $(LEM-IN)
 
 $(LEM-IN): $(OBJ_DIR) $(OBJ) $(PRINTF_A) $(HEADER)
-	$(PRINTF_A)
 	gcc $(GCC_PRINTF) $(addprefix -I, $(INC_DIR)) $(OBJ) $(FLAGS) -o $(LEM-IN)
 
 $(OBJ_DIR):

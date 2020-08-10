@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 13:06:58 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 16:44:14 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 17:30:53 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int		buff_free(char *buff)
 {
-	free(buff);
+	if (buff)
+		free(buff);
 	return (ERROR);
 }
 
@@ -23,7 +24,7 @@ void	free_rooms(t_lem_in **lem_in)
 	int i;
 
 	i = 0;
-	while (i < (*lem_in)->room_num)
+	while (i < (*lem_in)->room_num && (*lem_in)->rooms)
 	{
 		free((*lem_in)->rooms[i]->name);
 		free((*lem_in)->rooms[i]);
@@ -35,13 +36,16 @@ void	free_rooms(t_lem_in **lem_in)
 
 int		str_free(char **str, int i)
 {
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
 	if (str)
-		free(str);
+	{
+		while (str[i])
+		{
+			free(str[i]);
+			i++;
+		}
+		if (str)
+			free(str);
+	}
 	return (0);
 }
 
@@ -50,9 +54,10 @@ int		free_all(t_lem_in **lem_in)
 	int i;
 
 	i = 0;
-	while (i < (*lem_in)->room_num)
+	while (i < (*lem_in)->room_num && (*lem_in)->link_arr)
 	{
-		free((*lem_in)->link_arr[i]);
+		if ((*lem_in)->link_arr[i])
+			free((*lem_in)->link_arr[i]);
 		i++;
 	}
 	if ((*lem_in)->link_arr)

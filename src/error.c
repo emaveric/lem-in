@@ -40,5 +40,9 @@ int		error(int flag, char **str)
 		ft_printf("Map error! Error coordinate\n");
 	if (flag == 9)
 		ft_printf("Map error! Too many rooms\n");
+	if (flag == 10)
+		ft_printf("Map error! Double end or start\n");
+	if (flag == 11)
+		ft_printf("Map error! Same end and start\n");
 	return (-1);
 }

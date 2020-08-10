@@ -16,17 +16,17 @@ int		get_command(t_lem_in *l_i, char **line, int i)
 {
 	if (ft_strcmp(line[i], "##end") == 0 &&
 		ft_strcmp(line[i - 1], "##start") == 0)
-		return (ERROR);
+		return (error(11, NULL));
 	if (ft_strcmp(line[i], "##end") == 0)
 	{
 		if (l_i->e_r_flag == 1)
-			return (ERROR);
+			return (error(10, NULL));
 		l_i->e_r_flag = 1;
 	}
 	else if (ft_strcmp(line[i], "##start") == 0)
 	{
 		if (l_i->s_r_flag == 1)
-			return (ERROR);
+			return (error(10, NULL));
 		l_i->s_r_flag = 1;
 	}
 	return (0);

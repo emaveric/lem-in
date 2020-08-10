@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 16:30:40 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 17:23:33 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		map_reading(int fd, t_lem_in *l_i)
 	buff = (char*)ft_memalloc(B_SIZE + 1);
 	if ((data = read(fd, buff, B_SIZE)) < 32)
 	{
-		ft_printf("Error map");
+		ft_printf("Error map\n");
 		return (buff_free(buff));
 	}
 	buff[data] = '\0';

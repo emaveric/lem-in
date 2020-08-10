@@ -1,8 +1,6 @@
 6
 ##start
 start 3 68
-##end
-end 986 31
 1 1 1
 2 2 2
 start-1
