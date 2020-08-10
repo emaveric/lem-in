@@ -23,7 +23,7 @@ int		second_name(t_lem_in *l_i, char *str1, int i)
 	free(str1);
 	if (i < l_i->room_num)
 	{
-		if (is_link(l_i, l_i->j, i) == ERROR)
+		if (is_link(l_i, l_i->j, i, NULL) == ERROR)
 			return (ERROR);
 		l_i->j = 0;
 		return (0);

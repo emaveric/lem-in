@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 14:55:37 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 16:43:55 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 17:22:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		error(int flag, char **str)
 	if (flag == 9)
 		ft_printf("Map error! Too many rooms\n");
 	if (flag == 10)
-		ft_printf("Map error! Double end or start\n");
+		ft_printf("Map error! Error end or start\n");
 	if (flag == 11)
 		ft_printf("Map error! Same end and start\n");
 	return (-1);

@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 17:52:54 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 15:55:18 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/10 17:54:25 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		get_link(t_lem_in *l_i, char *line, int i, int j)
 	if (str[2] || !str[0] || !str[1])
 	{
 		if (many_dashes_link(l_i, line, 0) == ERROR)
-			return (error(5, str));
+			return (error(-1, str));
 		return (str_free(str, 0));
 	}
 	while (i < l_i->room_num)
@@ -56,8 +56,8 @@ int		get_link(t_lem_in *l_i, char *line, int i, int j)
 			k = l_i->rooms[i]->num;
 		i++;
 	}
-	if (is_link(l_i, j, k) == ERROR)
-		return (error(6, str));
+	if (is_link(l_i, j, k, str) == ERROR)
+		return (ERROR);
 	return (str_free(str, 0));
 }
 
@@ -125,5 +125,7 @@ int		get_map(t_lem_in *l_i, int i)
 			return (ERROR);
 		i++;
 	}
+	if (l_i->e_l_flag != 1 || l_i->s_l_flag != 1)
+		return (error(1, NULL));
 	return (0);
 }

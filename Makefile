@@ -6,7 +6,7 @@
 #    By: eshor <eshor@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/23 16:43:36 by emaveric          #+#    #+#              #
-#    Updated: 2020/08/10 16:57:13 by eshor            ###   ########.fr        #
+#    Updated: 2020/08/10 17:11:27 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INC_PRINTF = ./ft_printf/includes/
 SRC_DIR = ./src/
 OBJ_DIR = ./obj/
 
-SRC_NAME =	lem-in.c init.c get_room.c map.c validation.c check.c move_ants.c \
+SRC_NAME =	lem_in.c init.c get_room.c map.c validation.c check.c move_ants.c \
 			many_dashes_link.c form_paths.c \
 			start_algo.c queue_funcs.c edmonds_karp.c edmonds_karp_p2.c\
 			free_funcs.c path_funcs.c turn_funcs.c error.c\

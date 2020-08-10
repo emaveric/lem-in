@@ -89,7 +89,7 @@ t_lem_in			*init_l_i(void);
 t_room				*init_room(void);
 char				**init_link_arr(t_lem_in *l_i);
 int					same_name_and_coord_valid(t_lem_in *l_i);
-int					is_link(t_lem_in *l_i, int j, int k);
+int					is_link(t_lem_in *l_i, int j, int k, char **str);
 int					room_num_check(t_lem_in *l_i, int i);
 int					get_end_or_start_room(t_lem_in *l_i, char **str, int i);
 int					start_end_room_check(t_lem_in *l_i, int i, char **str);

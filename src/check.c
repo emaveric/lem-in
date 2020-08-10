@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:24:14 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 15:33:49 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/10 17:22:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int		room_num_check(t_lem_in *l_i, int i)
 	}
 	l_i->room_num = (l_i->room_num - 1) * 2;
 	if (l_i->room_num < 2 || l_i->e_r_flag == 0 || l_i->s_r_flag == 0)
-		return (error(1, NULL));
+		return (error(10, NULL));
 	return (0);
 }

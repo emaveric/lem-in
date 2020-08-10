@@ -126,7 +126,7 @@ add_executable(lem_in
         src/form_paths.c
         src/get_room.c
         src/init.c
-        src/lem-in.c
+        src/lem_in.c
         src/many_dashes_link.c
         src/map.c
         src/move_ants.c

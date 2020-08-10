@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 14:56:06 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 15:48:36 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/10 17:48:17 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,33 +37,33 @@ int		coord_valid(t_lem_in *l_i, char **str, int n)
 	return (0);
 }
 
-int		is_link_error(t_lem_in *l_i, int j, int k)
+int		is_link_error(t_lem_in *l_i, int j, int k, char **str)
 {
 	if (k == -1 || j == -1)
-		return (ERROR);
+		return (error(5, str));
 	if (k == 0 || j == 0)
 	{
 		if (l_i->link_arr[j][k] == 3 || l_i->link_arr[k][j] == 3)
-			return (ERROR);
+			return (error(6, str));
 	}
 	if (k == l_i->room_num - 1 || j == l_i->room_num - 1)
 	{
 		if (k == l_i->room_num - 1)
 			if (l_i->link_arr[j + 1][k] == 3)
-				return (ERROR);
+				return (error(6, str));
 		if (j == l_i->room_num - 1)
 			if (l_i->link_arr[k + 1][j] == 3)
-				return (ERROR);
+				return (error(6, str));
 	}
 	else if (l_i->link_arr[j][k + 1] == 4 ||
 			l_i->link_arr[k][j + 1] == 4)
-		return (ERROR);
+		return (error(6, str));
 	return (0);
 }
 
-int		is_link(t_lem_in *l_i, int j, int k)
+int		is_link(t_lem_in *l_i, int j, int k, char **str)
 {
-	if (is_link_error(l_i, j, k) == ERROR)
+	if (is_link_error(l_i, j, k, str) == ERROR)
 		return (ERROR);
 	if (k != 0 && j != 0 && k != l_i->room_num - 1 && j != l_i->room_num - 1)
 	{
