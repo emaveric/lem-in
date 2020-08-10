@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 12:53:56 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:19:57 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 15:33:29 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,46 @@ void	level_correction(t_lem_in *l_i, int flag, int k, int i)
 	}
 }
 
+void	move_directly(t_lem_in *lem_in)
+{
+	int		i;
+	t_room	*room;
+
+	i = 0;
+	room = lem_in->paths[0]->head;
+	while (i < lem_in->ant_num)
+	{
+		ft_printf("L%d-%s", i + 1, room->name);
+		if (i != lem_in->ant_num - 1)
+			ft_printf(" ");
+		i++;
+	}
+	ft_printf("\n");
+}
+
 int		start_algo(t_lem_in *lem_in)
 {
-    int i;
-    
+	int i;
+
 	lem_in->rooms[0]->level = 0;
 	lem_in->rooms[lem_in->room_num - 1]->level = MAX_INT;
 	if (edmonds_karp(lem_in) == ERROR)
 	{
+		ft_printf("Path from start to end does not exist.\n");
 		return (ERROR);
 	}
 	if (lem_in->path_num == 0)
-	{
 		return (ERROR);
-	}
-    i = 0;
-    while (lem_in->line[i])
+	i = 0;
+	while (lem_in->line[i])
 	{
-        ft_printf("%s\n", lem_in->line[i]);
-    	i++;
+		ft_printf("%s\n", lem_in->line[i]);
+		i++;
 	}
-    ft_printf("\n");
-	move_ants(lem_in);
+	ft_printf("\n");
+	if (lem_in->paths[0]->len == 1)
+		move_directly(lem_in);
+	else
+		move_ants(lem_in);
 	return (0);
 }
