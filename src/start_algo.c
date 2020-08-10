@@ -44,6 +44,8 @@ void 	level_correction(t_lem_in *l_i, int flag, int k, int i)
 
 int start_algo(t_lem_in *lem_in)
 {
+    int i;
+
 	t_path *temp;
 	int k;
 	lem_in->rooms[0]->level = 0;
@@ -58,7 +60,14 @@ int start_algo(t_lem_in *lem_in)
     {
         return (ERROR);
     }
-    ft_printf("\n");
+    i = 0;
+    // while (lem_in->line[i + 1])
+	// {
+    //     if (i != 1)
+    // 	    ft_printf("%s\n", lem_in->line[i]);
+    // 	i++;
+	// }
+    // ft_printf("\n");
 	move_ants(lem_in);
 	return (0);
 }
