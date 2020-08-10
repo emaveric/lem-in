@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 12:53:56 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 15:33:29 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 18:10:19 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,12 @@ int		start_algo(t_lem_in *lem_in)
 	if (lem_in->path_num == 0)
 		return (ERROR);
 	i = 0;
-	while (lem_in->line[i])
-	{
-		ft_printf("%s\n", lem_in->line[i]);
-		i++;
-	}
-	ft_printf("\n");
+	// while (lem_in->line[i])
+	// {
+	// 	ft_printf("%s\n", lem_in->line[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
 	if (lem_in->paths[0]->len == 1)
 		move_directly(lem_in);
 	else
