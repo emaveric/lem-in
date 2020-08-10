@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 12:53:56 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:12:11 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 14:19:57 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void	level_correction(t_lem_in *l_i, int flag, int k, int i)
 
 int		start_algo(t_lem_in *lem_in)
 {
+    int i;
+    
 	lem_in->rooms[0]->level = 0;
 	lem_in->rooms[lem_in->room_num - 1]->level = MAX_INT;
 	if (edmonds_karp(lem_in) == ERROR)
@@ -66,6 +68,13 @@ int		start_algo(t_lem_in *lem_in)
 	{
 		return (ERROR);
 	}
+    i = 0;
+    while (lem_in->line[i])
+	{
+        ft_printf("%s\n", lem_in->line[i]);
+    	i++;
+	}
+    ft_printf("\n");
 	move_ants(lem_in);
 	return (0);
 }
