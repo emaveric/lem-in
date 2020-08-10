@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 14:10:47 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 15:05:33 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,9 @@ int					get_end_or_start_room(t_lem_in *l_i, char **str, int i);
 int					start_end_room_check(t_lem_in *l_i, int i, char **str);
 int					many_dashes_link(t_lem_in *l_i, const char *line, int i);
 void				level_correction(t_lem_in *l_i, int flag, int k, int i);
-void				str_free(char **str, int i);
+int					str_free(char **str, int i);
+int 				buff_free(char *buff);
+int 				error(int flag, char **str);
 
 /*
 ** queue functions
@@ -142,7 +144,7 @@ void				move_all_in_path(t_lem_in *l_i, t_room *room, int *is_start,
 int even);
 void				move_ants(t_lem_in *lem_in);
 void				free_paths(t_path **paths, int num);
-void				free_all(t_lem_in **lem_in);
+int					free_all(t_lem_in **lem_in);
 
 /*
 ** auxiliary functions; delete later

@@ -12,7 +12,7 @@
 
 #include "../includes/lem_in.h"
 
-char 		**init_link_arr(t_lem_in *l_i)
+char	**init_link_arr(t_lem_in *l_i)
 {
 	char	**new;
 	int 	i;

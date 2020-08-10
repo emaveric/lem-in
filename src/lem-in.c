@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:30 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 14:44:07 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 16:30:40 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,31 @@
 
 int		map_reading(int fd, t_lem_in *l_i)
 {
-	char *buff;
-    // char 	buff[B_SIZE + 1];
-    int 	data;
-	int 	i;
+	char	*buff;
+	int		data;
 
-    buff = (char*)ft_memalloc(B_SIZE + 1);
-    if ((data = read(fd, buff, B_SIZE)) < 32)
+	buff = (char*)ft_memalloc(B_SIZE + 1);
+	if ((data = read(fd, buff, B_SIZE)) < 32)
 	{
-//    	printf("\n%s\n%d\n", buff, data);
-    	return (ERROR); // минимально возможное кол-во символов на валидной карте - 32
+		ft_printf("Error map");
+		return (buff_free(buff));
 	}
-    buff[data] = '\0';
-    if (empty_line_check(buff) == ERROR)
-	{
-    	printf("\nempty line\n");
-    	return (ERROR);
-	}
-    l_i->line = ft_strsplit(buff, '\n');
-    if (room_num_check(l_i, 0) == ERROR)
-	{
-    	printf("error in map reading\n");
-    	return (ERROR);
-	}
-  //  printf("num = %d\n\n\n", l_i->room_num);
-    if (get_map(l_i, -1) == ERROR)
-    	return (ERROR);
-    //printf("\nOK\n");
-   
-    free(buff);
-    return (0);
+	buff[data] = '\0';
+	if (empty_line_check(buff) == ERROR)
+		return (buff_free(buff));
+	l_i->line = ft_strsplit(buff, '\n');
+	if (room_num_check(l_i, 0) == ERROR)
+		return (buff_free(buff));
+	if (get_map(l_i, -1) == ERROR)
+		return (buff_free(buff));
+	free(buff);
+	return (0);
 }
 
 int		main(int ac, char **av)
 {
 	t_lem_in	*l_i;
-	char 		tmp;
+	char		tmp;
 
 	if (!(l_i = init_l_i()))
 		return (0);
@@ -58,15 +47,14 @@ int		main(int ac, char **av)
 		if (read(0, &tmp, 0) == 0)
 		{
 			if (map_reading(0, l_i) == ERROR)
-				return (ERROR);
+				return (free_all(&l_i));
 		}
 		else
-			return (ERROR);
+			return (free_all(&l_i));
 	}
 	else
-		return (ERROR);
+		return (free_all(&l_i));
 	start_algo(l_i);
-    free_all(&l_i);
-    // sleep(3);
-	return (0);
+	free_all(&l_i);
+	exit(0);
 }

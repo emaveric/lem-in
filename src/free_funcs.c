@@ -6,11 +6,17 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 13:06:58 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:11:39 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 14:54:28 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
+
+int 	buff_free(char *buff)
+{
+	free(buff);
+	return (ERROR);
+}
 
 void	free_rooms(t_lem_in **lem_in)
 {
@@ -27,7 +33,7 @@ void	free_rooms(t_lem_in **lem_in)
 		free((*lem_in)->rooms);
 }
 
-void	str_free(char **str, int i)
+int		str_free(char **str, int i)
 {
 	while (str[i])
 	{
@@ -36,9 +42,10 @@ void	str_free(char **str, int i)
 	}
 	if (str)
 		free(str);
+	return (0);
 }
 
-void	free_all(t_lem_in **lem_in)
+int 	free_all(t_lem_in **lem_in)
 {
 	int i;
 
@@ -54,6 +61,7 @@ void	free_all(t_lem_in **lem_in)
 	free_paths((*lem_in)->paths, (*lem_in)->path_num);
 	str_free((*lem_in)->line, 0);
 	free(*lem_in);
+	return (ERROR);
 }
 
 void	free_paths(t_path **paths, int num)
