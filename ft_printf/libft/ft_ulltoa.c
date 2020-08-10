@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ulltoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 17:49:48 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 19:38:37 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int		nbr_len(unsigned long long int n)
 	return (len);
 }
 
-char		ft_str_int(char *s, unsigned long long int n, int len)
+char			ft_str_int(char *s, unsigned long long int n, int len)
 {
 	while (len--)
 	{
