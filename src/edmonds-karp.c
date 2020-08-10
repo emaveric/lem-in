@@ -110,10 +110,7 @@ int	edmonds_karp(t_lem_in *lem_in)
         if ((lem_in->paths = pathfinder(lem_in, &num)) == NULL)
             return (ERROR);
         if (!paths && lem_in->path_num == 0)
-        {
-            ft_printf("ERROR\n");
             return (ERROR);
-        }
 		n_new = count_turns(lem_in);
         if (n_new < n_turns)
         {

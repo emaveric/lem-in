@@ -92,7 +92,6 @@ t_path **pathfinder(t_lem_in *lem_in, int *num)
 	t_path *one_path;
 
 	lem_in->path_num = get_num_paths(lem_in);
-    // print_link_arr(lem_in->link_arr, lem_in->room_num);
 	lem_in->paths = (t_path**)malloc(sizeof(t_path*) * lem_in->path_num);
 	if (!lem_in->paths)
 		return (NULL);

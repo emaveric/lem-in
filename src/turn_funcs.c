@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 16:18:48 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/06 14:33:21 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 12:52:51 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	count_move_all_in_path(t_lem_in *l_i, t_room *room)
 {
 	t_room *temp;
-    t_room *temp2;
+	t_room *temp2;
 
 	temp = room;
 	if (temp->level == MAX_INT)
@@ -42,16 +42,16 @@ void	count_move_from_start(t_lem_in *l_i, int i)
 		l_i->ant_end++;
 }
 
-void    no_ants(t_lem_in *lem_in)
+void	no_ants(t_lem_in *lem_in)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (i < lem_in->room_num)
-    {
-        lem_in->rooms[i]->ant_name = -1;
-        i++;
-    }   
+	i = 0;
+	while (i < lem_in->room_num)
+	{
+		lem_in->rooms[i]->ant_name = -1;
+		i++;
+	}
 }
 
 t_room	*count_find_last_room(t_room *head)
@@ -68,34 +68,30 @@ t_room	*count_find_last_room(t_room *head)
 	return (temp);
 }
 
-int	count_turns(t_lem_in *l_i)
+int		count_turns(t_lem_in *l_i)
 {
 	int		i;
 	t_room	*tail;
-    int count;
+	int		count;
 
-    count = 0;
+	count = 0;
 	while (l_i->ant_end != l_i->ant_num)
 	{
-		i = 0;
-		while (i < l_i->path_num)
+		i = -1;
+		while (++i < l_i->path_num)
 		{
 			if (l_i->ant_end == l_i->ant_num)
-            {
-                count++;
 				break ;
-            }
 			tail = count_find_last_room(l_i->paths[i]->head);
-            count_move_all_in_path(l_i, tail);
+			count_move_all_in_path(l_i, tail);
 			count_move_all_in_path(l_i, tail);
 			if (l_i->ant_start > l_i->paths[i]->comp)
 				count_move_from_start(l_i, i);
-			i++;
 		}
-        count++;
+		count++;
 	}
-    l_i->ant_start = l_i->ant_end;
-    l_i->ant_end = 0;
-    no_ants(l_i);
-    return (count);
+	l_i->ant_start = l_i->ant_end;
+	l_i->ant_end = 0;
+	no_ants(l_i);
+	return (count);
 }

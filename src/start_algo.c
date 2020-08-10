@@ -44,30 +44,21 @@ void 	level_correction(t_lem_in *l_i, int flag, int k, int i)
 
 int start_algo(t_lem_in *lem_in)
 {
-    int i;
+	int i;
 
 	t_path *temp;
 	int k;
 	lem_in->rooms[0]->level = 0;
 	lem_in->rooms[lem_in->room_num - 1]->level = MAX_INT;
 	if (edmonds_karp(lem_in) == ERROR)
-    {
+	{
 		return (ERROR);
-    }
-    // print_paths(lem_in);
-    // pathfinder(lem_in, &(lem_in->path_num));
+	}
 	if (lem_in->path_num == 0)
-    {
-        return (ERROR);
-    }
-    i = 0;
-    // while (lem_in->line[i + 1])
-	// {
-    //     if (i != 1)
-    // 	    ft_printf("%s\n", lem_in->line[i]);
-    // 	i++;
-	// }
-    // ft_printf("\n");
+	{
+		return (ERROR);
+	}
+	i = 0;
 	move_ants(lem_in);
 	return (0);
 }
