@@ -1,13 +1,25 @@
-#include "../includes/lem-in.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   path_funcs.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/10 12:56:26 by eshor             #+#    #+#             */
+/*   Updated: 2020/08/10 14:11:59 by eshor            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/lem_in.h"
 
 void	sort_paths(t_path **paths, int left, int right)
 {
 	int		i;
 	int		j;
-    int num;
+	int		num;
 	t_path	*temp;
 
-    num = right + 1;
+	num = right + 1;
 	i = 0;
 	while (i < num - 1)
 	{

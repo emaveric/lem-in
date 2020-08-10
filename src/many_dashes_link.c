@@ -6,11 +6,11 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 19:33:42 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/06 17:34:01 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 14:11:50 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 int 	second_name(t_lem_in *l_i, char *str1, int i)
 {

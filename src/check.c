@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:24:14 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/06 14:23:58 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/10 14:11:28 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 int		empty_line_check(const char *line)
 {

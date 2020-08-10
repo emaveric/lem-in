@@ -6,11 +6,11 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 21:21:10 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/06 17:43:08 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 14:11:41 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 int 	get_end_or_start_room(t_lem_in *l_i, char **str, int i)
 {

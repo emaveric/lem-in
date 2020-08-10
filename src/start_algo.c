@@ -1,8 +1,20 @@
-#include "../includes/lem-in.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   start_algo.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/10 12:53:56 by eshor             #+#    #+#             */
+/*   Updated: 2020/08/10 14:12:11 by eshor            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/lem_in.h"
 
 void	flag_correction(t_lem_in *l_i)
 {
-	int 	i;
+	int	i;
 
 	i = 0;
 	while (i < l_i->room_num)
@@ -14,9 +26,9 @@ void	flag_correction(t_lem_in *l_i)
 	}
 }
 
-void 	level_correction(t_lem_in *l_i, int flag, int k, int i)
+void	level_correction(t_lem_in *l_i, int flag, int k, int i)
 {
-	int 	j;
+	int	j;
 
 	flag_correction(l_i);
 	while (k != 0)
@@ -42,12 +54,8 @@ void 	level_correction(t_lem_in *l_i, int flag, int k, int i)
 	}
 }
 
-int start_algo(t_lem_in *lem_in)
+int		start_algo(t_lem_in *lem_in)
 {
-	int i;
-
-	t_path *temp;
-	int k;
 	lem_in->rooms[0]->level = 0;
 	lem_in->rooms[lem_in->room_num - 1]->level = MAX_INT;
 	if (edmonds_karp(lem_in) == ERROR)
@@ -58,7 +66,6 @@ int start_algo(t_lem_in *lem_in)
 	{
 		return (ERROR);
 	}
-	i = 0;
 	move_ants(lem_in);
 	return (0);
 }

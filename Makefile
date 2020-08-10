@@ -6,13 +6,13 @@
 #    By: eshor <eshor@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/23 16:43:36 by emaveric          #+#    #+#              #
-#    Updated: 2020/08/10 12:44:04 by eshor            ###   ########.fr        #
+#    Updated: 2020/08/10 14:12:24 by eshor            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LEM-IN = lem-in
 
-HEADER_NAME = lem-in.h
+HEADER_NAME = lem_in.h
 PRINTF_A = ft_printf/libftprintf.a
 
 INC_DIR = ./includes/
@@ -22,7 +22,7 @@ OBJ_DIR = ./obj/
 
 SRC_NAME =	lem-in.c init.c get_room.c map.c validation.c check.c move_ants.c \
 			many_dashes_link.c aux.c form_paths.c \
-			start_algo.c queue_funcs.c edmonds-karp.c\
+			start_algo.c queue_funcs.c edmonds_karp.c edmonds_karp_p2.c\
 			free_funcs.c path_funcs.c turn_funcs.c \
 			
 

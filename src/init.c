@@ -6,11 +6,11 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 15:47:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/05 22:01:02 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 14:11:45 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 char 		**init_link_arr(t_lem_in *l_i)
 {
@@ -49,7 +49,7 @@ t_room		*init_room(void)
 	new->name = NULL;
 	new->num_input = 0;
 	new->num_output = 0;
-	new->visited = 0;
+	new->visited = 1;
 	new->flag = 0;
 	new->label = 0;
 	new->ant_name = -1;
@@ -81,6 +81,8 @@ t_lem_in	*init_l_i(void)
 	new->e_l_flag = 0;
 	new->i = 1;
 	new->j = 0;
+    new->n_turns = MAX_INT;
+    new->paths_temp = NULL;
 	return (new);
 }
 

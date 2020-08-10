@@ -6,11 +6,11 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 16:18:48 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 12:52:51 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 14:12:14 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 void	count_move_all_in_path(t_lem_in *l_i, t_room *room)
 {
