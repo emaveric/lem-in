@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:07:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 15:05:33 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/10 16:52:06 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,9 @@ int					start_end_room_check(t_lem_in *l_i, int i, char **str);
 int					many_dashes_link(t_lem_in *l_i, const char *line, int i);
 void				level_correction(t_lem_in *l_i, int flag, int k, int i);
 int					str_free(char **str, int i);
-int 				buff_free(char *buff);
-int 				error(int flag, char **str);
+int					buff_free(char *buff);
+int					error(int flag, char **str);
+int					free_len(int *len);
 
 /*
 ** queue functions
@@ -114,20 +115,19 @@ int					start_algo(t_lem_in *lem_in);
 ** operations with paths
 */
 
-void				sort_paths(t_path **paths, int left, int right);
+void				sort_paths(t_path **paths, int right);
 void				define_comp_num(t_path **paths, int num);
 t_path				*create_path(t_room *head, int len);
 void				add_path(t_path **paths, t_path *new);
 int					does_path_end(t_lem_in *lem_in, int room_id);
-t_path				**pathfinder(t_lem_in *lem_in, int *num);
+t_path				**pathfinder(t_lem_in *lem_in);
 
 /*
 ** edmonds-karp
 */
 
 int					edmonds_karp(t_lem_in *lem_in);
-void				find_path_backwards(t_lem_in *lem_in, int room_id,
-int flag);
+void				find_path_backwards(t_lem_in *lem_in, int room_id);
 void				refresh_visited_and_lvl(t_room **rooms, int num);
 int					find_level(t_lem_in *lem_in, int prev, int curr);
 t_room				*find_last_room(t_room *head);
@@ -145,15 +145,5 @@ int even);
 void				move_ants(t_lem_in *lem_in);
 void				free_paths(t_path **paths, int num);
 int					free_all(t_lem_in **lem_in);
-
-/*
-** auxiliary functions; delete later
-*/
-
-void				print_links(char **arr, int len, t_room **rooms);
-void				print_rooms(t_room **rooms, int len);
-void				print_link_arr(char **arr, int len);
-void				print_queue(t_queue *q);
-void				print_paths(t_lem_in *lem_in);
 
 #endif

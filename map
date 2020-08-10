@@ -1,10 +1,7 @@
-196
-#Here is the number of lines required: 86
-##start
-Jvl7 2 2
+8
+4 4 4
 ##end
-Dvt5 6 6
-Vqi5 10 10
-Bf_4 14 14
-Jvl7-Vqi5
-Bf_4-Dvt5
+1 0 4
+1-2
+3-4
+5-4

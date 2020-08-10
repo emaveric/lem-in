@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/26 19:33:42 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 15:55:18 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/10 16:49:16 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	len_search(const char *line, t_lem_in *l_i, int k, int *len)
 	int		i;
 
 	i = 1;
-	if (k != ft_strlen(line) && l_i->j == 0)
+	if (k != (int)ft_strlen(line) && l_i->j == 0)
 		i = 0;
 	l_i->j = 0;
 	if (i == 1)
@@ -121,14 +121,15 @@ int		many_dashes_link(t_lem_in *l_i, const char *line, int i)
 	len[l_i->j + 1] = -1;
 	l_i->j = 0;
 	if ((i = first_name(l_i, line, k, len)) == ERROR)
-		return (ERROR);
-	if (k == ft_strlen(line) || flag != 0)
+		return (free_len(len));
+	if (k == (int)ft_strlen(line) || flag != 0)
 		k--;
 	if (!(str1 = ft_memalloc(len[k] - len[l_i->j])))
-		return (ERROR);
+		return (free_len(len));
 	str1 = ft_strfromcpy(str1, line, len[l_i->j] + 1);
 	l_i->j = i;
 	if (second_name(l_i, str1, 0) == ERROR)
-		return (ERROR);
+		return (free_len(len));
+	free(len);
 	return (0);
 }

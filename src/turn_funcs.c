@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 16:18:48 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:12:14 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 16:53:11 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	count_move_all_in_path(t_lem_in *l_i, t_room *room)
 {
 	t_room *temp;
-	t_room *temp2;
 
 	temp = room;
 	if (temp->level == MAX_INT)

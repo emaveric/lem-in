@@ -6,13 +6,13 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 13:06:58 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:54:28 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/08/10 16:44:14 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
 
-int 	buff_free(char *buff)
+int		buff_free(char *buff)
 {
 	free(buff);
 	return (ERROR);
@@ -45,7 +45,7 @@ int		str_free(char **str, int i)
 	return (0);
 }
 
-int 	free_all(t_lem_in **lem_in)
+int		free_all(t_lem_in **lem_in)
 {
 	int i;
 

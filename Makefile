@@ -6,7 +6,7 @@
 #    By: eshor <eshor@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/23 16:43:36 by emaveric          #+#    #+#              #
-#    Updated: 2020/08/10 14:12:24 by eshor            ###   ########.fr        #
+#    Updated: 2020/08/10 16:57:13 by eshor            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC_DIR = ./src/
 OBJ_DIR = ./obj/
 
 SRC_NAME =	lem-in.c init.c get_room.c map.c validation.c check.c move_ants.c \
-			many_dashes_link.c aux.c form_paths.c \
+			many_dashes_link.c form_paths.c \
 			start_algo.c queue_funcs.c edmonds_karp.c edmonds_karp_p2.c\
 			free_funcs.c path_funcs.c turn_funcs.c error.c\
 			
@@ -31,12 +31,13 @@ HEADER = $(addprefix $(INC_DIR), $(HEADER_NAME))
 SRC = $(addprefix $(SRC_DIR), $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_NAME:.c=.o))
 
-FLAGS = -g
+FLAGS = -Wall -Wextra -Werror
 GCC_PRINTF = -L ./ft_printf -l ftprintf
 
 all: $(LEM-IN)
 
 $(LEM-IN): $(OBJ_DIR) $(OBJ) $(PRINTF_A) $(HEADER)
+	$(PRINTF_A)
 	gcc $(GCC_PRINTF) $(addprefix -I, $(INC_DIR)) $(OBJ) $(FLAGS) -o $(LEM-IN)
 
 $(OBJ_DIR):

@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 13:07:32 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:11:36 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 16:52:58 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int		get_num_paths(t_lem_in *lem_in)
 	return (num);
 }
 
-t_path	**pathfinder(t_lem_in *lem_in, int *num)
+t_path	**pathfinder(t_lem_in *lem_in)
 {
 	int		i;
 	int		len;
@@ -116,7 +116,7 @@ t_path	**pathfinder(t_lem_in *lem_in, int *num)
 			lem_in->path_num++;
 		}
 	}
-	sort_paths(lem_in->paths, 0, lem_in->path_num - 1);
+	sort_paths(lem_in->paths, lem_in->path_num - 1);
 	define_comp_num(lem_in->paths, lem_in->path_num);
 	return (lem_in->paths);
 }

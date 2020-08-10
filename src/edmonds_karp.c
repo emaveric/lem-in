@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 13:10:32 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:11:30 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 16:51:29 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	in_end_room(t_lem_in *l, t_room *room, t_queue **q, int i)
 	l->link_arr[room->num][i] = 1;
 	l->link_arr[i][room->num] = 2;
 	l->rooms[i]->visited = 1;
-	find_path_backwards(l, room->num, 0);
+	find_path_backwards(l, room->num);
 	free_queue(q);
 }
 
@@ -81,7 +81,7 @@ int		edmonds_karp(t_lem_in *l)
 			if (traverse_queue(l, &q) == ERROR)
 				return (ERROR);
 		}
-		if ((l->paths = pathfinder(l, &l->path_num_temp)) == NULL
+		if ((l->paths = pathfinder(l)) == NULL
 		|| (!(l->paths_temp) && l->path_num == 0))
 			return (ERROR);
 		n_new = count_turns(l);

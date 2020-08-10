@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 12:56:55 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:11:56 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 16:48:36 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	print_move(int *is_start, int ant_name, char *next_name)
 void	move_all_in_path(t_lem_in *l_i, t_room *room, int *is_start, int even)
 {
 	t_room	*temp;
-	t_room	*temp2;
 	int		k;
 
 	k = 0;

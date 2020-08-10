@@ -6,13 +6,13 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 12:56:26 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:11:59 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 16:51:57 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
 
-void	sort_paths(t_path **paths, int left, int right)
+void	sort_paths(t_path **paths, int right)
 {
 	int		i;
 	int		j;

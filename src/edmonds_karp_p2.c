@@ -6,7 +6,7 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 13:53:11 by eshor             #+#    #+#             */
-/*   Updated: 2020/08/10 14:11:33 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 16:50:53 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	refresh_visited_and_lvl(t_room **rooms, int num)
 	rooms[num - 1]->visited = 0;
 }
 
-void	find_path_backwards(t_lem_in *lem_in, int room_id, int flag)
+void	find_path_backwards(t_lem_in *lem_in, int room_id)
 {
 	int prev;
 

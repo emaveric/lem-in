@@ -6,17 +6,17 @@
 /*   By: eshor <eshor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 15:47:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/08/10 14:11:45 by eshor            ###   ########.fr       */
+/*   Updated: 2020/08/10 16:45:28 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
 
-char	**init_link_arr(t_lem_in *l_i)
+char		**init_link_arr(t_lem_in *l_i)
 {
 	char	**new;
-	int 	i;
-	int 	j;
+	int		i;
+	int		j;
 
 	if (!(new = (char **)malloc(sizeof(char *) * l_i->room_num)))
 		return (NULL);
@@ -55,9 +55,9 @@ t_room		*init_room(void)
 	new->ant_name = -1;
 	new->d_flag = 0;
 	new->next = NULL;
-    new->temp_next = NULL;
-    new->prev = NULL;
-    new->temp_prev = NULL;
+	new->temp_next = NULL;
+	new->prev = NULL;
+	new->temp_prev = NULL;
 	return (new);
 }
 
@@ -81,23 +81,7 @@ t_lem_in	*init_l_i(void)
 	new->e_l_flag = 0;
 	new->i = 1;
 	new->j = 0;
-    new->n_turns = MAX_INT;
-    new->paths_temp = NULL;
+	new->n_turns = MAX_INT;
+	new->paths_temp = NULL;
 	return (new);
 }
-
-/*
-int			init_all(t_lem_in **l_i, t_room **room, t_link **link)//, t_queue **queue)
-{
-	if (!(*room = init_room()))
-		return (ERROR);
-	if (!(*link = init_link()))
-		return (ERROR);
-	*/
-/*if (!(*queue = init_queue()))
-		return (ERROR);*//*
-
-	if (!(*l_i = init_l_i()))
-		return (ERROR);
-	return (0);
-}*/
