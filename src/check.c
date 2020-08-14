@@ -55,7 +55,8 @@ int		room_num_check(t_lem_in *l_i, int i)
 	i++;
 	while (l_i->line[i])
 	{
-		if (l_i->line[i][0] == '#')
+		if (l_i->line[i][0] == '#' && ft_strcmp(l_i->line[i], "##start")
+		!= 0 && ft_strcmp(l_i->line[i], "##end") != 0)
 			if (get_command(l_i, l_i->line, i) == ERROR)
 				return (ERROR);
 		if (link_or_room(l_i, l_i->line[i], 0) == ERROR)
