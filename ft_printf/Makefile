@@ -6,7 +6,7 @@
 #    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/06 17:02:06 by emaveric          #+#    #+#              #
-#    Updated: 2020/03/02 16:51:13 by emaveric         ###   ########.fr        #
+#    Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FILES = check_is.c fill_final.c fill_find_other.c fill_new_str.c \
 
 SRC = $(addprefix src/, $(FILES))
 
-INC = includes/ft_printf.h
+INC = includes/
 
 OBJ = $(addprefix obj/, $(FILES:.c=.o))
 
@@ -27,7 +27,7 @@ LIBFT = libft/libft.a
 
 LIBFT_DIR = libft/
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = 
 
 all: $(NAME)
 

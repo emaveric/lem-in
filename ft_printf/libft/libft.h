@@ -6,13 +6,18 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 22:50:49 by emaveric          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/07/27 16:23:50 by emaveric         ###   ########.fr       */
+=======
+/*   Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr       */
+>>>>>>> lexa
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # define BUFF_SIZE 10
+# define SIZE_MAX 10000000
 
 # include <stdlib.h>
 # include <unistd.h>
